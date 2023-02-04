@@ -1,0 +1,31 @@
+.navbar-hatch .navbar-collapse .navbar-nav li a {
+    text-decoration: none;
+}
+.parent .input-validation-error {
+    border-width: 2px !important;
+}
+.input-validation-error {
+    border-width: 1px !important;
+    border-color: #a94442 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+}
+.required-field .control-label:before,
+.required-field .checkbox-accept:after {
+    color: #d00;
+    content: "*";
+    font-weight: bolder;
+}
+.control-label.subscribe-field-label ~ label {
+    display: block;
+    font-weight: normal;
+}
+.navigation-side-hatch ul li a {
+    background-color: transparent !important;
+}
+.form-group {
+    clear: both;
+}
+.nav.navbar-nav .navigation-title.field-navigationtitle {
+    display: inline;
+}

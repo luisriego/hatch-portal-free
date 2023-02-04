@@ -1,0 +1,36 @@
+App\Entity\Topic:
+  topic_1:
+    title: 'Bécancour Green Hydrogen Plant'
+    subtitle: 'Championing a low carbon future'
+    caseStudy: '20-megawatt proton exchange membrane electrolyzer'
+    location: 'Air Liquide Canada | Canada | 2019-2020'
+    challenges: 'Global trends for a low-emission environment has required the search for alternative power sources, such as green hydrogen. When industrial processes are combined with renewable energy sources in the generation of electricity for the electrolysis of water, green hydrogen is produced without carbon emissions.'
+    solutions: 'Provided civil, structural, and architectural, heating, ventilation, air conditioning engineering and construction and health and safety management services in the installation of proton exchange membrane (PEM) electrolyzers technology to form a 20-megawatt (MW) system.'
+    highlights: 'This cutting-edge project will implement the first large-scale use of novel PEM technology. Once this project enters commercial production, it will be the largest-of-its kind to produce green hydrogen in the world. Becancour’s proximity to major industrial markets in Canada and the United States will help ensure North America’s supply of low-carbon hydrogen for both industry and mobility usage.'
+    image: 'https://www.hatch.com/-/media/Hatch-Corporate/Projects/Energy/Bcancour-Green-Hydrogen-Plant.jpg'
+    link: 'https://www.hatch.com/Expertise/Topics/Responsible-Energy'
+    type: '@type_energy'
+
+  topic_2:
+    title: 'The socioeconomic impact of the Gautrain study'
+    subtitle: 'Championing a low carbon future'
+    caseStudy: '20-megawatt proton exchange membrane electrolyzer'
+    location: 'Gautrain Management Agency | South Africa | 2018-2019'
+    challenges: 'Increasing levels of travel and tourism in the Gauteng province have influenced the need for construction on the Gautrain light rail infrastructure system, connecting Johannesburg, Pretoria, and the O.R. Tambo International Airport. Understanding and maximizing the economic impacts and social benefits that the light rail system has, and will deliver, is becoming a critical factor in influencing the need for investment, expansion, and construction of the system so that the Gauteng province remains globally competitive.'
+    solutions: 'Hatch partnered with the Gautrain Management Agency (GMA) to understand the impact of the project by combining the economic insights, transportation planning skills, and deep understanding of local issues. The study demonstrated the full range of economic and social benefits that Gautrain provides and can continue to deliver with further investment. Our analysis provided fresh insight that addressed employment, property development, time savings, reducing inequality, emission savings, attracting foreign inward investment, current and future economic returns on investment, and annual contribution to regional GDP to successfully make the case for integrating this wider transport system across the Gauteng region.'
+    highlights: 'The study demonstrates how this world-class rapid transit system has positively transformed a city region that is home to 14 million people. The study validated the original motivation for the Gautrain, while demonstrating and communicating the impact in a way that resonated with multiple stakeholders.'
+    image: 'https://www.hatch.com/-/media/Hatch-Corporate/Projects/Infrastructure/The-socioeconomic-impact-of-the-Gautrain-study.jpg'
+    link: 'https://www.hatch.com/Projects/Infrastructure/The-socioeconomic-impact-of-the-Gautrain-study'
+    type: '@type_urban'
+
+  topic_3:
+    title: 'AP60 Smelter'
+    subtitle: 'Approaches for a new era of mining'
+    caseStudy: 'Pilot plant produces 40% more aluminum'
+    location: 'Rio Tinto Alcan | Canada | 2007–2013'
+    challenges: 'This greenfield plant wanted to demonstrate new proprietary AP60-smelting technology at an industrial scale.   The smelter was to produce 40% more aluminum per cell than the previous generation of AP technology.'
+    solutions: 'We provided project management, lean engineering, procurement, construction management, pre-commissioning, and commissioning services.'
+    highlights: 'Recognized by the Project Management Institute with the International Project of the Year Award in 2014, and the Project of the Year Award—Montréal  in 2013.'
+    image: 'https://www.hatch.com/-/media/Hatch-Corporate/Projects/MetalsMinerals/AP60_cropped.jpg'
+    link: 'https://www.hatch.com/Projects/Metals-And-Minerals/AP60'
+    type: '@type_mining'

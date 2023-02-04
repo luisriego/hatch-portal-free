@@ -1,0 +1,39 @@
+<section class="section-main brand-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="component breadcrumb navigation-title">
+                    <div class="component-content">
+
+                        <nav>
+                            <ol class="breadcrumb ">
+                                <li class="breadcrumb-item home">
+                                    <a title="Home" href="{{ path('app_homepage') }}">Home</a>
+                                    <span class="separator"></span>
+                                </li>
+                                <li class="breadcrumb-item ">
+                                    <a title="About-Us" href="{{ path('app_about_us') }}">About Us</a>                            <span class="separator"></span>
+                                </li>
+                                <li class="breadcrumb-item last">About the Company</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        var li = $(".breadcrumb .last")[0];
+                        var anchor = $(li).find("a");
+                        var text = anchor[0].innerText;
+                        $(anchor).remove();
+                        li.innerText = text;
+
+                        var arr = $(".breadcrumb a[title='About-Us']")[0];
+                        arr.pathname = arr.pathname + "/About-the-Company";
+
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</section>

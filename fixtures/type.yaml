@@ -1,0 +1,21 @@
+App\Entity\Type:
+  type_energy:
+    type: Energy
+    title: 'Responding to the energy transition'
+    image: 'https://www.hatch.com/-/media/Hatch-Corporate/Banner/Responding-to-the-energy-transition-home.jpg?h=440&iar=0&w=1200&hash=66CB2AE82FDDCEC00C59F26E7EBB463B'
+    subtitle: 'Championing a low carbon future'
+    link: 'https://www.hatch.com/Expertise/Topics/Responsible-Energy'
+
+  type_mining:
+    type: Mining
+    title: 'Innovation in Mining'
+    image: 'https://www.hatch.com/-/media/Hatch-Corporate/Banner/Innovation-in-Mining.jpg?h=580&iar=0&w=1920&hash=C5D1730B1A75F24F84B195A8D98BFFF8'
+    subtitle: 'A step change begins with a vision of what is possible'
+    link: 'https://www.hatch.com/Expertise/Topics/Innovation-in-Mining'
+
+  type_urban:
+    type: Urban
+    title: 'Innovation in Urban Solutions'
+    image: 'https://www.hatch.com/-/media/Hatch-Corporate/Homepage/Urban-Solutions-home.jpg?h=400&iar=0&w=1200&hash=DBD88FB0BA1B49EAB0FF22B03BBEDC73'
+    subtitle: 'Smarter cities arent a social ideal, theyre an economic imperative'
+    link: 'https://www.hatch.com/Projects/Infrastructure/The-socioeconomic-impact-of-the-Gautrain-study'

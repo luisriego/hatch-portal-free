@@ -17,6 +17,11 @@ RUN apt update \
     && docker-php-ext-install intl pdo gd zip \
     # for MySQL
     && docker-php-ext-install pdo_mysql \
+
+    # for Postgres
+        && apt install -y libpq-dev \
+        && docker-php-ext-install gd pdo_pgsql \
+
     # XDEBUG and APCu
     && pecl install xdebug apcu \
     # enable Docker extensions

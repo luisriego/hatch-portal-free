@@ -1,0 +1,28 @@
+<section class="section-hero">
+
+
+    <figure class="banner-hero banner-hero-home title-light">
+        <video onclick="this.paused ? this.play() : this.pause()"
+               class="video" width="1920" height="720" autoplay loop muted style="left: 0px; top: 0px; z-index: 2;">
+            <source src="https://www.hatch.com/-/media/Hatch-Corporate/Video/Aug2017WebVideo1920x720" type="video/mp4">
+            <img src="{{ asset('media/homepage/HatchHeroBanner.jpg') }}" />
+        </video>
+        <!-- hide hero banner image by default for desktop screen size -->
+        <div id="banner-hero-image" style="display:none;">
+            <img src="{{ asset('media/homepage/HatchHeroBanner.jpg') }}" />
+        </div>
+
+        <figcaption>
+            <div class="caption-content">
+
+                <h1>Building
+                    Smarter
+                    Solutions</h1>
+
+                <h2 class="banner-hero_subtitle">that ignite your vision</h2>
+
+                <a class="banner-hero_link case-study-link" href="/About-Us/Markets-Change">Learn how our innovative solutions are changing the world +</a>
+            </div>
+        </figcaption>
+    </figure>
+</section>

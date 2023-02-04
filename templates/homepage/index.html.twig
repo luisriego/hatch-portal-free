@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hatch - Consulting engineering and project implementation{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        {{ include('_navbar.html.twig') }}
+
+        <div id="maincontent" class="">
+
+            {{ include('sections/homepage/_banner.html.twig') }}
+
+            {% for item in data %}
+                {{ include('sections/homepage/_topic.html.twig') }}
+            {% endfor %}
+
+            {{ include('sections/homepage/_award.html.twig') }}
+
+            {{ include('sections/_communications.html.twig') }}
+
+            {{ include('sections/_clients-say.html.twig') }}
+
+            {{ include('sections/_need-a-solution.html.twig') }}
+
+        </div>
+
+        {{ include('_footer.html.twig') }}
+
+
+
+    </div>
+{% endblock %}
