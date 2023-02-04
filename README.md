@@ -16,6 +16,9 @@ This repository contains the basic configuration for a complete local environmen
 - Run `make start` to initiate all the containers
 - Enter the PHP container with `make ssh-be`
 - Install your favourite Symfony version with `composer create-project symfony/skeleton:"6.1.*" my_project_directory`
+- cd my_project_directory
+- `composer require webapp`
+- `cd ..`
 - Move the content to the root folder with `mv project/* . && mv project/.env .`. This is necessary since Composer won't install the project if the folder already contains data.
 - Copy the content from `project/.gitignore` and paste it in the root's folder `.gitignore`
 - Remove `project` folder (not needed anymore)
@@ -46,7 +49,7 @@ This repository contains the basic configuration for a complete local environmen
     ###> symfony/messenger ###
     # Choose one of the transports below
     # MESSENGER_TRANSPORT_DSN=doctrine://default
-    MESSENGER_TRANSPORT_DSN=amqp://guest:guest@docker-dev-env-for-symfony-rabbitmq:5672/%2f/messages
+    MESSENGER_TRANSPORT_DSN=amqp://guest:guest@hatch-portal-rabbitmq:5672/%2f/messages
     # MESSENGER_TRANSPORT_DSN=redis://localhost:6379/messages
     ###< symfony/messenger ###
 

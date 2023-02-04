@@ -35,7 +35,7 @@ RUN mkdir -p /var/www/html
 # Config XDEBUG
 COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
-## Install PHP-CS-FIXER
+# Install PHP-CS-FIXER
 RUN wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O php-cs-fixer
 RUN chmod a+x php-cs-fixer
 RUN mv php-cs-fixer /usr/local/bin/php-cs-fixer
