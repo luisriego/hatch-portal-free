@@ -61,6 +61,6 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
     && service apache2 restart
 
 # Modify upload file size
-RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+RUN mv "$PHP_INI_DIR/php.ini-" "$PHP_INI_DIR/php.ini"
 
 WORKDIR /var/www/html
