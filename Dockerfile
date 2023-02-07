@@ -23,7 +23,7 @@ COPY . /var/www/html/
 RUN /var/www/html/bin/console a:i
 
 RUN mkdir -p /var/www/html/var
-RUN chmod -R www-data:www-data /var/www/html/var
+RUN chown -R www-data:www-data /var/www/html/var
 
 # Install NODE 14 and Yarn
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
