@@ -24,6 +24,7 @@ class DoctrineTopicRepository extends ServiceEntityRepository implements TopicRe
     public function findRandomTreeOrFail(): ?array
     {
         return $this->createQueryBuilder('t')
+            ->andWhere('t.toPublish = true')
             ->orderBy('t.type', 'ASC')
             ->setMaxResults(3)
             ->getQuery()

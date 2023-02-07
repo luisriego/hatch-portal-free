@@ -18,26 +18,44 @@ services:
       XDEBUG_CLIENT_PORT: 9003
       PHP_IDE_CONFIG: serverName=hatch-portal-server
     ports:
-      - '80:80'
+      - '1000:80'
+    networks:
+      - hatch-portal-network
+    depends_on:
+      - hatch-portal-postgres
+
+  hatch-portal-postgres:
+    container_name: hatch-portal-postgres
+    image: postgres:14-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: postgres_symfony
+    volumes:
+      - hatch-portal-pgsql-data:/var/lib/postgresql
     networks:
       - hatch-portal-network
 
   hatch-portal-mysql:
     container_name: hatch-portal-mysql
-    image: mysql:8.0.26
+    build:
+      context: ./docker/database
     ports:
       - '3336:3306'
     environment:
       MYSQL_DATABASE: mysql_symfony
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - hatch-portal-mysql-data:/var/lib/mysql/data
+      - hatch-portal-mysql-data:/var/lib/mysql
     networks:
       - hatch-portal-network
     command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
 
 volumes:
   hatch-portal-mysql-data:
+  hatch-portal-pgsql-data:
 
 networks:
   hatch-portal-network:

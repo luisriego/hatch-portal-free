@@ -8,13 +8,14 @@
 
         <div id="maincontent" class="">
 
-            {{ include('sections/homepage/_banner.html.twig') }}
+            {{ include('sections/homepage/_award.html.twig') }}
 
             {% for item in data %}
                 {{ include('sections/homepage/_topic.html.twig') }}
             {% endfor %}
+{#            {{ include('sections/homepage/_banner.html.twig') }}#}
 
-            {{ include('sections/homepage/_award.html.twig') }}
+
 
             {{ include('sections/_communications.html.twig') }}
 

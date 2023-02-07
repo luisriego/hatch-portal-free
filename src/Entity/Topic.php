@@ -52,6 +52,9 @@ class Topic
     #[ORM\JoinColumn(nullable: false)]
     private ?Type $type = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $toPublish = null;
+
     public function __construct()
     {
         $this->id = Uuid::random()->value();
@@ -210,5 +213,17 @@ class Topic
     public function __toString(): string
     {
         return $this->title;
+    }
+
+    public function isToPublish(): ?bool
+    {
+        return $this->toPublish;
+    }
+
+    public function setToPublish(?bool $toPublish): self
+    {
+        $this->toPublish = $toPublish;
+
+        return $this;
     }
 }

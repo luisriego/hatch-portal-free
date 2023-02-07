@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/pt-BR">
+                <a class="navbar-brand" href="/">
                     <img src="{{ asset('media/images/Hatch-Corporate-Logo.png') }}?h=37&amp;iar=0&amp;w=231&amp;hash=2D56EB798FA50C697BA80C24608AE5AA" alt="Hatch" width="231" height="37" />
                 </a>
             </div>
@@ -26,20 +26,6 @@
                         <span id="searchboxicon" class="glyphicon glyphicon-search"></span>
                     </button>
                 </div>
-
-                <div id="search-box-typeahead" class="search-group" style="float: right; padding-right: 17px">
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('admin_dashboard') }}">
-                            <span id="searchboxicon" class="glyphicon glyphicon-dashboard"></span>
-                        </a>
-
-                    {% else %}
-                        <a href="{{ path('login') }}">
-                            <span id="searchboxicon" class="glyphicon glyphicon-log-in" style="color: #494a4c"></span>
-                        </a>
-                    {% endif %}
-                </div>
-
 
                 <style>
                     .gly-spin {
@@ -110,16 +96,20 @@
                 <nav>
                     <ul class="nav navbar-nav collapse" data-controller="nav">
                         <li class="">
-                            <a title="Expertise" href="/Expertise">Nossa expertice</a>
+                            <a title="Projects" href="https://www.hatch.com/Projects" target="_blank">Projetos</a>
                         </li>
                         <li class="">
-                            <a title="Projects" href="/Projects">Projetos</a>
-                        </li>
-                        <li class="">
-                            <a title="Careers" href="/Careers">Carreiras</a>
+                            <a title="Careers" href="https://jobs.hatch.com/" target="_blank">Carreiras</a>
                         </li>
                         <li class="">
                             <a title="About" href="{{ path('app_about_us') }}">Sobre nós</a>
+                        </li>
+                        <li class="">
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('admin_dashboard') }}">Administração</a>
+                            {% else %}
+                                <a href="{{ path('login') }}">Login</a>
+                            {% endif %}
                         </li>
                     </ul>
                 </nav>
