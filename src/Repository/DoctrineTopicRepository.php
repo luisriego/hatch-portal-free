@@ -21,6 +21,9 @@ class DoctrineTopicRepository extends ServiceEntityRepository implements TopicRe
         parent::__construct($registry, Topic::class);
     }
 
+    /**
+     * @return array|null
+     */
     public function findRandomTreeOrFail(): ?array
     {
         return $this->createQueryBuilder('t')
