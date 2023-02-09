@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\User;
+use App\Exception\ResourceNotFoundException;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
@@ -21,9 +22,9 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 {
     public function __construct(ManagerRegistry $registry)
     {
+        $this->repository = new ServiceEntityRepository($registry, User::class);
         parent::__construct($registry, User::class);
     }
-
     public function save(User $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -54,6 +55,15 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $user->setPassword($newHashedPassword);
 
         $this->save($user, true);
+    }
+
+    public function findOneByEmailOrFail(string $email): User
+    {
+        if (null === $user = $this->repository->findOneBy(['email' => $email])) {
+            throw ResourceNotFoundException::createFromResourceAndProperty(User::class, $email);
+        }
+
+        return $user;
     }
 
 //    /**
