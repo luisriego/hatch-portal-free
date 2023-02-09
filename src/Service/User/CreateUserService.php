@@ -8,7 +8,6 @@ use App\Entity\User;
 use App\Exception\UserAlreadyExistsException;
 use App\Repository\UserRepository;
 use App\Service\Security\PasswordHasherInterface;
-use App\ValueObjects\Uuid;
 
 class CreateUserService
 {
@@ -23,7 +22,7 @@ class CreateUserService
         /*
          * CASE_1: Case for repository method without exception
          */
-        if (null !== $this->userRepository->findOneByEmailOrFail($email)) {
+        if (null !== $this->userRepository->findOneByEmail($email)) {
             throw UserAlreadyExistsException::createFromEmail($email);
         }
 

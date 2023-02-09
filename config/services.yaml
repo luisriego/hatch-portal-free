@@ -20,6 +20,6 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
-#    User\Command\:
-#        resource: './src/Command/'
+#    App\Service\:
+#        resource: '../src/Command/'
 #        tags: [ 'console.command' ]

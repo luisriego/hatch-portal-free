@@ -25,7 +25,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->repository = new ServiceEntityRepository($registry, User::class);
         parent::__construct($registry, User::class);
     }
-    public function save(User $entity, bool $flush = false): void
+    public function save(User $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -55,6 +55,11 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $user->setPassword($newHashedPassword);
 
         $this->save($user, true);
+    }
+
+    public function findOneByEmail(string $email): ?User
+    {
+        return $this->repository->findOneBy(['email' => $email]);
     }
 
     public function findOneByEmailOrFail(string $email): User
