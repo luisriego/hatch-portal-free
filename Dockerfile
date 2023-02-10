@@ -20,7 +20,7 @@ RUN composer install --prefer-dist --no-scripts --no-interaction --no-dev
 
 ## Copy project content
 COPY . /var/www/html/
-RUN /var/www/html/bin/console a:i
+# RUN /var/www/html/bin/console a:i
 
 RUN mkdir -p /var/www/html/var
 RUN chown -R www-data:www-data /var/www/html/var
