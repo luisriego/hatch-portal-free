@@ -20,7 +20,7 @@ RUN composer install --prefer-dist --no-scripts --no-interaction --no-dev
 
 ## Copy project content
 COPY . /var/www/html/
-RUN /var/www/html/bin/console a:i
+RUN #/var/www/html/bin/console a:i
 
 RUN mkdir -p /var/www/html/var
 RUN chown -R www-data:www-data /var/www/html/var
@@ -31,6 +31,8 @@ RUN apt -y install nodejs
 RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt update && apt install yarn
+
+RUN yarn && yarn build && yarn start
 
 # Update Apache config
 COPY ./docker/php/default.conf /etc/apache2/sites-available/default.conf

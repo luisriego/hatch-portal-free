@@ -22,21 +22,22 @@ services:
     networks:
       - hatch-portal-network
     depends_on:
-      - hatch-portal-postgres
-
-  hatch-portal-postgres:
-    container_name: hatch-portal-postgres
-    image: postgres:14-alpine
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: passwd
-      POSTGRES_DB: postgres_symfony
-    volumes:
-      - hatch-portal-pgsql-data:/var/lib/postgresql
-    networks:
-      - hatch-portal-network
+      - hatch-portal-mysql
+#      - hatch-portal-postgres
+#
+#  hatch-portal-postgres:
+#    container_name: hatch-portal-postgres
+#    image: postgres:14-alpine
+#    ports:
+#      - '5432:5432'
+#    environment:
+#      POSTGRES_USER: user
+#      POSTGRES_PASSWORD: passwd
+#      POSTGRES_DB: postgres_symfony
+#    volumes:
+#      - hatch-portal-pgsql-data:/var/lib/postgresql
+#    networks:
+#      - hatch-portal-network
 
   hatch-portal-mysql:
     container_name: hatch-portal-mysql
@@ -55,7 +56,7 @@ services:
 
 volumes:
   hatch-portal-mysql-data:
-  hatch-portal-pgsql-data:
+#  hatch-portal-pgsql-data:
 
 networks:
   hatch-portal-network:

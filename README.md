@@ -99,4 +99,11 @@ $subQueryBuilder = $this->getEntityManager()->createQueryBuilder();
         ->getQuery();
 ```
 
+#!/bin/bash
 
+cd app
+git pull origin main
+docker build -t deploy .
+docker stop $(docker ps -aq) || true
+docker container prune -f
+docker run -d -p 8080:80 --restart unless-stopped --name hatch_portal_app deploy
