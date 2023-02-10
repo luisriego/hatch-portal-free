@@ -15,12 +15,12 @@ class HomepageService
 
     public function handle(): array
     {
-        if (null === $result = $this->topicRepository->findRandomTreeOrFail()) {
-            throw new NotFoundHttpException();
-        }
-
-        return $result;
-//        return [];
+//        if (null === $result = $this->topicRepository->findRandomTreeOrFail()) {
+//            throw new NotFoundHttpException();
+//        }
+//
+//        return $result;
+        return [];
 //        return [
 //            [
 //                'title' => 'Inovar na transição energética',
