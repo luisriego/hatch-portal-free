@@ -15,11 +15,11 @@ class HomepageService
 
     public function handle(): array
     {
-//        if (null === $result = $this->topicRepository->findBy(['toPublish' => true], ['type' => 'ASC'], 3 )) {
-//            throw new NotFoundHttpException();
-//        }
-//
-//        return $result;
-        return [];
+        if (null === $result = $this->topicRepository->findBy(['toPublish' => true], ['type' => 'ASC'], 3 )) {
+            throw new NotFoundHttpException();
+        }
+
+        return $result;
+//        return [];
     }
 }
