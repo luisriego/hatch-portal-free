@@ -15,7 +15,7 @@ class HomepageService
 
     public function handle(): array
     {
-        if (null === $result = $this->topicRepository->findRandomTreeOrFail()) {
+        if (null === $result = $this->topicRepository->findBy(['toPublish' => true], ['type' => 'ASC'], 3 )) {
             throw new NotFoundHttpException();
         }
 
