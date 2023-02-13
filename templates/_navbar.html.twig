@@ -106,9 +106,9 @@
                         </li>
                         <li class="">
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a href="{{ path('admin_dashboard') }}">{{ user }}</a>
+                                <a href="{{ path('admin_dashboard') }}">Administração</a>
                             {% else %}
-                                <a href="{{ path('login') }}">Login {{ noUser }}</a>
+                                <a href="{{ path('login') }}">Login</a>
                             {% endif %}
                         </li>
                     </ul>
