@@ -16,8 +16,8 @@ RUN apt update \
 # Install and update composer
 COPY --from=composer:2.3.5 /usr/bin/composer /usr/bin/composer
 COPY ./composer.* /var/www/html/
-#RUN composer install --prefer-dist --no-scripts --no-interaction --no-dev
-RUN composer install
+RUN composer install --prefer-dist --no-scripts --no-interaction --no-dev
+
 
 ## Copy project content
 COPY . /var/www/html/
