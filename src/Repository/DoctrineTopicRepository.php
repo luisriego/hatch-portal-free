@@ -34,6 +34,20 @@ class DoctrineTopicRepository extends ServiceEntityRepository implements TopicRe
             ->getResult();
     }
 
+
+    /**
+     * @return int|null
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function getTotalNumber(): ?int
+    {
+        return $this->createQueryBuilder('t')
+            ->select('count(t.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
 //    public function save(Topic $entity, bool $flush = false): void
 //    {
 //        $this->getEntityManager()->persist($entity);
