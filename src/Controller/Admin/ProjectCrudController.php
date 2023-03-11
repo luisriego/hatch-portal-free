@@ -31,8 +31,8 @@ class ProjectCrudController extends AbstractCrudController
             TextField::new('url'),
             ImageField::new('image')
                 ->setRequired(false)
-                ->setBasePath('media/images')
-                ->setUploadDir('public/media/images'),
+                ->setBasePath('media/projects')
+                ->setUploadDir('public/media/projects'),
         ];
     }
 }

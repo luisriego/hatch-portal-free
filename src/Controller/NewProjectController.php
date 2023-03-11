@@ -39,10 +39,10 @@ class NewProjectController extends AbstractController
                 $filename = bin2hex(random_bytes(6)).'.'.$photo->guessExtension();
 
                 try {
-//                    $photo->move($photoDir, $filename);
-                    $filesystem->touch(
-                        Path::normalize($photoDir.'/'.$filename)
-                    );
+                    $photo->move($photoDir, $filename);
+//                    $filesystem->touch(
+//                        Path::normalize($photoDir.'/'.$filename)
+//                    );
                 } catch (IOExceptionInterface  $e) {
                     echo "An error occurred while creating your directory at ".$e->getPath();
                 }
