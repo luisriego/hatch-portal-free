@@ -1,0 +1,12 @@
+<div class="rollup rollup-news">
+    <h2>Notícias</h2>
+
+    {% for item in news %}
+        {{ include('sections/_news.article.html.twig') }}
+    {% endfor %}
+
+    <a class="call2action brand-blue-dark" href="/About-Us/News-And-Media">
+        Todas as notícias
+    </a>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="rollup rollup-events">
+
+    <h2>Eventos</h2>
+
+    {% for event in events %}
+        {{ include('sections/_single-event.html.twig') }}
+    {% endfor %}
+
+    <a class="call2action brand-blue-dark" href="/About-Us/Events-And-Conferences">Todos os Eventos</a>
+</div>

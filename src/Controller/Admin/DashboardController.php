@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Area;
+use App\Entity\Event;
+use App\Entity\News;
 use App\Entity\Project;
 use App\Entity\Topic;
 use App\Entity\Type;
@@ -48,13 +50,18 @@ class DashboardController extends AbstractDashboardController
         $numProjects = $this->projectRepository->getTotalNumber();
         $numTopics = $this->topicRepository->getTotalNumber();
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-dashboard');
+        yield MenuItem::section('Admin');
         yield MenuItem::linkToCrud('Projects', 'fas fa-gear', Project::class)
             ->setBadge($numProjects, 'secondary');
         yield MenuItem::linkToCrud('Topics', 'fas fa-folder', Topic::class)
             ->setBadge($numTopics, 'secondary');
+        yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class);
+        yield MenuItem::section('Admin data');
         yield MenuItem::linkToCrud('Area', 'fa fa-square', Area::class);
         yield MenuItem::linkToCrud('Type', 'fa fa-check-square', Type::class);
-        yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class);
+        yield MenuItem::section('Homepage data');
+        yield MenuItem::linkToCrud('Events', 'fa fa-meetup', Event::class);
+        yield MenuItem::linkToCrud('News', 'fa fa-newspaper-o', News::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::section('Links');
         yield MenuItem::linkToUrl('Homepage', 'fas fa-home', $this->generateUrl('app_homepage'));
