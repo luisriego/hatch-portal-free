@@ -3,65 +3,73 @@
 namespace App\Repository;
 
 use App\Entity\News;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @extends ServiceEntityRepository<News>
- *
- * @method News|null find($id, $lockMode = null, $lockVersion = null)
- * @method News|null findOneBy(array $criteria, array $orderBy = null)
- * @method News[]    findAll()
- * @method News[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
-class NewsRepository extends ServiceEntityRepository
+
+class NewsRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(private readonly EntityManagerInterface $em)
     {
-        parent::__construct($registry, News::class);
     }
 
-    public function save(News $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+//    public function save(News $entity, bool $flush = false): void
+//    {
+//        $this->getEntityManager()->persist($entity);
+//
+//        if ($flush) {
+//            $this->getEntityManager()->flush();
+//        }
+//    }
+//
+//    public function remove(News $entity, bool $flush = false): void
+//    {
+//        $this->getEntityManager()->remove($entity);
+//
+//        if ($flush) {
+//            $this->getEntityManager()->flush();
+//        }
+//    }
+//
+//    /**
+//     * @return array|null
+//     */
+//    public function findRandomTreeOrFail(): ?array
+//    {
+//        return $this->createQueryBuilder('n')
+//            ->andWhere('t.toPublish = true')
+//            ->setMaxResults(3)
+//            ->getQuery()
+//            ->getResult();
+//    }
+//
+//
+//    public function getTotalNumber(): ?int
+//    {
+//        return $this->createQueryBuilder('n')
+//            ->select('count(n.id)')
+//            ->getQuery()
+//            ->getSingleScalarResult();
+//    }
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+    public function getTotalNumberWithSQL(): ?array
+    {
+        $rsm = new ResultSetMappingBuilder($this->em);
+        $rsm->addRootEntityFromClassMetadata(News::class, 'n');
+
+        $query = $this->em->createNativeQuery('SELECT COUNT(n.id) FROM news', $rsm);
+
+        return $query->getResult();
     }
 
-    public function remove(News $entity, bool $flush = false): void
+    public function findRandom3withSQL(): ?array
     {
-        $this->getEntityManager()->remove($entity);
+        $rsm = new ResultSetMappingBuilder($this->em);
+        $rsm->addRootEntityFromClassMetadata(News::class, 'n');
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+        $query = $this->em->createNativeQuery('SELECT * FROM news n WHERE n.to_publish = true LIMIT 3', $rsm);
 
-    /**
-     * @return array|null
-     */
-    public function findRandomTreeOrFail(): ?array
-    {
-        return $this->createQueryBuilder('n')
-            ->andWhere('t.toPublish = true')
-            ->setMaxResults(3)
-            ->getQuery()
-            ->getResult();
-    }
-
-
-    /**
-     * @return int|null
-     * @throws \Doctrine\ORM\NoResultException
-     * @throws \Doctrine\ORM\NonUniqueResultException
-     */
-    public function getTotalNumber(): ?int
-    {
-        return $this->createQueryBuilder('n')
-            ->select('count(n.id)')
-            ->getQuery()
-            ->getSingleScalarResult();
+        return $query->getResult();
     }
 }

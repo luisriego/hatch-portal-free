@@ -19,7 +19,8 @@ class EventService
 //            throw new NotFoundHttpException();
 //        }
         try {
-            null === $result = $this->eventRepository->findBy([], [], 1 );
+            null === $result = $this->eventRepository->findRandom3withSQL();
+
             return $result;
         }
         catch(\Exception $e){
