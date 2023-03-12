@@ -1,0 +1,9 @@
+<div class="rollup rollup-blog">
+    <h2>Pontos de Vista</h2>
+    {% for blog in blogs %}
+        {{ include('sections/_blog-article.html.twig') }}
+    {% endfor %}
+
+
+    <a class="call2action brand-blue-dark" href="/About-Us/Publications/Blogs">Todos os Blogs</a>
+</div>

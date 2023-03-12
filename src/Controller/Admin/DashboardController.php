@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Area;
+use App\Entity\Blog;
 use App\Entity\Event;
 use App\Entity\News;
 use App\Entity\Project;
@@ -62,6 +63,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Homepage data');
         yield MenuItem::linkToCrud('Events', 'fa fa-meetup', Event::class);
         yield MenuItem::linkToCrud('News', 'fa fa-newspaper-o', News::class);
+        yield MenuItem::linkToCrud('Blogs', 'fa fa-blog', Blog::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::section('Links');
         yield MenuItem::linkToUrl('Homepage', 'fas fa-home', $this->generateUrl('app_homepage'));

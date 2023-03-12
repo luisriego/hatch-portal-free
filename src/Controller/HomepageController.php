@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\NewsRepository;
+use App\Service\BlogService;
 use App\Service\EventService;
 use App\Service\HomepageService;
 use App\Service\NewsService;
@@ -16,6 +17,7 @@ class HomepageController extends AbstractController
         private readonly HomepageService $homepageService,
         private readonly NewsService $newsService,
         private readonly EventService $eventService,
+        private readonly BlogService $blogService,
     ) {
     }
 
@@ -26,12 +28,14 @@ class HomepageController extends AbstractController
         $randomData = $this->homepageService->handle();
         $randomNews = $this->newsService->handle();
         $randomEvent = $this->eventService->handle();
+        $randomBlog = $this->blogService->handle();
 
         return $this->render('homepage/index.html.twig',
             [
                 'data' => $randomData,
                 'news' => $randomNews,
                 'events' => $randomEvent,
+                'blogs' => $randomBlog,
             ]);
     }
 }
