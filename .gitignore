@@ -10,7 +10,9 @@ docker-compose.yml
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/public/media/
+/public/media/news
+/public/media/projects
+/public/media/blogs
 /var/
 /vendor/
 /migrations/
