@@ -15,23 +15,23 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-//    public function save(Event $entity, bool $flush = false): void
-//    {
-//        $this->getEntityManager()->persist($entity);
-//
-//        if ($flush) {
-//            $this->getEntityManager()->flush();
-//        }
-//    }
-//
-//    public function remove(Event $entity, bool $flush = false): void
-//    {
-//        $this->getEntityManager()->remove($entity);
-//
-//        if ($flush) {
-//            $this->getEntityManager()->flush();
-//        }
-//    }
+    public function save(Event $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Event $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
 
     /**
      * @throws \Doctrine\ORM\NonUniqueResultException
@@ -43,15 +43,5 @@ class EventRepository extends ServiceEntityRepository
             ->select('count(e.id)')
             ->getQuery()
             ->getSingleScalarResult();
-    }
-
-    public function findRandom3withSQL(): ?array
-    {
-        $rsm = new ResultSetMappingBuilder($this->em);
-        $rsm->addRootEntityFromClassMetadata(Event::class, 'e');
-
-        $query = $this->getEntityManager()->createNativeQuery('SELECT * FROM event e LIMIT 3', $rsm);
-
-        return $query->getResult();
     }
 }

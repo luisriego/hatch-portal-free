@@ -33,17 +33,17 @@ class NewsRepository extends ServiceEntityRepository
 //        }
 //    }
 //
-//    /**
-//     * @return array|null
-//     */
-//    public function findRandomTreeOrFail(): ?array
-//    {
-//        return $this->createQueryBuilder('n')
-//            ->andWhere('t.toPublish = true')
-//            ->setMaxResults(3)
-//            ->getQuery()
-//            ->getResult();
-//    }
+    /**
+     * @return array|null
+     */
+    public function findRandomTreeOrFail(): ?array
+    {
+        return $this->createQueryBuilder('n')
+            ->andWhere('n.toPublish = true')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
 //
 //
 //    public function getTotalNumber(): ?int

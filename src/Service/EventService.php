@@ -15,18 +15,10 @@ class EventService
 
     public function handle(): array|null
     {
-//        if (null === $result = $this->eventRepository->findBy([], [], 1 )) {
-//            throw new NotFoundHttpException();
-//        }
-        try {
-            null === $result = $this->eventRepository->findRandom3withSQL();
-
-            return $result;
-        }
-        catch(\Exception $e){
-            $errorMessage = $e->getMessage();
+        if (null === $result = $this->eventRepository->findBy([], [], 1 )) {
+            throw new NotFoundHttpException();
         }
 
-        return null;
+        return $result;
     }
 }
