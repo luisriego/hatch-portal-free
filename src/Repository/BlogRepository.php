@@ -39,6 +39,19 @@ class BlogRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return int|null
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function getTotalNumber(): ?int
+    {
+        return $this->createQueryBuilder('b')
+            ->select('count(b.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
 //    /**
 //     * @return Blog[] Returns an array of Blog objects
 //     */

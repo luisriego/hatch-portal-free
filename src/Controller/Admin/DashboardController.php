@@ -10,8 +10,14 @@ use App\Entity\Project;
 use App\Entity\Topic;
 use App\Entity\Type;
 use App\Entity\User;
+use App\Entity\Testimony;
+use App\Repository\BlogRepository;
 use App\Repository\DoctrineTopicRepository;
+use App\Repository\EventRepository;
+use App\Repository\NewsRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\TestimonyRepository;
+use App\Repository\UserRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -26,9 +32,12 @@ class DashboardController extends AbstractDashboardController
 {
     public function __construct(
         private readonly ProjectRepository $projectRepository,
-        private readonly DoctrineTopicRepository $topicRepository,
-    )
-    {
+        private readonly UserRepository $userRepository,
+        private readonly BlogRepository $blogRepository,
+        private readonly EventRepository $eventRepository,
+        private readonly NewsRepository $newsRepository,
+        private readonly TestimonyRepository $testimonyRepository,
+    ) {
     }
 
     #[IsGranted('ROLE_ADMIN')]
@@ -49,21 +58,31 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         $numProjects = $this->projectRepository->getTotalNumber();
-        $numTopics = $this->topicRepository->getTotalNumber();
+        $numUsers = $this->userRepository->getTotalNumber();
+        $numBlogs = $this->blogRepository->getTotalNumber();
+        $numEvents = $this->eventRepository->getTotalNumber();
+        $numNews = $this->newsRepository->getTotalNumber();
+        $numTestimonial = $this->testimonyRepository->getTotalNumber();
+
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-dashboard');
         yield MenuItem::section('Admin');
         yield MenuItem::linkToCrud('Projects', 'fas fa-gear', Project::class)
-            ->setBadge($numProjects, 'secondary');
-        yield MenuItem::linkToCrud('Topics', 'fas fa-folder', Topic::class)
-            ->setBadge($numTopics, 'secondary');
-        yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class);
+            ->setBadge($numProjects, 'danger');
+        yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class)
+            ->setBadge($numUsers, 'danger');
         yield MenuItem::section('Admin data');
-        yield MenuItem::linkToCrud('Area', 'fa fa-square', Area::class);
+        yield MenuItem::linkToCrud('Area', 'fa fa-arrows', Area::class);
+        yield MenuItem::linkToCrud('Topics', 'fas fa-folder', Topic::class);
         yield MenuItem::linkToCrud('Type', 'fa fa-check-square', Type::class);
         yield MenuItem::section('Homepage data');
-        yield MenuItem::linkToCrud('Events', 'fa fa-meetup', Event::class);
-        yield MenuItem::linkToCrud('News', 'fa fa-newspaper-o', News::class);
-        yield MenuItem::linkToCrud('Blogs', 'fa fa-blog', Blog::class);
+        yield MenuItem::linkToCrud('Blogs', 'fa fa-blog', Blog::class)
+            ->setBadge($numBlogs, 'info');
+        yield MenuItem::linkToCrud('Events', 'fa fa-list', Event::class)
+            ->setBadge($numEvents, 'info');
+        yield MenuItem::linkToCrud('News', 'fa fa-newspaper-o', News::class)
+            ->setBadge($numNews, 'info');
+        yield MenuItem::linkToCrud('Testimonials', 'fa fa-quote-left', Testimony::class)
+            ->setBadge($numTestimonial, 'info');
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::section('Links');
         yield MenuItem::linkToUrl('Homepage', 'fas fa-home', $this->generateUrl('app_homepage'));

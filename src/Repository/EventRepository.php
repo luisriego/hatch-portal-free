@@ -3,13 +3,16 @@
 namespace App\Repository;
 
 use App\Entity\Event;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
+use Doctrine\Persistence\ManagerRegistry;
 
-class EventRepository
+class EventRepository extends ServiceEntityRepository
 {
-    public function __construct(private readonly EntityManagerInterface $em)
+    public function __construct(ManagerRegistry $registry)
     {
+        parent::__construct($registry, Event::class);
     }
 
 //    public function save(Event $entity, bool $flush = false): void
@@ -30,12 +33,24 @@ class EventRepository
 //        }
 //    }
 
+    /**
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws \Doctrine\ORM\NoResultException
+     */
+    public function getTotalNumber(): ?int
+    {
+        return $this->createQueryBuilder('e')
+            ->select('count(e.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
     public function findRandom3withSQL(): ?array
     {
         $rsm = new ResultSetMappingBuilder($this->em);
         $rsm->addRootEntityFromClassMetadata(Event::class, 'e');
 
-        $query = $this->em->createNativeQuery('SELECT * FROM event e LIMIT 3', $rsm);
+        $query = $this->getEntityManager()->createNativeQuery('SELECT * FROM event e LIMIT 3', $rsm);
 
         return $query->getResult();
     }

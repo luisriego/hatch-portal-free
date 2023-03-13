@@ -3,15 +3,16 @@
 namespace App\Repository;
 
 use App\Entity\News;
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 
-class NewsRepository
+class NewsRepository extends ServiceEntityRepository
 {
-    public function __construct(private readonly EntityManagerInterface $em)
+    public function __construct(ManagerRegistry $registry)
     {
+        parent::__construct($registry, News::class);
     }
 
 //    public function save(News $entity, bool $flush = false): void
@@ -52,6 +53,18 @@ class NewsRepository
 //            ->getQuery()
 //            ->getSingleScalarResult();
 //    }
+
+    /**
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws \Doctrine\ORM\NoResultException
+     */
+    public function getTotalNumber(): ?int
+    {
+        return $this->createQueryBuilder('n')
+            ->select('count(n.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 
     public function getTotalNumberWithSQL(): ?array
     {
