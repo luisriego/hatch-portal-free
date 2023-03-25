@@ -1,0 +1,50 @@
+<div id="maincontent" class="">
+    <section class="">
+        <figure class="project-info">
+            {% if project.image is not null %}
+                <img src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}" width="1920" height="580">
+            {% else %}
+                <img src="{{ asset('media/banner/Innovation-inflation.jpg') }}" alt="{{ project.title }}" width="1920" height="580">
+            {% endif %}
+            <figcaption>
+                <div class="caption-content">
+                    <h1>{{ project.title }}</h1>
+
+                    <h2 class="project-info_subtitle">
+                        {{ project.subtitle }}
+                    </h2>
+                    <p>{{ project.location }}</p>
+                </div>
+            </figcaption>
+        </figure>
+        {{ include('projects/_facts.html.twig') }}
+    </section>
+    {{ include('projects/_project-details.html.twig') }}
+    <section class="section-main brand-gray-lighter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="project-summary">
+                        <div class="col-md-6">
+                            <h2>Projeto em números</h2>
+                            Reduction in Scope 1 and Scope 2 emissions by <strong>2030</strong><br>
+                            Over <strong>100</strong> carbon reduction initiatives assessed<br>
+                            <strong>Twenty-five</strong> sites in over ten countries spanning five commodities included in the analysis
+                        </div>
+{#                        <div class="col-md-6">#}
+{#                            <h2>Project services</h2>#}
+{#                            <p><a href="/Expertise/Services-and-Technologies/Advisory-Services">Advisory</a></p>#}
+{#                            <p><a href="/Expertise/Services-and-Technologies/EnvironmentalServices">Environmental Services</a></p>#}
+{#                            <p><a href="/Expertise/Services-and-Technologies/MineralProcessing">Mineral Processing</a></p>#}
+{#                            <p><a href="/Expertise/Services-and-Technologies/Mining">Mining</a></p>#}
+{#                            <p><a href="/Expertise/Services-and-Technologies/ProjectManagement">Project Management</a></p>#}
+{#                            <p><a href="/Expertise/Services-and-Technologies/Specialized-Engineering-Analysis-and-Design">Specialized Engineering Analysis and Design</a></p>#}
+{#                            <p><a href="/Expertise/Services-and-Technologies/Strategy-and-technology">Strategy</a></p>    #}
+{#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ include('sections/_need-a-solution.html.twig') }}
+</div>

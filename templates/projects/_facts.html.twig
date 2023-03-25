@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="project-facts">
+        {% for fact in project.fact %}
+            <div class="fact">
+                <p>{{ fact.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

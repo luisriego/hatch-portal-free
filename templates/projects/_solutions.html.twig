@@ -1,0 +1,8 @@
+<div class="col-md-4">
+    <h2>Soluções</h2>
+    <ul>
+        {% for solution in project.solutions %}
+            <li>{{ solution.text }}</li>
+        {% endfor %}
+    </ul>
+</div>

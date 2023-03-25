@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 hidden-xs hidden-sm">
-                    <a class="footer-logo" href="/en">
-                        <img src="media/images/Hatch-Corporate-Logo.png" alt="Hatch logo" width="187" height="30">
+                    <a class="footer-logo" href="{{ path('app_homepage') }}">
+                        <img src="{{ asset('media/images/Hatch-Corporate-Logo.png') }}" alt="Hatch logo" width="187" height="30">
                     </a>
 
                 </div>
                 <div class="col-md-3">
-                    <div class="footer-heading ">About Us</div>
+                    <div class="footer-heading ">Sobre nós</div>
                     <div class="sidebarBlock richText">
                         <ul>
                             <li><a href="/About-Us/About-the-Company">About the Company</a></li>
@@ -24,9 +24,9 @@
 
                 </div>
                 <div class="col-md-3 col-xs-6">
-                    <div class="footer-heading ">Have a Question?</div>
+                    <div class="footer-heading ">Você tem dúvidas?</div>
                     <a class="call2action btn " href="/About-Us/Contact-Us">
-                        Contact Us
+                        Contate-nos
                     </a>
                     <div class="footer-heading ">Office Locations</div>
                     <a class="call2action btn " href="/About-Us/Office-Locations">
@@ -38,15 +38,15 @@
                     <div class="footer-heading ">Follow Us</div>
                     <div class="sidebarBlock richText links-social">
                         <ul>
-                            <li><a href="https://www.youtube.com/user/HatchLtdVideos"><img alt="YouTube" src="media/social/458B56DA591942AC92BDA4BAE374CF26.ashx" /></a></li>
-                            <li><a href="https://twitter.com/HatchGlobal "><img alt="Twitter" src="media/social/DABA57276BCF48598769B8070CBB342F.ashx" /></a></li>
-                            <li><a href="https://www.linkedin.com/company/hatch"><img alt="LinkedIn" src="media/social/839A9EE9562D4D45A037106792BC0DB0.ashx" /></a></li>
-                            <li><a href="/sitecore/content/RSS-Feeds/News-and-Media-RSS-Feed"><img alt="RSS" src="media/social/FFD1A0D14D24465DBBC00AFABF9AA1A4.ashx" /></a></li>
+                            <li><a href="https://www.youtube.com/user/HatchLtdVideos"><img alt="YouTube" src="{{ asset('media/social/458B56DA591942AC92BDA4BAE374CF26.ashx') }}" /></a></li>
+                            <li><a href="https://twitter.com/HatchGlobal "><img alt="Twitter" src="{{ asset('media/social/DABA57276BCF48598769B8070CBB342F.ashx') }}" /></a></li>
+                            <li><a href="https://www.linkedin.com/company/hatch"><img alt="LinkedIn" src="{{ asset('media/social/839A9EE9562D4D45A037106792BC0DB0.ashx') }}" /></a></li>
+                            <li><a href="/sitecore/content/RSS-Feeds/News-and-Media-RSS-Feed"><img alt="RSS" src="{{ asset('media/social/FFD1A0D14D24465DBBC00AFABF9AA1A4.ashx') }}" /></a></li>
                         </ul>
                     </div>
-                    <div class="footer-heading ">Subscribe to our Newsletter</div>
+                    <div class="footer-heading ">Subscreba o nosso Newsletter</div>
                     <a class="call2action btn " href="/About-Us/Subscribe">
-                        Subscribe
+                        Subscreba
                     </a>
 
                 </div>

@@ -1,0 +1,8 @@
+<div class="col-md-4">
+    <h2>Destaques</h2>
+    <ul>
+        {% for highlight in project.highlights %}
+            <li>{{ highlight.text }}</li>
+        {% endfor %}
+    </ul>
+</div>

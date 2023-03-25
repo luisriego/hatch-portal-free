@@ -1,0 +1,9 @@
+<div class="col-xs-12 col-sm-6 col-md-3 project-listing-item">
+    <a id="{{ project.id }}" name="Project_{{ project.title }}" href="{{ project.url }}">
+        <figure class="divimage">
+            <img src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}" width="265" height="175">
+        </figure>
+        <div class="project-listing-item-title">{{ project.title }}</div>
+    </a>
+    <div class="project-listing-item-location">{{ project.location }}</div>
+</div>

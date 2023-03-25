@@ -1,0 +1,22 @@
+<div class="project-featured">
+
+    <h2>Projetos candidatos</h2>
+    {% for row in projects|batch(4) %}
+
+        <div class="row-flex">
+
+            {% for project in row %}
+            <div class="col-xs-12 col-sm-6 col-md-3 project-listing-item">
+                <a id="{{ project.id is defined }}" name="Project_{{ project.title is defined }}" href="{{ path('app_project', {projectId: project.id}) }}">
+                    <figure>
+                        <img src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}" width="265" height="175">
+                    </figure>
+                    <div class="project-listing-item-title">{{ project.title }}</div>
+                </a>
+                <div class="project-listing-item-location">{{ project.location }}</div>
+            </div>
+            {% endfor %}
+
+        </div>
+    {% endfor %}
+</div>

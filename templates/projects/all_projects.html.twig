@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        {{ include('_navbar.html.twig') }}
+        <div id="maincontent" class="">
+            {{ include('projects/_banner.html.twig') }}
+            <section class="section-main ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="component breadcrumb navigation-title">
+                                <div class="component-content">
+
+                                    <nav>
+                                        <ol class="breadcrumb ">
+                                            <li class="breadcrumb-item home">
+                                                <a title="Home" href="/">Home</a>
+                                                <span class="separator"></span>
+                                            </li>
+                                            <li class="breadcrumb-item last">{{ breadcrumb }}</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-main brand-gray-lighter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ include('projects/_project.featured.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        {{ include('_footer.html.twig') }}
+    </div>
+{% endblock %}

@@ -2,21 +2,22 @@
 
 namespace App\Entity;
 
-use App\Repository\FactRepository;
+use App\Repository\HighlightRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: FactRepository::class)]
-class Fact
+#[ORM\Entity(repositoryClass: HighlightRepository::class)]
+class Highlight
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $text = null;
 
-    #[ORM\ManyToOne(inversedBy: 'fact')]
+    #[ORM\ManyToOne(inversedBy: 'highlights')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Project $project = null;
 
@@ -25,14 +26,14 @@ class Fact
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getText(): ?string
     {
-        return $this->name;
+        return $this->text;
     }
 
-    public function setName(string $name): self
+    public function setText(string $text): self
     {
-        $this->name = $name;
+        $this->text = $text;
 
         return $this;
     }

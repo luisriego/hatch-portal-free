@@ -9,16 +9,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <img src="{{ asset('media/images/Hatch-Corporate-Logo.png') }}?h=37&amp;iar=0&amp;w=231&amp;hash=2D56EB798FA50C697BA80C24608AE5AA" alt="Hatch" width="231" height="37" />
+                    <img src="{{ asset('media/images/Hatch-Corporate-Logo.png') }}" alt="Hatch" width="231" height="37" />
                 </a>
             </div>
             <div class="navbar-right" data-controller="languages" data-action="change->languages#toggle" data-language-target>
-{#                <select id="languageToggle" class="language-toggle">#}
-{#                    <option class='active' value="pt-BR" selected>Português</option>#}
-{#                    <option class='' value="en" >English</option>#}
-{#                    <!-- <option class='' value="es-CL" >Espa&#241;ol</option>#}
-{#                    <option class='' value="fr-CA" >Fran&#231;ais</option> -->#}
-{#                </select>#}
+                <select id="languageToggle" class="language-toggle">
+                    <option class='active' value="pt-BR" selected>Português</option>
+                    <option class='' value="en" >English</option>
+                    <!-- <option class='' value="es-CL" >Espa&#241;ol</option>
+                    <option class='' value="fr-CA" >Fran&#231;ais</option> -->
+                </select>
 
                 <div id="search-box-typeahead" class="search-group">
                     <input aria-label="Search terms" class="search-control" id="q" name="q" onkeyup="BingSearch(event)" placeholder="Search" title="Search terms" type="text" value="" />
@@ -27,76 +27,12 @@
                     </button>
                 </div>
 
-                <style>
-                    .gly-spin {
-                        -webkit-animation: spin 2s infinite linear;
-                        -moz-animation: spin 2s infinite linear;
-                        -o-animation: spin 2s infinite linear;
-                        animation: spin 2s infinite linear;
-                    }
-
-                    @-moz-keyframes spin {
-                        0% {
-                            -moz-transform: rotate(0deg);
-                        }
-
-                        100% {
-                            -moz-transform: rotate(359deg);
-                        }
-                    }
-
-                    @-webkit-keyframes spin {
-                        0% {
-                            -webkit-transform: rotate(0deg);
-                        }
-
-                        100% {
-                            -webkit-transform: rotate(359deg);
-                        }
-                    }
-
-                    @-o-keyframes spin {
-                        0% {
-                            -o-transform: rotate(0deg);
-                        }
-
-                        100% {
-                            -o-transform: rotate(359deg);
-                        }
-                    }
-
-                    @keyframes spin {
-                        0% {
-                            -webkit-transform: rotate(0deg);
-                            transform: rotate(0deg);
-                        }
-
-                        100% {
-                            -webkit-transform: rotate(359deg);
-                            transform: rotate(359deg);
-                        }
-                    }
-
-                    .overlay {
-                        position: fixed;
-                        width: 100%;
-                        height: 100%;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        z-index: 10000;
-                        cursor: pointer;
-                        background: url('/assets/hatch/awards-br-site/spinners/spinner.gif') 50% 50% no-repeat rgba(0, 0, 0, 0.5);
-                    }
-                </style>
-
             </div>
             <div class="navbar-collapse collapse" class="component navigation navigation-title">
                 <nav>
                     <ul class="nav navbar-nav collapse" data-controller="nav">
                         <li class="">
-                            <a title="Projects" href="https://www.hatch.com/Projects" target="_blank">Projetos</a>
+                            <a title="Projects" href="{{ path('app_projects') }}">Projetos</a>
                         </li>
                         <li class="">
                             <a title="Careers" href="https://jobs.hatch.com/" target="_blank">Carreiras</a>

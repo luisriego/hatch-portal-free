@@ -5,8 +5,10 @@
   "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-a329cc.css": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-a329cc.css",
   "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-a329cc.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-a329cc.js",
   "build/images/glyphicons-halflings-regular.svg": "/build/images/glyphicons-halflings-regular.060b2710.svg",
+  "build/images/spinner.gif": "/build/images/spinner.dcbaf9a1.gif",
   "build/fonts/glyphicons-halflings-regular.ttf": "/build/fonts/glyphicons-halflings-regular.4692b9ec.ttf",
   "build/fonts/glyphicons-halflings-regular.woff": "/build/fonts/glyphicons-halflings-regular.82b1212e.woff",
   "build/fonts/glyphicons-halflings-regular.eot": "/build/fonts/glyphicons-halflings-regular.5be1347c.eot",
-  "build/fonts/glyphicons-halflings-regular.woff2": "/build/fonts/glyphicons-halflings-regular.be810be3.woff2"
+  "build/fonts/glyphicons-halflings-regular.woff2": "/build/fonts/glyphicons-halflings-regular.be810be3.woff2",
+  "build/assets_controllers_challengers_controller_js.js": "/build/assets_controllers_challengers_controller_js.js"
 }

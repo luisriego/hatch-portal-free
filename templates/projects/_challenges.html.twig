@@ -1,0 +1,8 @@
+<div class="col-md-4">
+    <h2>Desafios</h2>
+    <ul>
+        {% for challenge in project.challenges %}
+        <li>{{ challenge.text }}</li>
+        {% endfor %}
+    </ul>
+</div>

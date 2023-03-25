@@ -10,7 +10,7 @@
 
 
 
-        <title>{% block title %}Hatch - Consulting engineering and project implementation{% endblock %}</title>
+        <title>{% block title %}Hatch - Innovation Local Awards Brazil{% endblock %}</title>
 
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -20,12 +20,10 @@
 {#            <link href="assets/owl-carousel/owl.transitions.css" rel="stylesheet">#}
 {#            <link href="assets/hatch/awards-br-site/css/site.css" rel="stylesheet">#}
 {#            <link href="{{ asset('assets/hatch/awards-br-site/css/homepage-fixes.css') }}" rel="stylesheet">#}
-            <link rel="canonical" href="https://www.hatch.com/">
-            <link rel="alternate" href="https://www.hatch.com/pt-BR" hreflang="pt-BR">
-            <link rel="alternate" href="https://www.hatch.com/" hreflang="en">
-            <link rel="alternate" href="https://www.hatch.com/fr-CA" hreflang="fr-CA">
-            <link rel="alternate" href="https://www.hatch.com/zh-CN" hreflang="zh-CN">
-            <link rel="alternate" href="https://www.hatch.com/es-CL" hreflang="es-CL">
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+            <link rel="manifest" href="/site.webmanifest">
         {% endblock %}
 
 
@@ -47,78 +45,11 @@
 {#        <script src="assets/js/libs/jquery/jquery.jscroll.min.js"></script>#}
 {#        <script src="assets/owl-carousel/owl.carousel.min.js"></script>#}
 
-        <link href="{{ asset('assets/hatch/awards-br-site/css/hatch-wffm.css') }}" rel="stylesheet">
+{#        <link href="{{ asset('assets/hatch/awards-br-site/css/hatch-wffm.css') }}" rel="stylesheet">#}
 
         <noscript>
             <img height="1" width="1" style="display:none;" alt="" src=https://px.ads.linkedin.com/collect/?pid=4141484&fmt=gif />
         </noscript>
-
-
-        <!--CookieConsent.insites.com EU cookie consent popup-->
-
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/cookieconsent2/3.0.3/cookieconsent.min.css') }}">
-        <script src="{{ asset('assets/cookieconsent2/3.0.3/cookieconsent.min.js') }}"></script>
-        <script>
-            window.addEventListener("load", function () {
-
-                var langActive = '';
-                var ccMessage = '';
-                var ccDismiss = '';
-                var ccLink = '';
-                var ccHrefRef = '';
-                var ccPathPart = '';
-                var ccPathIdx = '';
-                var ccPathLen = '';
-                var ccHref = '';
-
-                langActive = 'en';
-                ccMessage = 'By continuing to browse this website, you agree to the use of cookies to improve your user experience and to collect statistics about your visits. Read the ';
-                ccDismiss = 'OK';
-                ccLink = 'Cookie Policy';
-
-                ccHrefRef = '{DB1AE341-50DE-42D7-B7D8-9AA170FDCDC3}';
-                if (ccHrefRef)
-                {
-                    ccHref = '/sitecore/content/Tenant Folder/Hatch/Corporate Site/Home/About-Us/Privacy-Statement';
-
-                    ccPathPart = '/sitecore/content/Tenant Folder/Hatch/Corporate Site'.toLowerCase();
-                    ccPathPart = ccPathPart + '/Home'.toLowerCase();
-
-                    ccPathIdx = ccHref.toLowerCase().indexOf(ccPathPart);
-                    ccPathLen = ccPathPart.length;
-
-                    ccHref = ccHref.replace(ccHref.substr(ccPathIdx,ccPathLen), '/'+langActive);
-                }
-
-                window.cookieconsent.initialise({
-                    "palette": {
-                        "popup": {
-                            "background": "#425563",
-                            "text": "#ffffff"
-                        },
-                        "button": {
-                            "background": "#cccc00"
-                        }
-                    },
-                    "content": {
-                        "message": ccMessage,
-                        "dismiss": ccDismiss,
-                        "link": ccLink,
-                        "href": ccHref
-                    }
-                })
-
-            });
-        </script>
-        <!-- <script src="/sitecore%20modules/Web/ExperienceForms/scripts/jquery-2.1.3.min.js"></script>-->
-{#        <script src="web/scripts/jquery.validate.min.js"></script>#}
-{#        <script src="web/scripts/jquery.validate.unobtrusive.min.js"></script>#}
-{#        <script src="web/scripts/jquery.unobtrusive-ajax.min.js"></script>#}
-{#        <script src="web/scripts/form.validate.js"></script>#}
-{#        <script src="web/scripts/form.tracking.js"></script>#}
-{#        <script src="web/scripts/subscribe-form.js"></script>#}
-{#        <script src="web/scripts/download-brochure.js"></script>#}
-{#        <script src="web/scripts/form.js"></script>#}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

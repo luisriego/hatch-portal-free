@@ -1,7 +1,7 @@
 "<div role="main" class="col-md-9 col-sm-8">
 
     <div>
-        <h1 class="pageTitle"> Registre o seu projeto </h1>
+        <h1 class="pageTitle"> Registre o seu projeto</h1>
     </div>
 
     <div class="component sitecore-form" id="{0f27ac40-b2a6-4b1f-b31d-a58a86756b49}">
@@ -34,12 +34,17 @@
                     </div>
                     <div class="required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content">
                         {{ form_label(project_form.photo, 'Foto do projeto', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
-                        {{ form_widget(project_form.photo, { 'attr': {'class': 'form-control text-box single-line hatch-form-control font-weight-bold'} }) }}
-                        {{ form_help(project_form.photo, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+                        {{ form_widget(project_form.photo, { 'attr': {'class': 'form-control text-box single-line hatch-form-control font-weight-bold', 'required': false} }) }}
+                        {{ form_help(project_form.photo, { 'attr': {'class': 'help-block font-weight-bold',} }) }}
                     </div>
                 </div>
-                <div class="form-submit-border">
-                    {{ form_row(project_form.apresentar, { 'attr': {'class': 'btn btn-default font-weight-bold'} }) }}
+                <div class="form-submit-border" style="margin-top: 50px; text-align: right">
+                    {{ form_widget(project_form.next, {
+                        'label': 'Próximo ',
+                        'attr': {
+                            'class': 'btn btn-default font-weight-bold'
+                        } })
+                    }}
                 </div>
             {{ form_rest(project_form) }}
             {{ form_end(project_form) }}

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Project;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -35,8 +36,8 @@ class ProjectFormType extends AbstractType
                     new Image(['maxSize' => '4096k']),
                 ],
             ])
-            ->add('apresentar', SubmitType::class)
-//            ->add('url')
+            ->add('next', SubmitType::class)
+//            ->add('addChallenge', ButtonType::class,)
         ;
     }
 
