@@ -20,16 +20,16 @@
         {{ include('projects/_facts.html.twig') }}
     </section>
     {{ include('projects/_project-details.html.twig') }}
+    {% if project.sumary is not defined %}
     <section class="section-main brand-gray-lighter">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="project-summary">
                         <div class="col-md-6">
+
                             <h2>Projeto em números</h2>
-                            Reduction in Scope 1 and Scope 2 emissions by <strong>2030</strong><br>
-                            Over <strong>100</strong> carbon reduction initiatives assessed<br>
-                            <strong>Twenty-five</strong> sites in over ten countries spanning five commodities included in the analysis
+                            {{ project.sumary }}
                         </div>
 {#                        <div class="col-md-6">#}
 {#                            <h2>Project services</h2>#}
@@ -46,5 +46,6 @@
             </div>
         </div>
     </section>
+    {% endif %}
     {{ include('sections/_need-a-solution.html.twig') }}
 </div>
