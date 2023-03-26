@@ -3,10 +3,6 @@ import { Controller} from '@hotwired/stimulus'
 export default class extends Controller {
     static targets = ['language']
 
-
-    connect() {
-    }
-
     toggle() {
         if (this.element.childNodes[1][0].classList.contains('active')) {
             this.element.childNodes[1][0].classList.remove('active')

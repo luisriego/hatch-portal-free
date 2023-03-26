@@ -18,9 +18,5 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
-    },
-    "dependencies": {
-        "bootstrap": "3.3.5",
-        "source-sans-pro": "^3.6.0"
     }
 }

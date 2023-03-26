@@ -32,15 +32,15 @@ class ProjectCrudController extends AbstractCrudController
                 ->setRequired(false)
                 ->setBasePath('media/projects')
                 ->setUploadDir('public/media/projects'),
-            CollectionField::new('challenges')
+//            CollectionField::new('challenges')
 //                ->setFormTypeOption('by_reference', false)
-                ->hideOnIndex(),
-            CollectionField::new('solutions')
-                ->setFormTypeOption('by_reference', false)
-                ->hideOnIndex(),
-            CollectionField::new('highlights')
-                ->setFormTypeOption('by_reference', false)
-                ->hideOnIndex(),
+//                ->hideOnIndex(),
+//            CollectionField::new('solutions')
+//                ->setFormTypeOption('by_reference', false)
+//                ->hideOnIndex(),
+//            CollectionField::new('highlights')
+//                ->setFormTypeOption('by_reference', false)
+//                ->hideOnIndex(),
         ];
     }
 }
