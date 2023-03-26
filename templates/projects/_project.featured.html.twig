@@ -9,7 +9,12 @@
             <div class="col-xs-12 col-sm-6 col-md-3 project-listing-item">
                 <a id="{{ project.id is defined }}" name="Project_{{ project.title is defined }}" href="{{ path('app_project', {projectId: project.id}) }}">
                     <figure>
-                        <img src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}" width="265" height="175">
+                        {% if project.image is not null %}
+                            <img src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}" width="265" height="175">
+                        {% else %}
+                            {{ project.image }}
+                            <img src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ project.title }}" width="265" height="175">
+                        {% endif %}
                     </figure>
                     <div class="project-listing-item-title">{{ project.title }}</div>
                 </a>
