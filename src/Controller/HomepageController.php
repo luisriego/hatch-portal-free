@@ -32,7 +32,7 @@ class HomepageController extends AbstractController
         $randomBlog = $this->blogService->handle();
         $randomTestimonials = $this->testimonialService->handle();
 
-        return $this->render('homepage/index.html.twig',
+        return $this->render('body-logis.html.twig',
             [
                 'data' => $randomData,
                 'news' => $randomNews,
