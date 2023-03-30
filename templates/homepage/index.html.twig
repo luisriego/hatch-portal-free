@@ -1,31 +1,59 @@
-{% extends 'base.html.twig' %}
-
+{% extends "base.html.twig" %}
 
 {% block body %}
-    <div class="wrapper">
+    {% include "modules/_navigation.html.twig" %}
+    <!-- =========home banner start============-->
+    {% include "modules/_carousel.html.twig" %}
+    <!-- =========home banner end============-->
+    <!-- We offer Different Services-->
 
-        {{ include('_navbar.html.twig') }}
-
-        <div id="maincontent" class="">
-
-            {{ include('sections/homepage/_award.html.twig') }}
-
-            {% for item in data %}
-                {{ include('sections/homepage/_topic.html.twig') }}
-            {% endfor %}
-{#            {{ include('sections/homepage/_banner.html.twig') }}#}
-
-
-
-            {{ include('sections/_communications.html.twig') }}
-
-            {{ include('sections/_clients-say.html.twig') }}
-
-            {{ include('sections/_need-a-solution.html.twig') }}
-
+    <!-- Lattest news-->
+    <div class="container clearfix sectpad-sec">
+      <div class="section_header2 common">
+        <h2>Latest news</h2>
+      </div>
+      <div class="row event-pad">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="news-evn-img"><a href="news.html" class="image_hover"><img src="images/event/1.jpg" alt="" class="img-responsive zoom_img_effect"></a>
+            <div class="event-date">
+              <h3>05 <small>Aug</small></h3>
+            </div>
+          </div>
+          <div class="news-evn-cont">
+            <div class="news-meta"><a href="news.html">By: Anjori Meyami</a><a href="news.html"> Comments: 6</a></div><a href="news.html">
+              <h3>The Surprising Reason College Tuition Is Crazy Expensive</h3></a>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusa nt ium doloremque laudantium totam rem aperiam</p>
+          </div>
         </div>
-
-        {{ include('_footer.html.twig') }}
-
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="news-evn-img"><a href="news.html" class="image_hover"><img src="images/event/2.jpg" alt="" class="img-responsive zoom_img_effect"></a>
+            <div class="event-date">
+              <h3>05 <small>Aug</small></h3>
+            </div>
+          </div>
+          <div class="news-evn-cont">
+            <div class="news-meta"><a href="news.html">By: Anjori Meyami</a><a href="news.html"> Comments: 6</a></div><a href="news.html">
+              <h3>The Surprising Reason College Tuition Is Crazy Expensive</h3></a>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusa nt ium doloremque laudantium totam rem aperiam</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="news-evn-img"><a href="news.html" class="image_hover"><img src="images/event/3.jpg" alt="" class="img-responsive zoom_img_effect"></a>
+            <div class="event-date">
+              <h3>05 <small>Aug</small></h3>
+            </div>
+          </div>
+          <div class="news-evn-cont">
+            <div class="news-meta"><a href="news.html">By: Anjori Meyami</a><a href="news.html"> Comments: 6</a></div><a href="news.html">
+              <h3>The Surprising Reason College Tuition Is Crazy Expensive</h3></a>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusa nt ium doloremque laudantium totam rem aperiam</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    {% include "modules/_solution.html.twig" %}
+    
+    {% include "modules/_footer.html.twig" %}
+
 {% endblock %}

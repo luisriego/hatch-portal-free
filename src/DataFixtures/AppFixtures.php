@@ -17,13 +17,13 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-         $type = new Type();
-         $type->setType('Energy');
-         $type->setTitle('Responding to the energy transition');
-         $type->setImage('https://www.hatch.com/-/media/Hatch-Corporate/Banner/Responding-to-the-energy-transition-home.jpg?h=440&iar=0&w=1200&hash=66CB2AE82FDDCEC00C59F26E7EBB463B');
-         $type->setSubtitle('Championing a low carbon future');
-         $type->setLink('https://www.hatch.com/Expertise/Topics/Responsible-Energy');
-         $manager->persist($type);
+        $type = new Type();
+        $type->setType('Energy');
+        $type->setTitle('Responding to the energy transition');
+        $type->setImage('https://www.hatch.com/-/media/Hatch-Corporate/Banner/Responding-to-the-energy-transition-home.jpg?h=440&iar=0&w=1200&hash=66CB2AE82FDDCEC00C59F26E7EBB463B');
+        $type->setSubtitle('Championing a low carbon future');
+        $type->setLink('https://www.hatch.com/Expertise/Topics/Responsible-Energy');
+        $manager->persist($type);
 
         $type1 = new Type();
         $type1->setType('Mining');
@@ -90,6 +90,5 @@ class AppFixtures extends Fixture
         $manager->persist($user);
 
         $manager->flush();
-
     }
 }

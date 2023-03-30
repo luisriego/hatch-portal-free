@@ -3,12 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Highlight;
-use App\Entity\Solution;
 use App\Form\HighlightFormType;
-use App\Form\SolutionFormType;
 use App\Repository\HighlightRepository;
 use App\Repository\ProjectRepository;
-use App\Repository\SolutionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,8 +18,7 @@ class NewHighlightController extends AbstractController
         private readonly EntityManagerInterface $entityManager,
         private readonly ProjectRepository $projectRepository,
         private readonly HighlightRepository $highlightRepository,
-    )
-    {
+    ) {
     }
 
     #[Route('/new-highlight/{projectId}', name: 'app_new_highlight')]
@@ -36,7 +32,6 @@ class NewHighlightController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $nextAction = $form->get('next')->isClicked()
                 ? 'app_new_fact'
                 : 'app_new_highlight';

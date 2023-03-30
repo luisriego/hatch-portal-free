@@ -15,7 +15,7 @@ class EventService
 
     public function handle(): array|null
     {
-        if (null === $result = $this->eventRepository->findBy([], [], 1 )) {
+        if (null === $result = $this->eventRepository->findBy([], [], 1)) {
             throw new NotFoundHttpException();
         }
 

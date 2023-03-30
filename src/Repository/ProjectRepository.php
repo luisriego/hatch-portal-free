@@ -22,7 +22,6 @@ class ProjectRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return int|null
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
      */

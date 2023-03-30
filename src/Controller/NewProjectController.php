@@ -3,19 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Project;
-use App\Exception\UnableToLoadPhotoException;
 use App\Form\ProjectFormType;
 use App\Repository\AreaRepository;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
-use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Filesystem\Path;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class NewProjectController extends AbstractController
@@ -43,7 +38,7 @@ class NewProjectController extends AbstractController
                     $photo->move($photoDir, $filename);
                     $project->setImage($filename);
                 } catch (IOExceptionInterface  $e) {
-                    echo "An error occurred while creating your directory at ".$e->getPath();
+                    echo 'An error occurred while creating your directory at '.$e->getPath();
                 }
             }
 

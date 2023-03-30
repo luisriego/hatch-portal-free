@@ -22,7 +22,6 @@ class HomepageController extends AbstractController
     ) {
     }
 
-
     #[Route('/', name: 'app_homepage')]
     public function __invoke(): Response
     {
@@ -32,7 +31,7 @@ class HomepageController extends AbstractController
         $randomBlog = $this->blogService->handle();
         $randomTestimonials = $this->testimonialService->handle();
 
-        return $this->render('body-logis.html.twig',
+        return $this->render('homepage/index.html.twig',
             [
                 'data' => $randomData,
                 'news' => $randomNews,

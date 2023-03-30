@@ -1,43 +1,104 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
 {% block body %}
-    <div class="wrapper">
-        {{ include('_navbar.html.twig') }}
-        <div id="maincontent" class="">
-            {{ include('projects/_banner.html.twig') }}
-            <section class="section-main ">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
+    {% include "modules/_navigation.html.twig" %}
+    <!-- Inner Header-->
+    <section class="inner-banner2 clearfix">
+      <div class="container clearfix">
+        <h2>Projetos</h2>
+      </div>
+    </section>
+    <section class="breadcumb-wrapper">
+      <div class="container clearfix">
+        <ul class="breadcumb">
+          <li><a href="index-2.html">Home</a></li>
+          <li><span>{{ breadcrumb }}</span></li>
+        </ul>
+      </div>
+    </section>
 
-                            <div class="component breadcrumb navigation-title">
-                                <div class="component-content">
-
-                                    <nav>
-                                        <ol class="breadcrumb ">
-                                            <li class="breadcrumb-item home">
-                                                <a title="Home" href="/">Home</a>
-                                                <span class="separator"></span>
-                                            </li>
-                                            <li class="breadcrumb-item last">{{ breadcrumb }}</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section-main brand-gray-lighter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            {{ include('projects/_project.featured.html.twig') }}
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!-- Lattest news-->
+    <div class="container clearfix sectpad-sec">
+      <div class="section_header2 common">
+        <h2>Projetos Candidatos ao PLI</h2>
+      </div>
+      {% for row in projects|batch(3) %}
+      <div class="row event-pad">
+       {% for project in row %}
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="news-evn-img">
+            <a href="{{ path('app_project', {projectId: project.id}) }}" class="image_hover">
+              {% if project.image is not null %}
+                  <img class="img-responsive zoom_img_effect" src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}">
+              {% else %}
+                  {{ project.image }}
+                  <img class="img-responsive zoom_img_effect" src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ project.title }}">
+              {% endif %}
+            </a>
+            {# <div class="event-date">
+              <h3>05 <small>Aug</small></h3>
+            </div> #}
+          </div>
+          <div class="news-evn-cont">
+            <div class="news-meta">
+              <a href="{{ path('app_project', {projectId: project.id}) }}">{{ project.location }}</a>
+              {# <a href="news.html"> Comments: 6</a> #}
+            </div>
+              <a href="{{ path('app_project', {projectId: project.id}) }}">
+                <h3>{{ project.title }}</h3>
+              </a>
+            <p>{{ project.subtitle }}</p>
+          </div>
         </div>
-        {{ include('_footer.html.twig') }}
+       {% endfor %}
+      </div>
+      {% endfor %}
     </div>
+
+
+    <!-- Project  Page-->
+    {# <section class="core-projects sectpad">
+      <div class="container clearfix">
+        <h1>Our company experts</h1>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+      </div>
+    </section> #}
+    <!-- Projects-->
+    {# <section class="project-post-area sectpad">
+      <div class="container clearfix">
+        {% for row in projects|batch(4) %}
+        <div class="project-post">
+          <div class="row">
+          {% for project in row %}
+            <div class="col-sm-4 project-post-info">
+              <div class="project-post-image">
+                <a href="{{ path('app_project', {projectId: project.id}) }}">
+                    {% if project.image is not null %}
+                        <img src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}">
+                    {% else %}
+                        {{ project.image }}
+                        <img src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ project.title }}" width="265" height="175">
+                    {% endif %}
+                </a>
+                <a href="{{ path('app_project', {projectId: project.id}) }}" class="four_arrow_hover_box"><span class="arrows"><span></span></span></a>
+              </div>
+              <div class="info-text">
+                <a href="{{ path('app_project', {projectId: project.id}) }}">
+                  <h4>{{ project.title }}</h4>
+                </a>
+                <p>{{ project.subtitle }}</p>
+                <p>{{ project.location }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section> #}
+
+    {% include "modules/_solution.html.twig" %}
+
+    {% include "modules/_footer.html.twig" %}
+
 {% endblock %}

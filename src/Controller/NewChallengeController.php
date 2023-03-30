@@ -18,8 +18,7 @@ class NewChallengeController extends AbstractController
         private readonly EntityManagerInterface $entityManager,
         private readonly ProjectRepository $projectRepository,
         private readonly ChallengeRepository $challengeRepository,
-    )
-    {
+    ) {
     }
 
     #[Route('/new-challenge/{projectId}', name: 'app_new_challenge')]
@@ -33,7 +32,6 @@ class NewChallengeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $nextAction = $form->get('next')->isClicked()
                 ? 'app_new_solution'
                 : 'app_new_challenge';
