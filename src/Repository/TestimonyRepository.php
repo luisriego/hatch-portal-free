@@ -40,9 +40,9 @@ class TestimonyRepository extends ServiceEntityRepository
     }
 
     /**
-    * @throws \Doctrine\ORM\NonUniqueResultException
-    * @throws \Doctrine\ORM\NoResultException
-    */
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws \Doctrine\ORM\NoResultException
+     */
     public function getTotalNumber(): ?int
     {
         return $this->createQueryBuilder('t')

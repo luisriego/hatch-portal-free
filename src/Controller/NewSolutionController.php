@@ -18,8 +18,7 @@ class NewSolutionController extends AbstractController
         private readonly EntityManagerInterface $entityManager,
         private readonly ProjectRepository $projectRepository,
         private readonly SolutionRepository $solutionRepository,
-    )
-    {
+    ) {
     }
 
     #[Route('/new-solution/{projectId}', name: 'app_new_solution')]
@@ -33,7 +32,6 @@ class NewSolutionController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $nextAction = $form->get('next')->isClicked()
                 ? 'app_new_highlight'
                 : 'app_new_solution';

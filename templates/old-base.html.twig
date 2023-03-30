@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+    <head>
+        <style data-merge-styles="true"></style>
+        <!-- <style data-merge-styles="true"></style><link href="assets/hatch/awards-br-site/fonts/fonts.googleapis.SourceSansPro.css" rel="stylesheet" type="text/css"> -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <title>{% block title %}Hatch - Innovation Local Awards Brazil{% endblock %}</title>
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+{#            <link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet">#}
+{#            <link href="assets/owl-carousel/owl.theme.css" rel="stylesheet">#}
+{#            <link href="assets/owl-carousel/owl.transitions.css" rel="stylesheet">#}
+{#            <link href="assets/hatch/awards-br-site/css/site.css" rel="stylesheet">#}
+{#            <link href="{{ asset('assets/hatch/awards-br-site/css/homepage-fixes.css') }}" rel="stylesheet">#}
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+            <link rel="manifest" href="/site.webmanifest">
+        {% endblock %}
+
+
+        <meta name="description" content="Hatch supplies engineering, project and construction, business consulting and operational services to the mining, metallurgical, energy and infrastructure industries.">
+
+
+
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:type" content="">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="">
+        <!-- files for webform-->
+
+{#        <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-GX8J4RVEYE&amp;l=dataLayer&amp;cx=c"></script>#}
+{#        <script async="" src="https://www.clarity.ms/eus2-c/s/0.7.1/clarity.js"></script>#}
+{#        <script async="" src="https://www.clarity.ms/tag/7b525xjptj"></script>#}
+{#        <script src="assets/js/libs/jquery/jquery-3.5.0.min.js"></script>#}
+{#        <script src="assets/js/libs/jquery/jquery.jscroll.min.js"></script>#}
+{#        <script src="assets/owl-carousel/owl.carousel.min.js"></script>#}
+
+{#        <link href="{{ asset('assets/hatch/awards-br-site/css/hatch-wffm.css') }}" rel="stylesheet">#}
+
+        <noscript>
+            <img height="1" width="1" style="display:none;" alt="" src=https://px.ads.linkedin.com/collect/?pid=4141484&fmt=gif />
+        </noscript>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

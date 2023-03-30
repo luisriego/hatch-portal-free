@@ -2,13 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\BlogService;
-use App\Service\EventService;
-use App\Service\HomepageService;
-use App\Service\NewsService;
-use App\Service\ProjectsService;
 use App\Service\SingleProjectService;
-use App\Service\TestimonialService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +14,6 @@ class ShowProjectController extends AbstractController
         private readonly SingleProjectService $projectsService,
     ) {
     }
-
 
     #[Route('/project/{projectId}', name: 'app_project')]
     public function __invoke(Request $request, $projectId): Response

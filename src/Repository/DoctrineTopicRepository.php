@@ -21,9 +21,6 @@ class DoctrineTopicRepository extends ServiceEntityRepository implements TopicRe
         parent::__construct($registry, Topic::class);
     }
 
-    /**
-     * @return array|null
-     */
     public function findRandomTreeOrFail(): ?array
     {
         return $this->createQueryBuilder('t')
@@ -34,9 +31,7 @@ class DoctrineTopicRepository extends ServiceEntityRepository implements TopicRe
             ->getResult();
     }
 
-
     /**
-     * @return int|null
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
      */

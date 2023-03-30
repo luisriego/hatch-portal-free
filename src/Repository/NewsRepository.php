@@ -7,7 +7,6 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
-
 class NewsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
@@ -33,9 +32,7 @@ class NewsRepository extends ServiceEntityRepository
 //        }
 //    }
 //
-    /**
-     * @return array|null
-     */
+
     public function findRandomTreeOrFail(): ?array
     {
         return $this->createQueryBuilder('n')

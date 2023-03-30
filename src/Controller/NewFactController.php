@@ -2,11 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Challenge;
 use App\Entity\Fact;
-use App\Form\ChallengeFormType;
 use App\Form\FactFormType;
-use App\Repository\ChallengeRepository;
 use App\Repository\FactRepository;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -21,8 +18,7 @@ class NewFactController extends AbstractController
         private readonly EntityManagerInterface $entityManager,
         private readonly ProjectRepository $projectRepository,
         private readonly FactRepository $factRepository,
-    )
-    {
+    ) {
     }
 
     #[Route('/new-fact/{projectId}', name: 'app_new_fact')]
@@ -36,7 +32,6 @@ class NewFactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $nextAction = $form->get('next')->isClicked()
                 ? 'app_homepage'
                 : 'app_new_fact';
