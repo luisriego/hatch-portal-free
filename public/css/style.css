@@ -5122,6 +5122,7 @@ blockquote footer a {
     border-bottom: 1px solid #5f6f7e;
 }
 .top-navigation-4 .main_menu {
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     left: 0;
     right: 0;
@@ -5151,6 +5152,8 @@ blockquote footer a {
     left: 0;
     right: 0;
     z-index: 100;
+    padding-top: 30px;
+    top: 0;
 }
 .top-navigation-4 .nav-t-holder .nav-t-footer ul.nav > li > a {
     padding: 0 1em;
@@ -6616,7 +6619,7 @@ blockquote footer a {
     width: 50%;
 }
 #minimal-bootstrap-carousel .carousel-inner .item {
-    min-height: 638px;
+    min-height: 550px;
     height: 100%;
     width: 100%;
     background-size: cover;

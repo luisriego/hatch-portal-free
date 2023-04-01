@@ -1,0 +1,34 @@
+<div class="main_menu menu_fixed nav-home-four wel-t-band">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="logo">
+                    <a href="{{  path('app_homepage') }}">
+                        <img src="{{ asset('media/images/Hatch-Corporate-Logo.png') }}" alt="logo" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12">
+                <div class="nav-menu pull-right">
+                    <div class="nav-t-holder pull-right">
+                        <div class="nav-t-header">
+                            <button><i class="fa fa-bars"></i></button>
+                        </div>
+                        <div class="nav-t-footer">
+                            <ul class="nav">
+                                <li><a href="{{ path('app_homepage') }}">Home</a></li>
+                                <li><a href="{{path('app_projects')}}">Projetos Inovadores</a></li>
+                                <li><a href="{{ path('app_about_us')}}">Sobre nós</a></li>
+                                <li><a href="{{ path('admin_dashboard')}}">Adm</a></li>
+                                <li><a><i class="icon icon-Search"></i></a></li>
+                            </ul>
+                            <div class="mobile-link">
+                                <a href="{{ path('app_new_project') }}" class="submit">registrar meu projeto </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

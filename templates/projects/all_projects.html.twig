@@ -1,17 +1,17 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    {% include "modules/_navigation.html.twig" %}
+    {% include "projects/_header.html.twig" %}
     <!-- Inner Header-->
-    <section class="inner-banner2 clearfix">
-      <div class="container clearfix">
-        <h2>Projetos</h2>
-      </div>
-    </section>
+{#    <section class="inner-banner2 clearfix">#}
+{#      <div class="container clearfix">#}
+{#        <h2>Projetos</h2>#}
+{#      </div>#}
+{#    </section>#}
     <section class="breadcumb-wrapper">
       <div class="container clearfix">
         <ul class="breadcumb">
-          <li><a href="index-2.html">Home</a></li>
+          <li><a href="{{ path('app_homepage') }}">Home</a></li>
           <li><span>{{ breadcrumb }}</span></li>
         </ul>
       </div>
