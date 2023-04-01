@@ -5,12 +5,14 @@
 
             <div class="project-details">
                 <div class="col-md-12">
-                    <h2>Fatos do projeto <span style="color: #e84a37">{{ project.title }}</span></h2>
+                    <h2>Fatos Concretos do projeto <span style="color: #e84a37">{{ project.title }}</span></h2>
+                    {% if facts|length > 0 %}
                     <ul style=" background-color: lightgray; padding: 10px">
                         {% for fact in facts %}
                             <li>{{ fact.name }}</li>
                         {% endfor %}
                     </ul>
+                    {% endif %}
                 </div>
             </div>
 
@@ -38,7 +40,7 @@
                 </div>
                 <div class="form-submit-border" style="margin-top: 50px">
                     {{ form_widget(project_form.addNew, {
-                        'label': 'Adicionar mais um desafio ',
+                        'label': 'Adicionar mais um Fato concreto ',
                         'attr': {
                             'class': 'btn btn-primary btn-lg',
                         } })
