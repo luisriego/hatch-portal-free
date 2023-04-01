@@ -1,8 +1,8 @@
 version: '3.5'
 
 services:
-  hatch-portal-be:
-    container_name: hatch-portal-be
+  lab-be:
+    container_name: lab-be
     build:
       context: docker/php
       args:
@@ -16,17 +16,17 @@ services:
     environment:
       XDEBUG_CLIENT_HOST: 172.17.0.1
       XDEBUG_CLIENT_PORT: 9003
-      PHP_IDE_CONFIG: serverName=hatch-portal-server
+      PHP_IDE_CONFIG: serverName=lab-server
     ports:
       - '1000:80'
     networks:
-      - hatch-portal-network
+      - lab-network
     depends_on:
-      - hatch-portal-mysql
-#      - hatch-portal-postgres
+      - lab-mysql
+#      - lab-postgres
 #
-#  hatch-portal-postgres:
-#    container_name: hatch-portal-postgres
+#  lab-postgres:
+#    container_name: lab-postgres
 #    image: postgres:14-alpine
 #    ports:
 #      - '5432:5432'
@@ -35,12 +35,12 @@ services:
 #      POSTGRES_PASSWORD: passwd
 #      POSTGRES_DB: postgres_symfony
 #    volumes:
-#      - hatch-portal-pgsql-data:/var/lib/postgresql
+#      - lab-pgsql-data:/var/lib/postgresql
 #    networks:
-#      - hatch-portal-network
+#      - lab-network
 
-  hatch-portal-mysql:
-    container_name: hatch-portal-mysql
+  lab-mysql:
+    container_name: lab-mysql
     build:
       context: ./docker/database
     ports:
@@ -49,15 +49,15 @@ services:
       MYSQL_DATABASE: mysql_symfony
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - hatch-portal-mysql-data:/var/lib/mysql
+      - lab-mysql-data:/var/lib/mysql
     networks:
-      - hatch-portal-network
+      - lab-network
     command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
 
 volumes:
-  hatch-portal-mysql-data:
-#  hatch-portal-pgsql-data:
+  lab-mysql-data:
+#  lab-pgsql-data:
 
 networks:
-  hatch-portal-network:
+  lab-network:
 #    external: true

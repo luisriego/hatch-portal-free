@@ -1,3 +1,4 @@
+{% for blog in blogs %}
 <article>
     <figure>
         <img src="{{ asset('media/blog/'~blog.photo) }}" alt="{{ blog.author }}" width="160" height="160" />
@@ -18,3 +19,4 @@
         </div>
     </div>
 </article>
+{% endfor %}

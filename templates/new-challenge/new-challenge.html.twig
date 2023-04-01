@@ -1,25 +1,28 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
 {% block body %}
-    <div class="wrapper">
-        {{ include('_navbar.html.twig') }}
-        <div id="maincontent">
-            {{ include('sections/_breadcrumb.html.twig') }}
 
-            <section class="section-main section-twocolumn-right">
-                <div class="container">
-                    <div class="row">
-                        {{ include('new-challenge/_form.container.html.twig') }}
+    {% include "modules/_navigation.html.twig" %}
 
-                        {{ include('about/_sidebar-nav.html.twig') }}
-                    </div>
-                </div>
-            </section>
+    <section class="breadcumb-wrapper">
+        <div class="container clearfix">
+            <ul class="breadcumb">
+                <li><a href="{{ path('app_homepage') }}">Home</a></li>
+                <li><span>{{ breadcrumb }}</span></li>
+            </ul>
         </div>
+    </section>
 
-        {{ include('_footer.html.twig') }}
+    <section class="section-main section-twocolumn-right">
+        <div class="container">
+            <div class="row">
+                {{ include('new-challenge/_form.container.html.twig') }}
+            </div>
+        </div>
+    </section>
 
+    {% include "modules/_solution.html.twig" %}
 
+    {% include "modules/_footer.html.twig" %}
 
-    </div>
 {% endblock %}

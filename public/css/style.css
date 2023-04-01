@@ -7288,3 +7288,7 @@ section.newsletter .req-button a i
 {
     width: 100%;
 }
+.section-main.section-twocolumn-right {
+    padding-top: 0;
+    padding-bottom: 85px;
+}

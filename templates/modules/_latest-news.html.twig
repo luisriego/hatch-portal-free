@@ -1,0 +1,30 @@
+<!-- Lattest news-->
+<div class="container clearfix sectpad-sec">
+    <div class="section_header2 common">
+        <h2>Últimos blogs</h2>
+    </div>
+    <div class="row event-pad">
+        {% for blog in blogs %}
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="news-evn-img">
+                    <a href="news.html" class="image_hover">
+                        <img src="{{ asset('media/blog/'~blog.photo) }}" alt="{{ blog.author }}" class="img-responsive zoom_img_effect">
+                    </a>
+                    <div class="event-date">
+                        <h3>05 <small>Aug</small></h3>
+                    </div>
+                </div>
+                <div class="news-evn-cont">
+                    <div class="news-meta">
+                        <a href="news.html">Por: {{ blog.author }}</a>
+                        <a href="news.html"> Comentários: 6</a>
+                    </div>
+                    <a href="news.html">
+                        <h3>{{ blog.title }}</h3>
+                    </a>
+                    <p>{{ blog.text }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

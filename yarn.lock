@@ -1606,7 +1606,7 @@ bootstrap-icons@^1.10.3:
   resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.10.3.tgz#c587b078ca6743bef4653fe90434b4aebfba53b2"
   integrity sha512-7Qvj0j0idEm/DdX9Q0CpxAnJYqBCFCiUI6qzSPYfERMcokVuV9Mdm/AJiVZI8+Gawe4h/l6zFcOzvV7oXCZArw==
 
-bootstrap@3.3.5:
+bootstrap@^3.3.5:
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.5.tgz#1777ab79299b128d87dce7cbd86fdc46ac69c0b1"
   integrity sha512-Px9EFI0UqI/9XEKTN9Oy1k5niss9VlThHsexEFffHtrRMZmcYvsLENa12EHD9HwbdG8bP/OcxQWMrQsAlnACVA==
