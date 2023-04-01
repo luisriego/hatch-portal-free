@@ -1,0 +1,22 @@
+<div id="minimal-bootstrap-carousel" data-ride="carousel" class="">
+    <!-- Wrapper for slides-->
+    <div role="listbox" class="carousel-inner">
+        {% if project.image is not null %}
+            <div style="background-image: url({{ asset('media/projects/'~project.image) }}); min-height: 400px;" class="item active">
+        {% else %}
+            <div style="background-image: url({{ asset('media/banner/Innovation-inflation-small.jpg') }}); min-height: 400px;" class="item active">
+        {% endif %}
+            <div class="carousel-caption">
+                <div class="thm-container">
+                    <div class="box valign-top">
+                        <div class="content text-left pull-left">
+                            <h1 data-animation="animated fadeInLeft" class="bnrfnt40">{{ project.title }}</h1>
+                            <p>{{ project.subtitle }}</p>
+                            <p>{{ project.location }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

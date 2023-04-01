@@ -1,20 +1,12 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hatch - Consulting engineering and project implementation{% endblock %}
+{% extends "base.html.twig" %}
 
 {% block body %}
-    <div class="wrapper">
-        {{ include('_navbar.html.twig') }}
-        <div id="maincontent" class="">
-            {{ include('sections/_breadcrumb.html.twig') }}
-            <section class="section-main section-twocolumn-right">
-                <div class="container">
-                    <div class="row">
-                        {% block content %}{% endblock %}
-                    </div>
-                </div>
-            </section>
-        </div>
-        {{ include('_footer.html.twig') }}
-    </div>
+    {% include "about/_header.html.twig" %}
+
+    {{ include('sections/_breadcrumb.html.twig') }}
+
+    {% include "about/_body.html.twig" %}
+
+    {% include "modules/_footer.html.twig" %}
+
 {% endblock %}

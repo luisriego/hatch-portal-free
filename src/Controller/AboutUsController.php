@@ -19,7 +19,7 @@ class AboutUsController extends AbstractController
     {
 //        $randomData = $this->homepageService->handle();
 
-        return $this->render('about/about-us.html.twig',
+        return $this->render('about/about-us.base.html.twig',
             [
                 'breadcrumb' => 'Sobre nossa Empresa',
 //                'data' => $randomData
