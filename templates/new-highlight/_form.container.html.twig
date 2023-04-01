@@ -1,4 +1,4 @@
-<div role="main" class="col-md-9 col-sm-8">
+<div role="main" class="col-md-12 col-sm-8">
 
     <div>
         <h1 class="pageTitle">+<span style="color: #e84a37">+</span></h1>
@@ -6,11 +6,13 @@
             <div class="project-details">
                 <div class="col-md-12">
                     <h2>Destaques do projeto <span style="color: #e84a37">{{ project.title }}</span></h2>
-                    <ul style=" background-color: lightgray; padding: 10px">
-                        {% for highlight in highlights %}
-                            <li>{{ highlight.text }}</li>
-                        {% endfor %}
-                    </ul>
+                    {% if highlights|length > 0 %}
+                        <ul style=" background-color: lightgray; padding: 10px">
+                            {% for highlight in highlights %}
+                                <li>{{ highlight.text }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
 

@@ -6,11 +6,13 @@
             <div class="project-details">
                 <div class="col-md-12">
                     <h2>Desafios do projeto <span style="color: #e84a37">{{ project.title }}</span></h2>
-                    <ul style=" background-color: lightgray; padding: 10px">
-                        {% for challenge in challenges %}
-                            <li>{{ challenge.text }}</li>
-                        {% endfor %}
-                    </ul>
+                    {% if challenges|length > 0 %}
+                        <ul style=" background-color: lightgray; padding: 10px">
+                            {% for challenge in challenges %}
+                                <li>{{ challenge.text }}</li> 
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
 
