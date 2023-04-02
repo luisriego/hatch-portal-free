@@ -1,4 +1,5 @@
 @import "~bootstrap";
+@import '~font-awesome';
 
 .clearfix {
     clear: both;
@@ -44,7 +45,7 @@ li {
 a,
 .btn,
 button {
-    color: white;
+    /*color: white;*/
     text-decoration: none;
     outline: none;
     -webkit-transition: all 300ms linear 0s;
@@ -1641,7 +1642,7 @@ img {
 .widget.about-us-widget img {
     max-width: 100%;
 }
-.widget-contact h4,
+.about-us-widget h4,
 .get-in-touch h4,
 .widget-links h4 {
     font: 600 20px "Open Sans", sans-serif;
@@ -1651,7 +1652,7 @@ img {
     margin-bottom: 24px;
     font-style: italic;
 }
-.widget-contact h4:after,
+.about-us-widget h4:after,
 .get-in-touch h4:after,
 .widget-links h4:after {
     content: '';
@@ -1660,6 +1661,14 @@ img {
     background: #0094b3;
     display: block;
     margin-top: 13px;
+}
+.follow-us h4 {
+    font: 600 20px "Open Sans", sans-serif;
+    color: #fff;
+    margin-top: 0px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-style: italic;
 }
 .widget-contact-list ul {
     margin: 0;

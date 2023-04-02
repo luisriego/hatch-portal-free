@@ -14,7 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Blog[]    findAll()
  * @method Blog[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BlogRepository extends ServiceEntityRepository
+class BlogRepository extends ServiceEntityRepository implements BlogRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -49,6 +49,19 @@ class BlogRepository extends ServiceEntityRepository
             ->select('count(b.id)')
             ->getQuery()
             ->getSingleScalarResult();
+    }
+
+    /**
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findOneByIdOrFail($id): ?Blog
+    {
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getSingleResult();
     }
 
 //    /**

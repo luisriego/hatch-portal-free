@@ -1,0 +1,215 @@
+<section class="core-projects sectpad">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 pull-left news">
+                <div>
+                    <!-- Search-->
+                    <div class="widget-search-blog">
+                        <div class="row widget-inner">
+                            <form action="#" method="get" class="search-form">
+                                <div class="input-group">
+                                    <input type="search" placeholder="Enter Search keywords" class="form-control"><span class="input-group-addon">
+                        <button type="submit"><i class="icon icon-Search"></i></button></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="single-sidebar-widget">
+                        <div class="sec-title">
+                            <h2><span>Categories</span></h2>
+                        </div>
+                        <div class="categories">
+                            <ul>
+                                <li><a href="#">Chemistry of Petrolium Filteration</a></li>
+                                <li><a href="#">Alluminium Strength Depends</a></li>
+                                <li><a href="#">Solar Panel Working Process</a></li>
+                                <li><a href="#">Advanced Materials Innovation</a></li>
+                                <li><a href="#">Metal Manufacturing Process</a></li>
+                                <li><a href="#">Construction and Architecture</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-sidebar-widget">
+                        <div class="sec-title">
+                            <h2><span>Popular Posts</span></h2>
+                        </div>
+                        <div class="popular-post">
+                            <ul>
+                                <li class="img-cap-effect">
+                                    <div class="img-box"><a href="news-details.html"><img src="images/news/popular-post1.jpg" alt="Awesome Image"></a></div>
+                                    <div class="content"><a href="#">
+                                            <h4>Duisau irure dolor</h4></a>
+                                        <p>in reprehenderit in volup tate velit esse cillum</p><span>02 Dec</span>
+                                    </div>
+                                </li>
+                                <li class="img-cap-effect">
+                                    <div class="img-box"><a href="news-details.html"><img src="images/news/popular-post2.jpg" alt="Awesome Image"></a></div>
+                                    <div class="content"><a href="#">
+                                            <h4>Duisau irure dolor</h4></a>
+                                        <p>in reprehenderit in volup tate velit esse cillum</p><span>02 Dec</span>
+                                    </div>
+                                </li>
+                                <li class="img-cap-effect">
+                                    <div class="img-box"><a href="news-details.html"><img src="images/news/popular-post3.jpg" alt="Awesome Image"></a></div>
+                                    <div class="content"><a href="#">
+                                            <h4>Duisau irure dolor</h4></a>
+                                        <p>in reprehenderit in volup tate velit esse cillum</p><span>02 Dec</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-sidebar-widget">
+                        <div class="sec-title">
+                            <h2><span>Text widget</span></h2>
+                        </div>
+                        <div class="text-box">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore que laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi arch itecto beatae vitae dict eaque ipsa quae.</p>
+                        </div>
+                    </div>
+                    <div class="single-sidebar-widget">
+                        <div class="sec-title">
+                            <h2><span>Tag clouds</span></h2>
+                        </div>
+                        <div class="tag-cloud">
+                            <ul>
+                                <li><a href="#">Warehouse</a></li>
+                                <li><a href="#">Ocean frieght</a></li>
+                                <li><a href="#">logistic</a></li>
+                                <li><a href="#">land transport</a></li>
+                                <li><a href="#">cost shipment</a></li>
+                                <li><a href="#">Air frieght</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-12 pull-right">
+                <!-- News-->
+                <div class="single-post-wrapper news news-details">
+                    <!-- News 1-->
+                    <article class="single-blog-post img-cap-effect">
+                        <div class="img-box">
+                            <a>
+                                <img src="{{ asset('media/blog/'~blog.photo) }}" alt="" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="meta-info">
+                            <div class="content-box">
+                                <ul class="post-links">
+                                    <li><a href="#"><i class="fa fa-user"></i> By:  {{ blog.author }}</a></li>
+                                    <li><a href="#"><i class="fa fa-tag"></i> Delivery across country</a></li>
+                                    <li><a href="#"><i class="fa fa-comments-o"></i> Comentários: 8</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h6>{{ blog.date|date('d/M/Y') }}</h6>
+                        <h2>{{ blog.title }}</h2>
+                        <h4>{{ blog.subtitle }}</h4>
+                         {{ blog.text|raw }}
+
+{#                        <h3>Two Column texts</h3>#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-6 info">#}
+{#                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem ape riam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>#}
+{#                            </div>#}
+{#                            <div class="col-sm-6 info">#}
+{#                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem ape riam, eaque ipsa quae ab illo invent ore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>#}
+{#                            </div>#}
+{#                        </div><br>#}
+{#                        <blockquote>#}
+{#                            <p>Ut enim ad minima veniam, quis nostrum exercitatio nem ullam corporis suscipit labori osam, nisi ut aliqu id ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>#}
+{#                            <footer><a href="#">Michale John</a></footer>#}
+{#                        </blockquote>#}
+                    </article>
+
+                    <div class="sec-title">
+                        <h2><span>Links relacionados</span></h2>
+                    </div>
+                    <div class="categories">
+                        <ul>
+                            <li><a href="https://www.maximizemarketresearch.com/market-report/global-advanced-process-control-market/35837/"><p>[1] Advanced Process Control Market- Growth, Trends and Forecasts 2029 (maximizemarketresearch.com)</p></a></li>
+                            <li><a href="https://manufacturingdigital.com/top10/mckinsey-eight-industry-40-value-drivers"><p>[2] McKinsey: Eight Industry 4.0 Value Drivers | Manufacturing Digital</p></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Comments-->
+                    <div class="news-comments">
+                        <h3 class="comments_count">Comentários (5)</h3>
+                        <div class="comments">
+                            <div class="media comment">
+                                <div class="media-left"><img src="images/news/coments1.jpg" alt=""></div>
+                                <div class="media-body">
+                                    <h5 class="commenter-name">Merry John</h5>
+                                    <p>Duis aute irure dolor in reprehenderit in vol uptate velit esse cillum dolore eu fugiat nulla pari atur. Excepteur sint occaecat cupidatat non proid pent.</p>
+                                    <ul class="date-reply nav">
+                                        <li><a href="#">Dec 09 2015</a></li>
+                                        <li><a href="#">reply</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Comment-->
+                            <div class="media comment comment-bg">
+                                <div class="media-left"><img src="images/news/coments3.jpg" alt=""></div>
+                                <div class="media-body">
+                                    <h5 class="commenter-name">Merry John</h5>
+                                    <p>Duis aute irure dolor in reprehenderit in vol uptate velit esse cillum dolore eu fugiat nulla pari atur. Excepteur sint occaecat cupidatat non proid pent.</p>
+                                    <ul class="date-reply nav">
+                                        <li><a href="#">Dec 09 2015</a></li>
+                                        <li><a href="#">reply</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Comment-->
+                            <div class="media comment">
+                                <div class="media-left"><img src="images/news/coments1.jpg" alt=""></div>
+                                <div class="media-body">
+                                    <h5 class="commenter-name">Merry John</h5>
+                                    <ul class="date-reply nav">
+                                        <li><a href="#">Dec 09 2015</a></li>
+                                        <li><a href="#">reply</a></li>
+                                    </ul>
+                                    <p>Duis aute irure dolor in reprehenderit in vol uptate velit esse cillum dolore eu fugiat nulla pari atur. Excepteur sint occaecat cupidatat non proid pent.</p>
+                                    <div class="media comment reply">
+                                        <div class="media-left"><img src="images/news/coments2.jpg" alt=""></div>
+                                        <div class="media-body">
+                                            <h5 class="commenter-name">Merry John</h5>
+                                            <p>Duis aute irure dolor in reprehenderit in vol uptate velit esse cillum dolore eu fugiat nulla pari atur. Excepteur sint occaecat.</p>
+                                            <ul class="date-reply nav">
+                                                <li><a href="#">Dec 09 2015</a></li>
+                                                <li><a href="#">reply</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Comment-->
+                                </div>
+                            </div>
+                            <!-- Comment-->
+                            <div class="media comment comment-bg">
+                                <div class="media-left"><img src="images/news/coments2.jpg" alt=""></div>
+                                <div class="media-body">
+                                    <h5 class="commenter-name">Merry John</h5>
+                                    <p>Duis aute irure dolor in reprehenderit in vol uptate velit esse cillum dolore eu fugiat nulla pari atur. Excepteur sint occaecat cupidatat non proid pent.</p>
+                                    <ul class="date-reply nav">
+                                        <li><a href="#">Dec 09 2015</a></li>
+                                        <li><a href="#">reply</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Leave a Comment-->
+                        <div class="leave-comments">
+                            <h3 class="leave-comment-title">Deixe o seu comentário</h3>
+                            <form action="#" method="post" class="comment_form row m0">
+                                <input type="text" placeholder="Seu nome" class="form-control">
+                                <input type="email" placeholder="Seu email" class="form-control">
+                                <textarea placeholder="Sua mensagem" class="form-control"></textarea>
+                                <button type="submit" class="btn btn-primary submit">Enviar agora <i class="fa fa-arrow-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

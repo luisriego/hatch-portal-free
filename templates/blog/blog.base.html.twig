@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% include "about/_header.html.twig" %}
+
+    {{ include('sections/_breadcrumb.html.twig') }}
+
+    {% include "blog/_single-blog-body.html.twig" %}
+
+    {% include "modules/_footer.html.twig" %}
+
+{% endblock %}

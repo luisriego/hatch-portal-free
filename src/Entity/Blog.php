@@ -29,6 +29,9 @@ class Blog
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subtitle = null;
+
     public function __construct()
     {
         $this->date = new \DateTime();
@@ -95,6 +98,18 @@ class Blog
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(?string $subtitle): self
+    {
+        $this->subtitle = $subtitle;
 
         return $this;
     }
