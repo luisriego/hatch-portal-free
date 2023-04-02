@@ -25,3 +25,8 @@ services:
 #    App\Service\:
 #        resource: '../src/Command/'
 #        tags: [ 'console.command' ]
+
+    App\EventListener\ProjectEntityListener:
+        tags:
+            - { name: 'doctrine.orm.entity_listener', event: 'prePersist', entity: 'App\Entity\Project' }
+            - { name: 'doctrine.orm.entity_listener', event: 'preUpdate', entity: 'App\Entity\Project' }

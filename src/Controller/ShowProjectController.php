@@ -15,10 +15,10 @@ class ShowProjectController extends AbstractController
     ) {
     }
 
-    #[Route('/project/{projectId}', name: 'app_project')]
-    public function __invoke(Request $request, $projectId): Response
+    #[Route('/project/{slug}', name: 'app_project')]
+    public function __invoke(Request $request, $slug): Response
     {
-        $project = $this->projectsService->handle($projectId);
+        $project = $this->projectsService->handle($slug);
 
         return $this->render('projects/single.project.base.html.twig',
             [

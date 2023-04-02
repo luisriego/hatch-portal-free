@@ -27,7 +27,7 @@
        {% for project in row %}
         <div class="col-md-4 col-sm-4 col-xs-12">
           <div class="news-evn-img">
-            <a href="{{ path('app_project', {projectId: project.id}) }}" class="image_hover">
+            <a href="{{ path('app_project', {slug: project.slug}) }}" class="image_hover">
               {% if project.image is not null %}
                   <img class="img-responsive zoom_img_effect" src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}">
               {% else %}
@@ -41,10 +41,10 @@
           </div>
           <div class="news-evn-cont">
             <div class="news-meta">
-              <a href="{{ path('app_project', {projectId: project.id}) }}">{{ project.location }}</a>
+              <a href="{{ path('app_project', {slug: project.slug}) }}">{{ project.location }}</a>
               {# <a href="news.html"> Comments: 6</a> #}
             </div>
-              <a href="{{ path('app_project', {projectId: project.id}) }}">
+              <a href="{{ path('app_project', {slug: project.slug}) }}">
                 <h3>{{ project.title }}</h3>
               </a>
             <p>{{ project.subtitle }}</p>

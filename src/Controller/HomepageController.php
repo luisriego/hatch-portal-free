@@ -14,30 +14,30 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomepageController extends AbstractController
 {
     public function __construct(
-        private readonly HomepageService $homepageService,
-        private readonly NewsService $newsService,
-        private readonly EventService $eventService,
         private readonly BlogService $blogService,
-        private readonly TestimonialService $testimonialService,
+//        private readonly HomepageService $homepageService,
+//        private readonly NewsService $newsService,
+//        private readonly EventService $eventService,
+//        private readonly TestimonialService $testimonialService,
     ) {
     }
 
     #[Route('/', name: 'app_homepage')]
     public function __invoke(): Response
     {
-        $randomData = $this->homepageService->handle();
-        $randomNews = $this->newsService->handle();
-        $randomEvent = $this->eventService->handle();
         $randomBlog = $this->blogService->handle();
-        $randomTestimonials = $this->testimonialService->handle();
+//        $randomData = $this->homepageService->handle();
+//        $randomNews = $this->newsService->handle();
+//        $randomEvent = $this->eventService->handle();
+//        $randomTestimonials = $this->testimonialService->handle();
 
         return $this->render('homepage/index.html.twig',
             [
-                'data' => $randomData,
-                'news' => $randomNews,
-                'events' => $randomEvent,
                 'blogs' => $randomBlog,
-                'testimonial' => $randomTestimonials,
+//                'data' => $randomData,
+//                'news' => $randomNews,
+//                'events' => $randomEvent,
+//                'testimonial' => $randomTestimonials,
             ]);
     }
 }

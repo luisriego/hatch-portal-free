@@ -14,9 +14,9 @@ class SingleProjectService
     {
     }
 
-    public function handle(string $id): Project|null
+    public function handle(string $slug): Project|null
     {
-        if (null === $result = $this->projectRepository->findOneBy(['id' => $id])) {
+        if (null === $result = $this->projectRepository->findOneBy(['slug' => $slug])) {
             throw new NotFoundHttpException();
         }
 
