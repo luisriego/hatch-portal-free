@@ -39,6 +39,7 @@ class NewChallengeController extends AbstractController
             if (null !== $form['text']->getData()) {
                 $challenge->setProject($project);
                 $project->setStatus(2);
+                $project->markAsUpdated();
 
                 $this->entityManager->persist($challenge);
                 $this->entityManager->flush();

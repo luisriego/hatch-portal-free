@@ -20,35 +20,40 @@
     </div>
 
     <div class="component sitecore-form" id="{0f27ac40-b2a6-4b1f-b31d-a58a86756b49}">
-        <div class="component-content">
+        <div class="component-content" data-controller="challenge">
             {{ form_start(project_form, {'attr': {'class': 'custom-form text-left hatch-scfForm'}}) }}
                 <div class="my-custom-class-for-errors">
                     {{ form_errors(project_form) }}
                 </div>
 
                 <div class="font-weight-bold">
-                    <div class="required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content">
+                    <div class="required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-challenge-target="text">
                         {{ form_label(project_form.text, 'Texto', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
                         {{ form_widget(project_form.text, {
                             'required': false,
                             'attr': {
-                                'class': 'form-control text-box single-line hatch-form-control font-weight-bold'
+                                'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                                'data-action': 'challenge#textAction'
                             } })
                         }}
                         {{ form_help(project_form.text, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
                     </div>
                 </div>
-                <div class="form-submit-border" style="margin-top: 50px">
+                <div class="form-submit-border col-md-6" style="margin-top: 50px" data-challenge-target="buttonPlus">
                     {{ form_widget(project_form.addNew, {
-                        'label': 'Adicionar mais uma solução ',
+                        'label': 'Salvar e Adicionar outro desafio ',
                         'attr': {
-                            'class': 'btn btn-primary btn-lg',
+                            'class': 'btn btn-success btn-lg',
+                            'disabled': true
                         } })
                     }}
+                </div>
+                <div class="form-submit-border col-md-6" style="margin-top: 50px" data-challenge-target="buttonNext">
                     {{ form_widget(project_form.next, {
-                        'label': 'Seguiente ',
+                        'label': 'Salvar e ir ao Seguinte formulário',
                         'attr': {
-                            'class': 'btn btn-default'
+                            'class': 'btn btn-info btn-lg',
+                            'disabled': true
                         } })
                     }}
                 </div>

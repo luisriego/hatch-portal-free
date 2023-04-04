@@ -39,6 +39,7 @@ class NewHighlightController extends AbstractController
             if (null !== $form['text']->getData()) {
                 $highlight->setProject($project);
                 $project->setStatus(4);
+                $project->markAsUpdated();
 
                 $this->entityManager->persist($highlight);
                 $this->entityManager->flush();

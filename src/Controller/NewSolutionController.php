@@ -39,6 +39,7 @@ class NewSolutionController extends AbstractController
             if (null !== $form['text']->getData()) {
                 $solution->setProject($project);
                 $project->setStatus(3);
+                $project->markAsUpdated();
 
                 $this->entityManager->persist($solution);
                 $this->entityManager->flush();

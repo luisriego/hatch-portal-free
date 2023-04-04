@@ -39,6 +39,7 @@ class NewFactController extends AbstractController
             if (null !== $form['name']->getData() and count($facts) < 3) {
                 $fact->setProject($project);
                 $project->setStatus(5);
+                $project->markAsUpdated();
 
                 $this->entityManager->persist($fact);
                 $this->entityManager->flush();

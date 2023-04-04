@@ -2,8 +2,8 @@
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-cdbd14.css": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-cdbd14.css",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-cdbd14.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-cdbd14.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.css": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.css",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.js",
   "build/images/fontawesome-webfont.svg?v=4.7.0": "/build/images/fontawesome-webfont.c1e38fd9.svg",
   "build/images/bg-our-project4.jpg": "/build/images/bg-our-project4.435d366c.jpg",
   "build/fonts/fontawesome-webfont.eot": "/build/fonts/fontawesome-webfont.8b43027f.eot",
@@ -41,5 +41,6 @@
   "build/images/select-menu-arrow.png": "/build/images/select-menu-arrow.499ff525.png",
   "build/images/arrow.png": "/build/images/arrow.c76715c9.png",
   "build/assets/quote.html": "/build/assets/quote.d4b292b6.html",
-  "build/images/select-menu-arrow1.png": "/build/images/select-menu-arrow1.95b13ddb.png"
+  "build/images/select-menu-arrow1.png": "/build/images/select-menu-arrow1.95b13ddb.png",
+  "build/assets_controllers_challenge_controller_js.js": "/build/assets_controllers_challenge_controller_js.js"
 }

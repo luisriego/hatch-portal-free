@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use App\Trait\TimestampableTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -12,9 +13,12 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 #[UniqueEntity("slug")]
 class Project
 {
+    use TimestampableTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -69,6 +73,8 @@ class Project
     public function __construct()
     {
         $this->status = 0;
+        $this->createdOn = new \DateTimeImmutable();
+        $this->markAsUpdated();
         $this->fact = new ArrayCollection();
         $this->challenges = new ArrayCollection();
         $this->solutions = new ArrayCollection();

@@ -22,5 +22,6 @@ class ProjectEntityListener
     public function preUpdate(Project $project, LifecycleEventArgs $eventArgs)
     {
         $project->computeSlug($this->slugger);
+        $project->markAsUpdated();
     }
 }
