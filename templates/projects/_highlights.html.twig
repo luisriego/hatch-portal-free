@@ -2,7 +2,7 @@
     <h2>Destaques</h2>
     <ul>
         {% for highlight in project.highlights %}
-            <li>{{ highlight.text }}</li>
+            {{ highlight.text|raw }}
         {% endfor %}
     </ul>
 </div>

@@ -2,7 +2,7 @@
     <h2>Soluções</h2>
     <ul>
         {% for solution in project.solutions %}
-            <li>{{ solution.text }}</li>
+            {{ solution.text|raw }}
         {% endfor %}
     </ul>
 </div>

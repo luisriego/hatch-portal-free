@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Fact;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,7 +14,7 @@ class FactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
+            ->add('name', CKEditorType::class)
 //            ->add('previous', SubmitType::class)
             ->add('next', SubmitType::class)
             ->add('addNew', SubmitType::class)
