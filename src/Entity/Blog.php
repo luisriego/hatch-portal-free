@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\BlogRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -32,9 +34,17 @@ class Blog
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $subtitle = null;
 
+    #[ORM\ManyToOne(inversedBy: 'blogs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Author $owner = null;
+
+    #[ORM\OneToMany(mappedBy: 'blog', targetEntity: Comment::class, orphanRemoval: true)]
+    private Collection $comment;
+
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->comment = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -110,6 +120,48 @@ class Blog
     public function setSubtitle(?string $subtitle): self
     {
         $this->subtitle = $subtitle;
+
+        return $this;
+    }
+
+    public function getOwner(): ?Author
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(?Author $owner): self
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getComment(): Collection
+    {
+        return $this->comment;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comment->contains($comment)) {
+            $this->comment->add($comment);
+            $comment->setBlog($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comment->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getBlog() === $this) {
+                $comment->setBlog(null);
+            }
+        }
 
         return $this;
     }
