@@ -11,6 +11,7 @@ use App\Entity\Testimony;
 use App\Entity\Topic;
 use App\Entity\Type;
 use App\Entity\User;
+use App\Entity\Challenge;
 use App\Repository\BlogRepository;
 use App\Repository\EventRepository;
 use App\Repository\NewsRepository;
@@ -69,6 +70,7 @@ class DashboardController extends AbstractDashboardController
             ->setBadge($numProjects, 'danger');
         yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class)
             ->setBadge($numUsers, 'danger');
+        yield MenuItem::linkToCrud('Challenges', 'fas fa-users', Challenge::class);
         yield MenuItem::section('Admin data');
         yield MenuItem::linkToCrud('Area', 'fa fa-arrows', Area::class);
         yield MenuItem::linkToCrud('Topics', 'fas fa-folder', Topic::class);

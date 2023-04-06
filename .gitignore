@@ -12,6 +12,7 @@ docker-compose.yml
 /public/bundles/
 /public/media/news
 /public/media/projects
+/public/media/blog
 /public/media/blogs
 /var/
 /vendor/

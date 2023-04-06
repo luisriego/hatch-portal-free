@@ -22,6 +22,7 @@ class BlogCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title'),
+            TextField::new('subtitle'),
             TextField::new('author'),
             TextEditorField::new('text'),
             DateTimeField::new('date')

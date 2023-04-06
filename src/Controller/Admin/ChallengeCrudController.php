@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ChallengeCrudController extends AbstractCrudController
 {
@@ -22,6 +23,8 @@ class ChallengeCrudController extends AbstractCrudController
             IdField::new('id')
                 ->hideOnForm(),
             TextEditorField::new('text'),
+            TextField::new('project')
+                ->setFormTypeOption('by_reference', false)
         ];
     }
 
