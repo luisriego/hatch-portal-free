@@ -2,7 +2,7 @@
     <h2>Desafios</h2>
     <ul>
         {% for challenge in project.challenges %}
-        <li>{{ challenge.text }}</li>
+        {{ challenge.text|raw }}
         {% endfor %}
     </ul>
 </div>

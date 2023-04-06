@@ -2,8 +2,8 @@
     <div class="container">
         <div class="project-facts">
             {% for fact in project.fact %}
-                <div class="col-lg-3" style="background-color: #e84a37; margin: 10px; height: 141px; width: 100%">
-                    <div class="panel-body" style="color: white">{{ fact.name }}</div>
+                <div class="col-lg-3" style="background-color: #e84a37; margin: 10px; height: 160px; width: 100%">
+                    <div class="panel-body" style="color: white !important;">{{ fact.name|raw }}</div>
                 </div>
             {% endfor %}
         </div>
