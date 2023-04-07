@@ -14,5 +14,7 @@ interface BlogRepositoryInterface
 
     public function findOneByIdOrFail(string $id): ?Blog;
 
+    public function findThreeActiveOrFail(int $limit): ?array;
+
     public function getTotalNumber(): ?int;
 }

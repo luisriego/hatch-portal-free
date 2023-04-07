@@ -64,6 +64,13 @@ class BlogRepository extends ServiceEntityRepository implements BlogRepositoryIn
             ->getSingleResult();
     }
 
+    public function findThreeActiveOrFail(int $limit = 3): ?array
+    {
+        return $this->createQueryBuilder('b')
+            ->getQuery()
+            ->getResult($limit);
+    }
+
 //    /**
 //     * @return Blog[] Returns an array of Blog objects
 //     */

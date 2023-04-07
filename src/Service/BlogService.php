@@ -15,7 +15,7 @@ class BlogService
 
     public function handle(): array|null
     {
-        if (null === $result = $this->blogRepository->findBy([], [], 3)) {
+        if (null === $result = $this->blogRepository->findThreeActiveOrFail()) {
             throw new NotFoundHttpException();
         }
 
