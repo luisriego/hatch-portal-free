@@ -2,38 +2,34 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Blog;
+use App\Entity\Author;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class BlogCrudController extends AbstractCrudController
+class AuthorCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Blog::class;
+        return Author::class;
     }
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title'),
-            TextField::new('subtitle'),
-            TextField::new('author'),
-            AssociationField::new('owner')
-                ->autocomplete(),
-            TextEditorField::new('text'),
-            DateTimeField::new('date')
-                ->setFormat('dd/MM/yyyy'),
-            ImageField::new('photo')
+            TextField::new('name'),
+            TextField::new('surname'),
+            TextField::new('email'),
+            TextEditorField::new('resume'),
+            TextField::new('position'),
+            ImageField::new('avatar')
                 ->setRequired(false)
-                ->setBasePath('media/blog')
-                ->setUploadDir('public/media/blog'),
+                ->setBasePath('media/social')
+                ->setUploadDir('public/media/social'),
         ];
     }
 

@@ -14,7 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Comment[]    findAll()
  * @method Comment[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CommentRepository extends ServiceEntityRepository
+class DoctrineCommentRepository extends ServiceEntityRepository implements CommentRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -39,6 +39,23 @@ class CommentRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findOneByBlogEmailAndMessageOrFail(string $blog, string $email, string $message): ?Comment
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.blog = :blog')
+            ->andWhere('c.email = :email')
+            ->andWhere('c.text = :message')
+            ->setParameter('blog', $blog)
+            ->setParameter('email', $email)
+            ->setParameter('message', $message)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 //    /**
 //     * @return Comment[] Returns an array of Comment objects
 //     */
@@ -51,16 +68,6 @@ class CommentRepository extends ServiceEntityRepository
 //            ->setMaxResults(10)
 //            ->getQuery()
 //            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Comment
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
 //        ;
 //    }
 }

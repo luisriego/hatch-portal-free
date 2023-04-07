@@ -1,0 +1,42 @@
+{{ form_start(comment_form, {'attr': {'class': 'comment_form row m0'}}) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(comment_form) }}
+    </div>
+
+    {{ form_widget(comment_form.name, {
+        'required': false,
+        'attr': {
+            'class': 'form-control',
+            'placeholder': 'Seu nome completo'
+        } })
+    }}
+    {{ form_help(comment_form.name, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+
+    {{ form_widget(comment_form.email, {
+        'required': false,
+        'attr': {
+            'class': 'form-control',
+            'placeholder': 'Seu e-mail'
+        } })
+    }}
+    {{ form_help(comment_form.email, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+
+    {{ form_widget(comment_form.text, {
+        'required': false,
+
+        'attr': {
+            'class': 'form-control',
+            'placeholder': 'Sua mensagem'
+        } })
+    }}
+    {{ form_help(comment_form.text, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+
+    {{ form_widget(comment_form.submit, {
+        'attr': {
+            'class': 'btn btn-primary submit',
+            'disabled': false
+        } })
+    }}
+
+{{ form_rest(comment_form) }}
+{{ form_end(comment_form) }}
