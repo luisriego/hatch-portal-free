@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\CommentRepository;
+use App\Repository\DoctrineCommentRepository;
+use App\Trait\TimestampableTrait;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CommentRepository::class)]
+#[ORM\Entity(repositoryClass: DoctrineCommentRepository::class)]
 class Comment
 {
+    use TimestampableTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -20,6 +23,18 @@ class Comment
     #[ORM\ManyToOne(inversedBy: 'comment')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Blog $blog = null;
+
+    #[ORM\Column(length: 50)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
+
+    public function __construct()
+    {
+        $this->createdOn = new \DateTimeImmutable();
+        $this->markAsUpdated();
+    }
 
     public function getId(): ?int
     {
@@ -51,6 +66,30 @@ class Comment
     public function setBlog(?Blog $blog): self
     {
         $this->blog = $blog;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

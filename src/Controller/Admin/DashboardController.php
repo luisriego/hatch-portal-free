@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Area;
+use App\Entity\Author;
 use App\Entity\Blog;
 use App\Entity\Event;
 use App\Entity\News;
@@ -70,7 +71,8 @@ class DashboardController extends AbstractDashboardController
             ->setBadge($numProjects, 'danger');
         yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class)
             ->setBadge($numUsers, 'danger');
-        yield MenuItem::linkToCrud('Challenges', 'fas fa-users', Challenge::class);
+        yield MenuItem::linkToCrud('Authors', 'fas fa-user', Author::class);
+        yield MenuItem::linkToCrud('Challenges', 'glyphicon glyphicon-pawn', Challenge::class);
         yield MenuItem::section('Admin data');
         yield MenuItem::linkToCrud('Area', 'fa fa-arrows', Area::class);
         yield MenuItem::linkToCrud('Topics', 'fas fa-folder', Topic::class);
