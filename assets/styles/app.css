@@ -7323,3 +7323,7 @@ section.newsletter .req-button a i
     overflow: hidden;
     position: relative;
 }
+
+.steps h4 {
+    margin-left: 30px;
+}
