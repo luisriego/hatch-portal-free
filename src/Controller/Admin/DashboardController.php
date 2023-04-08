@@ -5,9 +5,12 @@ namespace App\Controller\Admin;
 use App\Entity\Area;
 use App\Entity\Author;
 use App\Entity\Blog;
+use App\Entity\Comment;
 use App\Entity\Event;
+use App\Entity\Highlight;
 use App\Entity\News;
 use App\Entity\Project;
+use App\Entity\Solution;
 use App\Entity\Testimony;
 use App\Entity\Topic;
 use App\Entity\Type;
@@ -71,15 +74,20 @@ class DashboardController extends AbstractDashboardController
             ->setBadge($numProjects, 'danger');
         yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class)
             ->setBadge($numUsers, 'danger');
-        yield MenuItem::linkToCrud('Authors', 'fas fa-user', Author::class);
-        yield MenuItem::linkToCrud('Challenges', 'glyphicon glyphicon-pawn', Challenge::class);
+        yield MenuItem::subMenu('Details');
+        yield MenuItem::linkToCrud('Challenges', 'fa-solid fa-trophy', Challenge::class);
+        yield MenuItem::linkToCrud('Solutions', 'fa fa-tasks', Solution::class);
+        yield MenuItem::linkToCrud('Highlights', 'fa-solid fa-highlighter', Highlight::class);
         yield MenuItem::section('Admin data');
         yield MenuItem::linkToCrud('Area', 'fa fa-arrows', Area::class);
         yield MenuItem::linkToCrud('Topics', 'fas fa-folder', Topic::class);
         yield MenuItem::linkToCrud('Type', 'fa fa-check-square', Type::class);
-        yield MenuItem::section('Homepage data');
-        yield MenuItem::linkToCrud('Blogs', 'fa fa-blog', Blog::class)
+        yield MenuItem::section('Blog data');
+        yield MenuItem::linkToCrud('Posts', 'fa fa-blog', Blog::class)
             ->setBadge($numBlogs, 'info');
+        yield MenuItem::linkToCrud('Authors', 'fas fa-user', Author::class);
+        yield MenuItem::linkToCrud('Comments', 'fa fa-comment', Comment::class);
+        yield MenuItem::section('Homepage data');
         yield MenuItem::linkToCrud('Events', 'fa fa-list', Event::class)
             ->setBadge($numEvents, 'info');
         yield MenuItem::linkToCrud('News', 'fa fa-newspaper-o', News::class)
