@@ -10,11 +10,11 @@
             </div>
             <div class="col-md-9 col-sm-12 col-xs-12">
                 <div class="nav-menu pull-right">
-                    <div class="nav-t-holder pull-right">
-                        <div class="nav-t-header">
-                            <button><i class="fa fa-bars"></i></button>
+                    <div class="nav-t-holder pull-right" data-controller="menu">
+                        <div class="nav-t-header visible-xs"  data-menu-target="button">
+                            <button data-action="menu#toggle"><i class="fa fa-bars"></i></button>
                         </div>
-                        <div class="nav-t-footer">
+                        <div class="nav-t-footer hidden-xs" data-menu-target="options">
                             <ul class="nav">
                                 <li><a href="{{ path('app_homepage') }}">Home</a></li>
                                 <li><a href="{{path('app_projects')}}">Projetos Inovadores</a></li>
