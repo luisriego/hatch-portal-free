@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Author;
 use App\Form\AuthorFormType;
 use Doctrine\ORM\EntityManagerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class NewPostAuthorController extends AbstractController
 {
-    public function __construct(private readonly EntityManagerInterface $entityManager,)
+    public function __construct(private readonly EntityManagerInterface $entityManager)
     {
     }
 
@@ -26,7 +25,6 @@ class NewPostAuthorController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $author->markAsUpdated();
 
             $this->entityManager->persist($author);

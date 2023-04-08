@@ -38,7 +38,6 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             if (null !== $form['text']->getData()
                 && $this->commentRepeatedService->handle(
                     $id,
@@ -54,12 +53,11 @@ class BlogController extends AbstractController
             return $this->redirect($request->getUri());
         }
 
-
         return $this->render('blog/blog.base.html.twig',
             [
                 'breadcrumb' => 'Blog',
                 'blog' => $blog,
-                'comment_form' => $form->createView()
+                'comment_form' => $form->createView(),
             ]);
     }
 }

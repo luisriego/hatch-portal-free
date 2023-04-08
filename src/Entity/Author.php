@@ -13,7 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: AuthorRepository::class)]
 class Author
 {
-    use TimestampableTrait, IsActiveTrait;
+    use TimestampableTrait;
+    use IsActiveTrait;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -157,6 +158,6 @@ class Author
 
     public function __toString(): string
     {
-        return $this->getName() . ' ' . $this->getSurname();
+        return $this->getName().' '.$this->getSurname();
     }
 }

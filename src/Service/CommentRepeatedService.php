@@ -4,13 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\Entity\Blog;
-use App\Entity\Comment;
-use App\Repository\BlogRepository;
 use App\Repository\CommentRepositoryInterface;
-use App\Repository\DoctrineCommentRepository;
-use phpDocumentor\Reflection\Types\Boolean;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CommentRepeatedService
 {

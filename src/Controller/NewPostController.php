@@ -2,13 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Author;
 use App\Entity\Blog;
-use App\Form\AuthorFormType;
 use App\Form\BlogFormType;
 use App\Repository\AuthorRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,7 +42,7 @@ class NewPostController extends AbstractController
             }
 
             $blog->setOwner($author);
-            $blog->setAuthor($author->getName() . ' ' . $author->getSurname());
+            $blog->setAuthor($author->getName().' '.$author->getSurname());
 
             $this->entityManager->persist($blog);
             $this->entityManager->flush();

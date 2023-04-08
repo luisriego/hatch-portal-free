@@ -32,7 +32,7 @@ class NewFactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $nextAction = $form->get('next')->isClicked() || count($facts) === 3
+            $nextAction = $form->get('next')->isClicked() || 3 === count($facts)
                 ? 'app_homepage'
                 : 'app_new_fact';
 
