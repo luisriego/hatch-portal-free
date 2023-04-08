@@ -7,20 +7,20 @@
         {% for blog in blogs %}
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="news-evn-img">
-                    <a href="{{ path('app_single_blog', {id: blog.id}) }}" class="image_hover">
-                        <img src="{{ asset('media/blog/'~blog.photo) }}" alt="{{ blog.author }}" class="img-responsive zoom_img_effect">
+                    <a href="{{ path('app_single_blog', {id: blog.b_id}) }}" class="image_hover">
+                        <img src="{{ asset('media/blog/'~blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
                     </a>
                     <div class="event-date">
-                        <h3>{{ blog.date|date("d")}} <small>{{ blog.date|date("M")}}</small></h3>
+                        <h3>{{ blog.b_date|date("d")}} <small>{{ blog.b_date|date("M")}}</small></h3>
                     </div>
                 </div>
                 <div class="news-evn-cont">
                     <div class="news-meta">
-                        <a href="{{ path('app_single_blog', {id: blog.id}) }}">Por: {{ blog.author }}</a>
-                        <a href="{{ path('app_single_blog', {id: blog.id}) }}"> Comentários: 6</a>
+                        <a href="{{ path('app_single_blog', {id: blog.b_id}) }}">Por: {{ blog.b_author }}</a>
+                        <a href="{{ path('app_single_blog', {id: blog.b_id}) }}"> Comentários: 6</a>
                     </div>
-                    <a href="{{ path('app_single_blog', {id: blog.id}) }}">
-                        <h3>{{ blog.title }}</h3>
+                    <a href="{{ path('app_single_blog', {id: blog.b_id}) }}">
+                        <h3>{{ blog.b_title }}</h3>
                     </a>
                 </div>
             </div>
