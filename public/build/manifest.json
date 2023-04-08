@@ -2,6 +2,7 @@
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
+  "build/assets_controllers_owner_controller_js.js": "/build/assets_controllers_owner_controller_js.js",
   "build/vendors-node_modules_symfony_webpack-encore_lib_webpack_copy-files-loader_js_context_var_www_-ba5980.js": "/build/vendors-node_modules_symfony_webpack-encore_lib_webpack_copy-files-loader_js_context_var_www_-ba5980.js",
   "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.css": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.css",
   "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ar-8a3129.js",
@@ -2750,5 +2751,6 @@
   "build/ckeditor/plugins/print/lang/vi.js": "/build/ckeditor/plugins/print/lang/vi.js",
   "build/ckeditor/plugins/save/lang/da.js": "/build/ckeditor/plugins/save/lang/da.js",
   "build/ckeditor/skins/kama/images/dialog_sides.gif": "/build/ckeditor/skins/kama/images/dialog_sides.gif",
-  "build/ckeditor/plugins/exportpdf/plugindefinition.js": "/build/ckeditor/plugins/exportpdf/plugindefinition.js"
+  "build/ckeditor/plugins/exportpdf/plugindefinition.js": "/build/ckeditor/plugins/exportpdf/plugindefinition.js",
+  "build/assets_controllers_menu_controller_js.js": "/build/assets_controllers_menu_controller_js.js"
 }
