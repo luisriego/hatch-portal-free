@@ -24,7 +24,7 @@ class ChallengeCrudController extends AbstractCrudController
                 ->hideOnForm(),
             TextEditorField::new('text'),
             TextField::new('project')
-                ->setFormTypeOption('by_reference', false)
+                ->setFormTypeOption('by_reference', false),
         ];
     }
 

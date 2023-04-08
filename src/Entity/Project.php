@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 #[ORM\HasLifecycleCallbacks()]
-#[UniqueEntity("slug")]
+#[UniqueEntity('slug')]
 class Project
 {
     use TimestampableTrait;

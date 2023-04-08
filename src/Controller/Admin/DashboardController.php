@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Area;
 use App\Entity\Author;
 use App\Entity\Blog;
+use App\Entity\Challenge;
 use App\Entity\Comment;
 use App\Entity\Event;
 use App\Entity\Highlight;
@@ -15,7 +16,6 @@ use App\Entity\Testimony;
 use App\Entity\Topic;
 use App\Entity\Type;
 use App\Entity\User;
-use App\Entity\Challenge;
 use App\Repository\BlogRepository;
 use App\Repository\EventRepository;
 use App\Repository\NewsRepository;
@@ -74,7 +74,7 @@ class DashboardController extends AbstractDashboardController
             ->setBadge($numProjects, 'danger');
         yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class)
             ->setBadge($numUsers, 'danger');
-        yield MenuItem::subMenu('Details');
+        yield MenuItem::subMenu('Project details');
         yield MenuItem::linkToCrud('Challenges', 'fa-solid fa-trophy', Challenge::class);
         yield MenuItem::linkToCrud('Solutions', 'fa fa-tasks', Solution::class);
         yield MenuItem::linkToCrud('Highlights', 'fa-solid fa-highlighter', Highlight::class);
