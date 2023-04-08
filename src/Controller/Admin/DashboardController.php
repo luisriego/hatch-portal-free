@@ -74,7 +74,7 @@ class DashboardController extends AbstractDashboardController
             ->setBadge($numProjects, 'danger');
         yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class)
             ->setBadge($numUsers, 'danger');
-        yield MenuItem::subMenu('Details');
+        yield MenuItem::subMenu('Project details');
         yield MenuItem::linkToCrud('Challenges', 'fa-solid fa-trophy', Challenge::class);
         yield MenuItem::linkToCrud('Solutions', 'fa fa-tasks', Solution::class);
         yield MenuItem::linkToCrud('Highlights', 'fa-solid fa-highlighter', Highlight::class);
