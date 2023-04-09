@@ -41,7 +41,7 @@ class AcceptConditionsController extends AbstractController
                 : 'reject_conditions';
 
             if ($nextAction === 'accept_conditions') {
-                $project->toggleAccepted();
+                $project->setIsAccepted(true);
                 $project->SetAcceptedOn();
                 $project->markAsUpdated();
 
@@ -50,7 +50,9 @@ class AcceptConditionsController extends AbstractController
             }
 
             if ($nextAction === 'reject_conditions') {
-                $this->entityManager->remove($project);
+                $project->setIsAccepted(false);
+
+                $this->entityManager->persist($project);
                 $this->entityManager->flush();
             }
 

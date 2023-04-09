@@ -15,7 +15,7 @@ class ProjectsService
 
     public function handle(): array
     {
-        if (null === $result = $this->projectRepository->findBy(['status' => '5'], ['title' => 'ASC'])) {
+        if (null === $result = $this->projectRepository->findBy(['status' => '5', 'isActive' => true, 'isAccepted' => true], ['title' => 'ASC'])) {
             throw new NotFoundHttpException();
         }
 

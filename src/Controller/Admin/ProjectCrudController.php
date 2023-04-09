@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\Project;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -25,22 +27,28 @@ class ProjectCrudController extends AbstractCrudController
             AssociationField::new('area')
                 ->autocomplete(),
             TextField::new('title'),
-            TextField::new('subtitle'),
+            TextField::new('subtitle')
+                ->onlyOnForms(),
             TextField::new('location'),
-            TextField::new('url'),
+            TextField::new('url')
+                ->onlyOnForms(),
+            BooleanField::new('is_active'),
+            BooleanField::new('is_accepted')
+                ->renderAsSwitch(false),
+            DateTimeField::new('accepted_on')
+                ->onlyOnForms(),
             ImageField::new('image')
                 ->setRequired(false)
                 ->setBasePath('media/projects')
                 ->setUploadDir('public/media/projects'),
-//            CollectionField::new('challenges')
-//                ->setFormTypeOption('by_reference', false)
-//                ->hideOnIndex(),
-//            CollectionField::new('solutions')
-//                ->setFormTypeOption('by_reference', false)
-//                ->hideOnIndex(),
-//            CollectionField::new('highlights')
-//                ->setFormTypeOption('by_reference', false)
-//                ->hideOnIndex(),
+            TextField::new('sumary')
+                ->onlyOnForms(),
+            TextField::new('slug')
+                ->onlyOnDetail(),
+            DateTimeField::new('created_on')
+                ->onlyOnDetail(),
+            DateTimeField::new('updated_on')
+                ->onlyOnDetail(),
         ];
     }
 }
