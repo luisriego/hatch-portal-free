@@ -1,0 +1,38 @@
+<div role="main" class="col-md-12 col-sm-8">
+
+    <div>
+        <h1 class="pageTitle">Deseja apresentar o seu projeto para o "Premio Local à Innovação"?</h1>
+    </div>
+    <div class="bodyContent">
+        <h4 style="margin-left: 0in;">Nossa organização está apaixonadamente comprometida com a busca de um mundo melhor através de mudanças positivas. </h4>
+        <h4>Abraçamos suas visões como nossas e nos associamos a você para desenvolver melhores idéias que sejam mais <b>inteligentes, eficientes e inovadoras</b>.</h4>
+        <h4 style="margin-left: 0in;">Com esse objetivo em mente, nos alegra saber que deseja participar na iniciativa com suas experiênias e conhecimentos.</h4>
+        <br>
+        <a>Regras para particitar no Premio Local à Innovação</a> [PDF]</p>
+        <br>
+        <h3 style="margin-left: 0in;">Para poder partipar vc deve aceitar as condições e <b>reconhece</b> que o projeto apresentado é da <b>sua autoria ou co-autoria</b></h3>
+        <div class="steps" style="margin-bottom: 40px;">
+
+        </div>
+        {{ form_start(accept_form, {'attr': {'class': 'custom-form text-left hatch-scfForm'}}) }}
+        {{ form_errors(accept_form) }}
+            {{ form_widget(accept_form.accept, {
+                'label': 'Aceito as condições, quero participar! ',
+                'attr': {
+                    'class': 'btn btn-success btn-lg',
+                    'disabled': false
+                } })
+            }}
+            {{ form_widget(accept_form.reject, {
+                'label': 'De jeito nenhum, estou fora! Apagar tudinho! ',
+                'attr': {
+                    'class': 'btn btn-danger btn-lg pull-right',
+                    'disabled': false
+                } })
+            }}
+{#        <a data-animation="animated fadeInUp" href="" class="btn btn-info">Aceito as condições, quero participar!</a>#}
+{#        <a data-animation="animated fadeInUp" href="" class="btn btn-danger pull-right">De jeito nenhum, estou fora! <b>Apaga tudo!</b></a>#}
+        {{ form_rest(accept_form) }}
+        {{ form_end(accept_form) }}
+    </div>
+</div>

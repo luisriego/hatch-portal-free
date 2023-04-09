@@ -33,7 +33,7 @@ class NewFactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $nextAction = $form->get('next')->isClicked() || 3 === count($facts)
-                ? 'app_homepage'
+                ? 'app_accept_conditions'
                 : 'app_new_fact';
 
             if (null !== $form['name']->getData() and count($facts) < 3) {
