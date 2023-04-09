@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use App\Trait\IsAcceptedTrait;
+use App\Trait\IsActiveTrait;
 use App\Trait\TimestampableTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -17,7 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[UniqueEntity('slug')]
 class Project
 {
-    use TimestampableTrait;
+    use TimestampableTrait, IsActiveTrait, IsAcceptedTrait;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -72,6 +74,7 @@ class Project
 
     public function __construct()
     {
+        $this->isActive = false;
         $this->status = 0;
         $this->createdOn = new \DateTimeImmutable();
         $this->markAsUpdated();

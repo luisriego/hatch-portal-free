@@ -1,5 +1,6 @@
 @import "~bootstrap";
 @import '~font-awesome';
+@import '~animate.css';
 
 .clearfix {
     clear: both;
@@ -7326,4 +7327,9 @@ section.newsletter .req-button a i
 
 .steps h4 {
     margin-left: 30px;
+}
+
+.projects a {
+    margin-top: 200px;
+    margin-left: 800px;
 }
