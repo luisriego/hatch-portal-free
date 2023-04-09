@@ -34,9 +34,10 @@ class ProjectCrudController extends AbstractCrudController
                 ->onlyOnForms(),
             BooleanField::new('is_active'),
             BooleanField::new('is_accepted')
-                ->renderAsSwitch(false),
+                ->renderAsSwitch(false)
+                ->onlyOnDetail(),
             DateTimeField::new('accepted_on')
-                ->onlyOnForms(),
+                ->onlyOnDetail(),
             ImageField::new('image')
                 ->setRequired(false)
                 ->setBasePath('media/projects')
