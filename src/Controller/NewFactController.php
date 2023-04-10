@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Fact;
 use App\Form\FactFormType;
 use App\Repository\FactRepository;
+use App\Repository\FactRepositoryInterface;
 use App\Repository\ProjectRepository;
+use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,16 +18,16 @@ class NewFactController extends AbstractController
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly ProjectRepository $projectRepository,
-        private readonly FactRepository $factRepository,
+        private readonly ProjectRepositoryInterface $projectRepository,
+        private readonly FactRepositoryInterface $factRepository,
     ) {
     }
 
-    #[Route('/new-fact/{projectId}', name: 'app_new_fact')]
-    public function __invoke(Request $request, $projectId): Response
+    #[Route('/new-fact/{slug}', name: 'app_new_fact')]
+    public function __invoke(Request $request, $slug): Response
     {
-        $project = $this->projectRepository->findOneBy(['id' => $projectId]);
-        $facts = $this->factRepository->findBy(['project' => $projectId]);
+        $project = $this->projectRepository->findOneBySlugOrFail($slug);
+        $facts = $this->factRepository->findAllByProjectIdOrFail($project->getId());
         $fact = new Fact();
         $form = $this->createForm(FactFormType::class, $fact);
 
@@ -45,7 +47,7 @@ class NewFactController extends AbstractController
                 $this->entityManager->flush();
             }
 
-            return $this->redirectToRoute($nextAction, ['projectId' => $project->getId()]);
+            return $this->redirectToRoute($nextAction, ['slug' => $project->getSlug()]);
         }
 
         return $this->render('new-fact/new-fact.html.twig',

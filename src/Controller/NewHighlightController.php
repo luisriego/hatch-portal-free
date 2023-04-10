@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Highlight;
 use App\Form\HighlightFormType;
 use App\Repository\HighlightRepository;
+use App\Repository\HighlightRepositoryInterface;
 use App\Repository\ProjectRepository;
+use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,16 +18,19 @@ class NewHighlightController extends AbstractController
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly ProjectRepository $projectRepository,
-        private readonly HighlightRepository $highlightRepository,
+        private readonly ProjectRepositoryInterface $projectRepository,
+        private readonly HighlightRepositoryInterface $highlightRepository,
     ) {
     }
 
-    #[Route('/new-highlight/{projectId}', name: 'app_new_highlight')]
-    public function __invoke(Request $request, $projectId): Response
+    /**
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    #[Route('/new-highlight/{slug}', name: 'app_new_highlight')]
+    public function __invoke(Request $request, $slug): Response
     {
-        $project = $this->projectRepository->findOneBy(['id' => $projectId]);
-        $highlights = $this->highlightRepository->findBy(['project' => $projectId]);
+        $project = $this->projectRepository->findOneBySlugOrFail($slug);
+        $highlights = $this->highlightRepository->findAllByProjectIdOrFail($project->getId());
         $highlight = new Highlight();
         $form = $this->createForm(HighlightFormType::class, $highlight);
 
@@ -45,7 +50,7 @@ class NewHighlightController extends AbstractController
                 $this->entityManager->flush();
             }
 
-            return $this->redirectToRoute($nextAction, ['projectId' => $project->getId()]);
+            return $this->redirectToRoute($nextAction, ['slug' => $project->getSlug()]);
         }
 
         return $this->render('new-highlight/new-highlight.html.twig',

@@ -6,6 +6,7 @@ use App\Entity\Fact;
 use App\Form\FactFormType;
 use App\Repository\FactRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -17,14 +18,14 @@ class AcceptConditionsController extends AbstractController
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly ProjectRepository $projectRepository,
+        private readonly ProjectRepositoryInterface $projectRepository,
     ) {
     }
 
-    #[Route('/accept/conditions/{projectId}', name: 'app_accept_conditions')]
-    public function __invoke(Request $request, $projectId): Response
+    #[Route('/accept/conditions/{slug}', name: 'app_accept_conditions')]
+    public function __invoke(Request $request, $slug): Response
     {
-        $project = $this->projectRepository->findOneBy(['id' => $projectId]);
+        $project = $this->projectRepository->findOneBySlugOrFail($slug);
 
         $defaultData = ['message' => 'Type your message here'];
         $form = $this->createFormBuilder($defaultData)
@@ -56,7 +57,7 @@ class AcceptConditionsController extends AbstractController
                 $this->entityManager->flush();
             }
 
-            return $this->redirectToRoute('app_homepage', ['projectId' => $project->getId()]);
+            return $this->redirectToRoute('app_homepage');
         }
         return $this->render('accept_conditions/accept-conditions.html.twig', [
             'breadcrumb' => 'Condições para publicação e aceitação',

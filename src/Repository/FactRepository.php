@@ -6,15 +6,7 @@ use App\Entity\Fact;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @extends ServiceEntityRepository<Fact>
- *
- * @method Fact|null find($id, $lockMode = null, $lockVersion = null)
- * @method Fact|null findOneBy(array $criteria, array $orderBy = null)
- * @method Fact[]    findAll()
- * @method Fact[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
-class FactRepository extends ServiceEntityRepository
+class FactRepository extends ServiceEntityRepository implements FactRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -39,20 +31,15 @@ class FactRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Fact[] Returns an array of Fact objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('f.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findAllByProjectIdOrFail(string $id): ?array
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.project = :project')
+            ->setParameter('project', $id)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
 //    public function findOneBySomeField($value): ?Fact
 //    {

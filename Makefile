@@ -14,7 +14,7 @@ start: ## Start the containers
 	docker network create lab-network || true
 	cp -n docker-compose.yml.dist docker-compose.yml || true
 	cp -n .env.dist .env || true
-	U_ID=${UID} docker-compose up -d
+	U_ID=${UID} docker-compose up -d --remove-orphans
 
 stop: ## Stop the containers
 	U_ID=${UID} docker-compose stop

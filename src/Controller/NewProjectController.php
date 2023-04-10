@@ -6,6 +6,7 @@ use App\Entity\Project;
 use App\Form\ProjectFormType;
 use App\Repository\AreaRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
@@ -18,7 +19,7 @@ class NewProjectController extends AbstractController
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
         private readonly AreaRepository $areaRepo,
-        private readonly ProjectRepository $projectRepository)
+        private readonly ProjectRepositoryInterface $projectRepository)
     {
     }
 
@@ -48,11 +49,9 @@ class NewProjectController extends AbstractController
 
                 $this->entityManager->persist($project);
                 $this->entityManager->flush();
-
-                return $this->redirectToRoute('app_new_challenge', ['projectId' => $project->getId()]);
             }
 
-            return $this->redirectToRoute('app_new_challenge', ['projectId' => $result->getId()]);
+            return $this->redirectToRoute('app_new_challenge', ['slug' => $project->getSlug()]);
         }
 
         return $this->render('new-project/new-project.html.twig',
