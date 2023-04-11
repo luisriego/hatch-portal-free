@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Solution;
 use App\Form\SolutionFormType;
 use App\Repository\ProjectRepository;
+use App\Repository\ProjectRepositoryInterface;
 use App\Repository\SolutionRepository;
+use App\Repository\SolutionRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,16 +18,16 @@ class NewSolutionController extends AbstractController
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly ProjectRepository $projectRepository,
-        private readonly SolutionRepository $solutionRepository,
+        private readonly ProjectRepositoryInterface $projectRepository,
+        private readonly SolutionRepositoryInterface $solutionRepository,
     ) {
     }
 
-    #[Route('/new-solution/{projectId}', name: 'app_new_solution')]
-    public function __invoke(Request $request, $projectId): Response
+    #[Route('/new-solution/{slug}', name: 'app_new_solution')]
+    public function __invoke(Request $request, $slug): Response
     {
-        $project = $this->projectRepository->findOneBy(['id' => $projectId]);
-        $solutions = $this->solutionRepository->findBy(['project' => $projectId]);
+        $project = $this->projectRepository->findOneBySlugOrFail($slug);
+        $solutions = $this->solutionRepository->findBy(['project' => $project->getId()]);
         $solution = new Solution();
         $form = $this->createForm(SolutionFormType::class, $solution);
 
@@ -45,7 +47,7 @@ class NewSolutionController extends AbstractController
                 $this->entityManager->flush();
             }
 
-            return $this->redirectToRoute($nextAction, ['projectId' => $project->getId()]);
+            return $this->redirectToRoute($nextAction, ['slug' => $project->getSlug()]);
         }
 
         return $this->render('new-solution/new-solution.html.twig',

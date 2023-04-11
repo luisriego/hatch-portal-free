@@ -6,6 +6,7 @@ use App\Entity\Challenge;
 use App\Form\ChallengeFormType;
 use App\Repository\ChallengeRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,16 +17,16 @@ class NewChallengeController extends AbstractController
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
-        private readonly ProjectRepository $projectRepository,
+        private readonly ProjectRepositoryInterface $projectRepository,
         private readonly ChallengeRepository $challengeRepository,
     ) {
     }
 
-    #[Route('/new-challenge/{projectId}', name: 'app_new_challenge')]
-    public function __invoke(Request $request, $projectId): Response
+    #[Route('/new-challenge/{slug}', name: 'app_new_challenge')]
+    public function __invoke(Request $request, $slug): Response
     {
-        $project = $this->projectRepository->findOneBy(['id' => $projectId]);
-        $challenges = $this->challengeRepository->findBy(['project' => $projectId]);
+        $project = $this->projectRepository->findOneBySlugOrFail($slug);
+        $challenges = $this->challengeRepository->findBy(['project' => $project->getId()]);
         $challenge = new Challenge();
         $form = $this->createForm(ChallengeFormType::class, $challenge);
 
@@ -45,7 +46,7 @@ class NewChallengeController extends AbstractController
                 $this->entityManager->flush();
             }
 
-            return $this->redirectToRoute($nextAction, ['projectId' => $project->getId()]);
+            return $this->redirectToRoute($nextAction, ['slug' => $project->getSlug()]);
         }
 
         return $this->render('new-challenge/new-challenge.html.twig',
