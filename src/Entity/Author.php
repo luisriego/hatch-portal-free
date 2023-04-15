@@ -41,12 +41,16 @@ class Author
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'author')]
+    private Collection $projects;
+
     public function __construct()
     {
         $this->isActive = false;
         $this->createdOn = new \DateTimeImmutable();
         $this->markAsUpdated();
         $this->blogs = new ArrayCollection();
+        $this->projects = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -159,5 +163,32 @@ class Author
     public function __toString(): string
     {
         return $this->getName().' '.$this->getSurname();
+    }
+
+    /**
+     * @return Collection<int, Project>
+     */
+    public function getProjects(): Collection
+    {
+        return $this->projects;
+    }
+
+    public function addProject(Project $project): self
+    {
+        if (!$this->projects->contains($project)) {
+            $this->projects->add($project);
+            $project->addAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProject(Project $project): self
+    {
+        if ($this->projects->removeElement($project)) {
+            $project->removeAuthor($this);
+        }
+
+        return $this;
     }
 }

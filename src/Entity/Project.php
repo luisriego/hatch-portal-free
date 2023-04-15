@@ -72,6 +72,9 @@ class Project
     #[ORM\Column(length: 255, unique: true)]
     private ?string $slug = null;
 
+    #[ORM\ManyToMany(targetEntity: Author::class, inversedBy: 'projects')]
+    private Collection $author;
+
     public function __construct()
     {
         $this->isActive = false;
@@ -82,6 +85,7 @@ class Project
         $this->challenges = new ArrayCollection();
         $this->solutions = new ArrayCollection();
         $this->highlights = new ArrayCollection();
+        $this->author = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -312,6 +316,7 @@ class Project
 
     public function setSlug(string $slug): self
     {
+
         $this->slug = $slug;
 
         return $this;
@@ -320,12 +325,36 @@ class Project
     public function computeSlug(SluggerInterface $slugger)
     {
         if (!$this->slug || '_' === $this->slug) {
-            $this->slug = (string) $slugger->slug((string) $this)->lower();
+            $this->slug = (string) $slugger->slug($this->getTitle() . '_' . $this->getSubtitle() . '_' . $this->getLocation(), '_')->lower();
         }
     }
 
     public function __toString(): string
     {
         return $this->getTitle();
+    }
+
+    /**
+     * @return Collection<int, Author>
+     */
+    public function getAuthor(): Collection
+    {
+        return $this->author;
+    }
+
+    public function addAuthor(Author $author): self
+    {
+        if (!$this->author->contains($author)) {
+            $this->author->add($author);
+        }
+
+        return $this;
+    }
+
+    public function removeAuthor(Author $author): self
+    {
+        $this->author->removeElement($author);
+
+        return $this;
     }
 }
