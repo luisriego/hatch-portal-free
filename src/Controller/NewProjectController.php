@@ -36,7 +36,6 @@ class NewProjectController extends AbstractController
         }
         if (count($projects) === 1) {
             $project = $projects[0];
-            dd($project->getArea()->getName());
         }
 
         $form = $this->createForm(ProjectFormType::class, $project);
