@@ -93,4 +93,16 @@ class Comment
 
         return $this;
     }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'text' => $this->text,
+            'name' => $this->name,
+            'email' => $this->email,
+            'createdOn' => $this->createdOn->format(\DateTime::RFC3339),
+            'updatedOn' => $this->updatedOn->format(\DateTime::RFC3339),
+        ];
+    }
 }
