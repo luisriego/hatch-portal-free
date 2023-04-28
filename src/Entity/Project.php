@@ -6,6 +6,7 @@ use App\Repository\ProjectRepository;
 use App\Trait\IsAcceptedTrait;
 use App\Trait\IsActiveTrait;
 use App\Trait\TimestampableTrait;
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -79,7 +80,7 @@ class Project
     {
         $this->isActive = false;
         $this->status = 0;
-        $this->createdOn = new \DateTimeImmutable();
+        $this->createdOn = new DateTimeImmutable();
         $this->markAsUpdated();
         $this->fact = new ArrayCollection();
         $this->challenges = new ArrayCollection();
