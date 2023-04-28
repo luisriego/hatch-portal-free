@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BlogRepository;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -164,5 +165,18 @@ class Blog
         }
 
         return $this;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'subtitle' => $this->subtitle,
+            'owner' => $this->owner->getId(),
+            'comment' => $this->comment,
+            'photo' => $this->photo,
+            'date' => $this->date->format(DateTimeInterface::RFC3339),
+        ];
     }
 }
