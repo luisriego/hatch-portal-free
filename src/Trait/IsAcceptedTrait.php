@@ -11,7 +11,7 @@ trait IsAcceptedTrait
     #[ORM\Column(type: 'boolean')]
     protected bool $isAccepted = false;
 
-    #[ORM\Column(type: 'datetime_immutable')]
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     protected \DateTimeImmutable $acceptedOn;
 
     public function isAccepted(): bool
