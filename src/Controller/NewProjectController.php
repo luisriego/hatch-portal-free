@@ -58,6 +58,7 @@ class NewProjectController extends AbstractController
                 $project->addAuthor($author);
                 $project->setArea($this->areaRepo->findOneBy(['id' => $form['area']->getData()]));
                 $project->setStatus(1);
+                $project->setAcceptedOn(new \DateTimeImmutable());
 
                 $this->entityManager->persist($project);
                 $this->entityManager->flush();
