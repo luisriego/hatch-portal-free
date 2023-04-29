@@ -4987,7 +4987,7 @@ blockquote footer a {
     padding: 0 1.3em;
     display: block;
     color: #fff;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
     font: 600 1.36em/1em 'Open Sans Condensed', sans-serif;
