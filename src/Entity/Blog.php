@@ -3,15 +3,19 @@
 namespace App\Entity;
 
 use App\Repository\BlogRepository;
+use App\Trait\IsActiveTrait;
 use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[ORM\Entity(repositoryClass: BlogRepository::class)]
 class Blog
 {
+    use IsActiveTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -19,6 +23,9 @@ class Blog
 
     #[ORM\Column(length: 150)]
     private ?string $title = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subtitle = null;
 
     #[ORM\Column(length: 100)]
     private ?string $author = null;
@@ -29,11 +36,11 @@ class Blog
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $photo = null;
 
+    #[ORM\Column(length: 255, unique: true)]
+    private ?string $slug = null;
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $subtitle = null;
 
     #[ORM\ManyToOne(inversedBy: 'blogs')]
     #[ORM\JoinColumn(nullable: false)]
@@ -44,6 +51,7 @@ class Blog
 
     public function __construct()
     {
+        $this->isActive = false;
         $this->date = new \DateTime();
         $this->comment = new ArrayCollection();
     }
@@ -99,6 +107,26 @@ class Blog
         $this->photo = $photo;
 
         return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function computeSlug(SluggerInterface $slugger)
+    {
+        if (!$this->slug || '_' === $this->slug) {
+            $this->slug = (string) $slugger->slug($this->getTitle(), '_')->lower();
+        }
     }
 
     public function getDate(): ?\DateTimeInterface

@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Repository\BlogRepository;
+use App\Repository\BlogRepositoryInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class BlogService
 {
-    public function __construct(private readonly BlogRepository $blogRepository)
+    public function __construct(private readonly BlogRepositoryInterface $blogRepository)
     {
     }
 

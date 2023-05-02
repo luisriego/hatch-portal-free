@@ -9,6 +9,8 @@ use App\Form\CommentFormType;
 use App\Service\CommentRepeatedService;
 use App\Service\SingleBlogService;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,13 +26,13 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @throws \Doctrine\ORM\NonUniqueResultException
-     * @throws \Doctrine\ORM\NoResultException
+     * @throws NonUniqueResultException
+     * @throws NoResultException
      */
-    #[Route('/blog/{id}', name: 'app_single_blog')]
-    public function __invoke(Request $request, $id): Response
+    #[Route('/blog/{slug}', name: 'app_single_blog')]
+    public function __invoke(Request $request, $slug): Response
     {
-        $blog = $this->singleBlogService->handle($id);
+        $blog = $this->singleBlogService->handle($slug);
 
         $comment = new Comment();
         $form = $this->createForm(CommentFormType::class, $comment);
@@ -40,7 +42,7 @@ class BlogController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             if (null !== $form['text']->getData()
                 && $this->commentRepeatedService->handle(
-                    $id,
+                    $slug,
                     $form['email']->getData(),
                     $form['text']->getData())) {
                 $comment->setBlog($blog);

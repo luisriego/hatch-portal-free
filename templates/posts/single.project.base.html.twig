@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+        <div class="top-navigation-4 project-info">
+                <!-- Main Navigation-->
+                {{ include('modules/_nav.html.twig') }}
+                <!-- Main Navigation-->
+                {% block carousel %}{% endblock %}
+                <!-- =========home banner start============-->
+                {{ include('projects/_carousel-single.html.twig') }}
+                <!-- =========home banner end============-->
+        </div>
+
+        {% include "projects/_project-details.html.twig" %}
+
+        {% include "modules/_footer.html.twig" %}
+
+{% endblock %}

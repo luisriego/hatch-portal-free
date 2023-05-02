@@ -14,7 +14,11 @@ interface BlogRepositoryInterface
 
     public function findOneByIdOrFail(string $id): ?Blog;
 
+    public function findOneBySlugOrFail(string $slug): ?Blog;
+
     public function findThreeActiveOrFail(int $limit): ?array;
 
     public function getTotalNumber(): ?int;
+
+    public function getAllPostsActives(): ?array;
 }

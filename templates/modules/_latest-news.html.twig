@@ -1,13 +1,17 @@
 <!-- Lattest news-->
 <div class="container clearfix sectpad-sec">
     <div class="section_header2 common">
-        <h2>Últimos blogs</h2>
+        <h2>Últimos Posts do nosso Blog</h2>
     </div>
     <div class="row event-pad">
+        {% if blogs is empty %}
+            <h3>Nenhum Posts foi publicado ainda!</h3>
+            <p>Se você escreveu um post e ainda não aparece aqui, aguarde, em breve sera revisado</p>
+        {% endif %}
         {% for blog in blogs %}
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="news-evn-img">
-                    <a href="{{ path('app_single_blog', {id: blog.b_id}) }}" class="image_hover">
+                    <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}" class="image_hover">
                         <img src="{{ asset('media/blog/'~blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
                     </a>
                     <div class="event-date">
@@ -16,10 +20,10 @@
                 </div>
                 <div class="news-evn-cont">
                     <div class="news-meta">
-                        <a href="{{ path('app_single_blog', {id: blog.b_id}) }}">Por: {{ blog.b_author }}</a>
-                        <a href="{{ path('app_single_blog', {id: blog.b_id}) }}"> Comentários: 6</a>
+                        <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}">Por: {{ blog.b_author }}</a>
+                        <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}"> Comentários: 6</a>
                     </div>
-                    <a href="{{ path('app_single_blog', {id: blog.b_id}) }}">
+                    <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}">
                         <h3>{{ blog.b_title }}</h3>
                     </a>
                 </div>

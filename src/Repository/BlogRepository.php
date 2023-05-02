@@ -4,16 +4,10 @@ namespace App\Repository;
 
 use App\Entity\Blog;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @extends ServiceEntityRepository<Blog>
- *
- * @method Blog|null find($id, $lockMode = null, $lockVersion = null)
- * @method Blog|null findOneBy(array $criteria, array $orderBy = null)
- * @method Blog[]    findAll()
- * @method Blog[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
 class BlogRepository extends ServiceEntityRepository implements BlogRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
@@ -40,8 +34,8 @@ class BlogRepository extends ServiceEntityRepository implements BlogRepositoryIn
     }
 
     /**
-     * @throws \Doctrine\ORM\NoResultException
-     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws NoResultException
+     * @throws NonUniqueResultException
      */
     public function getTotalNumber(): ?int
     {
@@ -52,8 +46,8 @@ class BlogRepository extends ServiceEntityRepository implements BlogRepositoryIn
     }
 
     /**
-     * @throws \Doctrine\ORM\NoResultException
-     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws NoResultException
+     * @throws NonUniqueResultException
      */
     public function findOneByIdOrFail($id): ?Blog
     {
@@ -64,35 +58,38 @@ class BlogRepository extends ServiceEntityRepository implements BlogRepositoryIn
             ->getSingleResult();
     }
 
+    /**
+     * @throws NonUniqueResultException
+     * @throws NoResultException
+     */
+    public function findOneBySlugOrFail(string $slug): ?Blog
+    {
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.slug = :slug')
+            ->setParameter('slug', $slug)
+            ->getQuery()
+            ->getSingleResult();
+    }
+
     public function findThreeActiveOrFail(int $limit = 3): ?array
     {
         return $this->createQueryBuilder('b')
+            ->andWhere('b.isActive = :val')
+            ->setParameter('val', true)
             ->getQuery()
             ->getResult($limit);
     }
 
-//    /**
-//     * @return Blog[] Returns an array of Blog objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('b.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
 
-//    public function findOneBySomeField($value): ?Blog
-//    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function getAllPostsActives(): ?array
+    {
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.isActive = :val')
+            ->setParameter('val', true)
+            ->orderBy('b.date', 'ASC')
+            ->setMaxResults(9)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

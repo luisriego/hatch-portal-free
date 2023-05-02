@@ -6,21 +6,18 @@ namespace App\Service;
 
 use App\Entity\Blog;
 use App\Repository\BlogRepository;
+use App\Repository\BlogRepositoryInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SingleBlogService
 {
-    public function __construct(private readonly BlogRepository $blogRepository)
+    public function __construct(private readonly BlogRepositoryInterface $blogRepository)
     {
     }
 
-    /**
-     * @throws \Doctrine\ORM\NonUniqueResultException
-     * @throws \Doctrine\ORM\NoResultException
-     */
-    public function handle(string $id): Blog|null
+    public function handle(string $slug): Blog|null
     {
-        if (null === $result = $this->blogRepository->findOneByIdOrFail($id)) {
+        if (null === $result = $this->blogRepository->findOneBySlugOrFail($slug)) {
             throw new NotFoundHttpException();
         }
 

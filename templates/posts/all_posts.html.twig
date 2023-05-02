@@ -1,0 +1,98 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% include "posts/_header.html.twig" %}
+    <!-- Inner Header-->
+{#    <section class="inner-banner2 clearfix">#}
+{#      <div class="container clearfix">#}
+{#        <h2>Projetos</h2>#}
+{#      </div>#}
+{#    </section>#}
+    <section class="breadcumb-wrapper">
+      <div class="container clearfix">
+        <ul class="breadcumb">
+          <li><a href="{{ path('app_homepage') }}">Home</a></li>
+          <li><span>{{ breadcrumb }}</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lattest news-->
+    <div class="container clearfix sectpad-sec">
+      <div class="section_header2 common">
+        <h2>Últimas Postagens</h2>
+      </div>
+      {% for row in posts|batch(3) %}
+          <div class="row event-pad">
+              {% for blog in row %}
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                      <div class="news-evn-img">
+                          <a href="{{ path('app_single_blog', {slug: blog.slug}) }}" class="image_hover">
+                              <img src="{{ asset('media/blog/'~blog.photo) }}" alt="{{ blog.author }}" class="img-responsive zoom_img_effect">
+                          </a>
+                          <div class="event-date">
+                              <h3>{{ blog.date|date("d")}} <small>{{ blog.date|date("M")}}</small></h3>
+                          </div>
+                      </div>
+                      <div class="news-evn-cont">
+                          <div class="news-meta">
+                              <a href="{{ path('app_single_blog', {slug: blog.slug}) }}">Por: {{ blog.author }}</a>
+                              <a href="{{ path('app_single_blog', {slug: blog.slug}) }}"> Comentários: 6</a>
+                          </div>
+                          <a href="{{ path('app_single_blog', {slug: blog.slug}) }}">
+                              <h3>{{ blog.title }}</h3>
+                          </a>
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+      {% endfor %}
+    </div>
+
+
+    <!-- Project  Page-->
+    {# <section class="core-projects sectpad">
+      <div class="container clearfix">
+        <h1>Our company experts</h1>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+      </div>
+    </section> #}
+    <!-- Projects-->
+    {# <section class="project-post-area sectpad">
+      <div class="container clearfix">
+        {% for row in projects|batch(4) %}
+        <div class="project-post">
+          <div class="row">
+          {% for project in row %}
+            <div class="col-sm-4 project-post-info">
+              <div class="project-post-image">
+                <a href="{{ path('app_post', {projectId: post.id}) }}">
+                    {% if post.image is not null %}
+                        <img src="{{ asset('media/projects/'~post.image) }}" alt="{{ post.title }}">
+                    {% else %}
+                        {{ post.image }}
+                        <img src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ post.title }}" width="265" height="175">
+                    {% endif %}
+                </a>
+                <a href="{{ path('app_post', {projectId: post.id}) }}" class="four_arrow_hover_box"><span class="arrows"><span></span></span></a>
+              </div>
+              <div class="info-text">
+                <a href="{{ path('app_post', {projectId: post.id}) }}">
+                  <h4>{{ post.title }}</h4>
+                </a>
+                <p>{{ post.subtitle }}</p>
+                <p>{{ post.location }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section> #}
+
+    {% include "modules/_solution.html.twig" %}
+
+    {% include "modules/_footer.html.twig" %}
+
+{% endblock %}
