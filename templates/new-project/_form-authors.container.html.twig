@@ -1,6 +1,6 @@
 <div role="main" class="col-md-12 col-sm-8">
     <div>
-        <h1 class="pageTitle"> Inclussão de um projeto na premiação</h1>
+        <h1 class="pageTitle"> Inclusão de um Projeto</h1>
         <h3>Começemos com os dados dos criadores</h3>
     </div>
     <div class="component sitecore-form" id="">
@@ -12,7 +12,7 @@
 
                 <div class="font-weight-bold">
                     <div class="col-md-4 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
-                        {{ form_label(author_form.name, 'Nome do responsáavel *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+                        {{ form_label(author_form.name, 'Nome do responsável *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
                         {{ form_widget(author_form.name, {
                             'attr': {
                                 'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
@@ -22,7 +22,7 @@
                         {{ form_help(author_form.name, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
                     </div>
                     <div class="col-md-7 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="title">
-                        {{ form_label(author_form.surname, 'Sobrenome do responsáavel *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+                        {{ form_label(author_form.surname, 'Sobrenome do responsável *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
                         {{ form_widget(author_form.surname, { 'attr': {
                             'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
                             'data-action': 'blur->project#titleBtn'
@@ -30,7 +30,7 @@
                         {{ form_help(author_form.surname, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
                     </div>
                     <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="subtitle">
-                        {{ form_label(author_form.resume, 'Lista dos envolvidos, cada um em uma linha', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+                        {{ form_label(author_form.resume, 'Lista dos envolvidos, um por linha', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
                         {{ form_widget(author_form.resume, { 'attr': {
                             'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
                             'data-action': 'blur->project#subtitleBtn'
@@ -38,7 +38,7 @@
                         {{ form_help(author_form.resume, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
                     </div>
                     <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="location">
-                        {{ form_label(author_form.position, 'Cargo que ocupa no projeto o responsável pela inscrição *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+                        {{ form_label(author_form.position, 'Cargo ocupado pelo responsável no Projeto *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
                         {{ form_widget(author_form.position, { 'attr': {
                             'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
                             'data-action': 'blur->project#locationBtn'
@@ -46,7 +46,7 @@
                         {{ form_help(author_form.position, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
                     </div>
                     <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content">
-                        {{ form_label(author_form.email, 'e-mail do responsáavel *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+                        {{ form_label(author_form.email, 'E-mail do responsável *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
                         {{ form_widget(author_form.email, { 'attr': {'class': 'form-control text-box single-line hatch-form-control font-weight-bold', 'required': false} }) }}
                         {{ form_help(author_form.email, { 'attr': {'class': 'help-block font-weight-bold',} }) }}
                     </div>
