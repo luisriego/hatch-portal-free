@@ -11,10 +11,10 @@ docker-compose.yml
 /config/secrets/prod/prod.decrypt.private.php
 /public/build
 /public/bundles/
-/public/media/news
-/public/media/projects
+#/public/media/news
+#/public/media/projects
 # /public/media/blog
-/public/media/blogs
+#/public/media/blogs
 /var/
 /vendor/
 /migrations/
