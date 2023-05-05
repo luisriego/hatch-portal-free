@@ -1,12 +1,16 @@
-{% extends "base.html.twig" %}
+ {% extends "base.html.twig" %}
 
 {% block body %}
     {% include "homepage/_header.html.twig" %}
 
     {% include "modules/_latest-news.html.twig" %}
 
+    {% include "modules/_podcast.html.twig" %}
+
+    {% include "modules/_faq.html.twig" %}
+
     {% include "modules/_solution.html.twig" %}
-    
+
     {% include "modules/_footer.html.twig" %}
 
 {% endblock %}
