@@ -51,7 +51,7 @@ class NewChallengeController extends AbstractController
 
         return $this->render('new-challenge/new-challenge.html.twig',
             [
-                'breadcrumb' => 'Add Challenge',
+                'breadcrumb' => 'Desafios do Projeto',
                 'challenges' => $challenges,
                 'project_form' => $form->createView(),
                 'project' => $project,

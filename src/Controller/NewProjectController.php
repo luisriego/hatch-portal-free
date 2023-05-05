@@ -71,7 +71,7 @@ class NewProjectController extends AbstractController
 
         return $this->render('new-project/new-project.html.twig',
             [
-                'breadcrumb' => 'Add project',
+                'breadcrumb' => 'Registre seu projeto',
                 'project_form' => $form->createView(),
             ]);
     }
