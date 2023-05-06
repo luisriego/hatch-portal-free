@@ -11,8 +11,12 @@
         {% for blog in blogs %}
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="news-evn-img">
-                    <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}" class="image_hover">
-                        <img src="{{ asset('media/blog/'~blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
+                    <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}" class="image_hover text-center">
+                        {% if blog.photo is defined %}
+                            <img src="{{ asset('media/blog/'~blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
+                        {% else %}
+                            <img src="{{ asset('media/blog/avatar.jpg') }}" alt="avatar padrão" class="img-responsive zoom_img_effect">
+                        {% endif %}
                     </a>
                     <div class="event-date">
                         <h3>{{ blog.b_date|date("d")}} <small>{{ blog.b_date|date("M")}}</small></h3>
