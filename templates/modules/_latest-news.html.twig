@@ -12,7 +12,7 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="news-evn-img">
                     <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}" class="image_hover text-center">
-                        {% if blog.photo is defined %}
+                        {% if blog.b_photo is not null %}
                             <img src="{{ asset('media/blog/'~blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
                         {% else %}
                             <img src="{{ asset('media/blog/avatar.jpg') }}" alt="avatar padrão" class="img-responsive zoom_img_effect">
@@ -25,7 +25,7 @@
                 <div class="news-evn-cont">
                     <div class="news-meta">
                         <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}">Por: {{ blog.b_author }}</a>
-                        <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}"> Comentários: 6</a>
+                        <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}"> Comentários: </a>
                     </div>
                     <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}">
                         <h3>{{ blog.b_title }}</h3>

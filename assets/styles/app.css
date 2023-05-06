@@ -69,7 +69,7 @@ footer.row {
     position: relative;
 }
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -268,7 +268,7 @@ body {
 
 .wel-band {
     background: #093660;
-    font: 300 1em/1em "Open Sans", sans-serif;
+    font: 300 1em/1em "Source Sans Pro", sans-serif;
     color: #6e6e6e;
 }
 .wel-band-bg {
@@ -278,12 +278,12 @@ body {
     background-size: cover;
 }
 .wel-band-bg p {
-    font: 400 1.1em/1em "Open Sans", sans-serif;
+    font: 400 1.1em/1em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0;
 }
 .top-w-text p {
-    font: 400 1.1em/1em "Open Sans", sans-serif;
+    font: 400 1.1em/1em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -337,7 +337,7 @@ body {
     color: #232932;
     padding: 0;
     margin: 0;
-    font: 400 1.072em/0.8em "Open Sans", sans-serif;
+    font: 400 1.072em/0.8em "Source Sans Pro", sans-serif;
 }
 .media-body p span {
     color: #9692a0;
@@ -361,7 +361,7 @@ body {
     height: 37px;
     border-radius: 0;
     border: none;
-    font: 1em/1em "Open Sans", sans-serif;
+    font: 1em/1em "Source Sans Pro", sans-serif;
     padding: 0 15px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -690,7 +690,7 @@ body {
     line-height: 28px;
     color: #fff;
     text-transform: uppercase;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 500;
     padding: 10px 0px;
     padding-left: 27px;
@@ -835,7 +835,7 @@ body {
     overflow: hidden;
 }
 .wel-info h1 {} .wel-info h1 {
-                    font: 600 2.4em/1em "Alegreya", serif;
+                    font: 600 2.4em/1em "Source Sans Pro", serif;
                     color: #282c3d;
                     margin: 0 0 0.8em;
                     text-transform: uppercase;
@@ -843,7 +843,7 @@ body {
 .wel-info p {
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #777777;
 }
@@ -859,7 +859,7 @@ body {
     width: 104px;
 }
 .wel-bot h2 {
-    font: 400 1.5em/1.2em "Open Sans", sans-serif;
+    font: 400 1.5em/1.2em "Source Sans Pro", sans-serif;
     color: #e84a37;
     margin: 0;
     padding: 0;
@@ -897,7 +897,7 @@ body {
     margin: 2em;
 }
 .wel-ind-r-txt p {
-    font: 400 1.5em/1.2em "Open Sans", sans-serif;
+    font: 400 1.5em/1.2em "Source Sans Pro", sans-serif;
     font-style: italic;
 }
 .wel-ind-r-img {
@@ -930,7 +930,7 @@ body {
     padding: 0 0 3em;
 }
 .section_header h2 {
-    font: bold 28px "Alegreya", serif;
+    font: bold 28px "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
@@ -961,7 +961,7 @@ body {
 .service-info a h4 {
     border-bottom: 2px solid #19a3b8;
     color: #242424;
-    font: 600 1.3em/1.5em "Open Sans", sans-serif;
+    font: 600 1.3em/1.5em "Source Sans Pro", sans-serif;
     text-transform: uppercase;
     padding: 0 0 0.5em;
     -webkit-transition: all 300ms linear 0s;
@@ -973,7 +973,7 @@ body {
 }
 .service-info p {
     color: #898989;
-    font: 400 1.1em/1.6em "Open Sans", sans-serif;
+    font: 400 1.1em/1.6em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 1em 0 0.5em;
 }
@@ -981,7 +981,7 @@ body {
 .service-info p a {
     color: #0fa2d9;
     text-transform: uppercase;
-    font: 13px "Open Sans", sans-serif;
+    font: 13px "Source Sans Pro", sans-serif;
     font-weight: bold;
 }
 .service-info h6 a:hover,
@@ -1088,18 +1088,18 @@ body {
 }
 .service-content ul .item .media .media-body {
     text-align: left;
-    font: 1em/1em "Open Sans", sans-serif;
+    font: 1em/1em "Source Sans Pro", sans-serif;
     color: #898989;
     letter-spacing: 0.3px;
     padding: 0 17em 0 0;
 }
 .service-content ul .item .media .media-body h4 {
-    font: 600 1.3em/1em "Open Sans", sans-serif;
+    font: 600 1.3em/1em "Source Sans Pro", sans-serif;
     color: #fff;
     text-transform: uppercase;
 }
 .service-content ul .item .media .media-body p {
-    font: 1em/1.5em "Open Sans", sans-serif;
+    font: 1em/1.5em "Source Sans Pro", sans-serif;
     color: #fff;
 }
 .nau-head {
@@ -1108,12 +1108,12 @@ body {
     width: 18em;
     bottom: 1em;
     text-align: left;
-    font-family: "Raleway", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     padding: 1em 0 0 2em;
     right: 0;
 }
 .nau-head p {
-    font: 600 1.3em/1em "Raleway", sans-serif;
+    font: 600 1.3em/1em "Source Sans Pro", sans-serif;
     color: #000;
     text-transform: uppercase;
 }
@@ -1267,7 +1267,7 @@ img {
 .our-pro-slider .pro-sliders .pro-web h4 {
     color: #fff;
     text-transform: uppercase;
-    font: 600 1.3em/1em "Open Sans", sans-serif;
+    font: 600 1.3em/1em "Source Sans Pro", sans-serif;
     -webkit-transition: all 300ms linear 0s;
     transition: all 300ms linear 0s;
     margin: 0;
@@ -1342,7 +1342,7 @@ img {
     display: inline-block;
 }
 .testimonial-sec .testimonial-slider p {
-    font: 1.15em/2em "Open Sans", sans-serif;
+    font: 1.15em/2em "Source Sans Pro", sans-serif;
     color: #fff;
     padding: 0;
     margin: 2em;
@@ -1424,12 +1424,12 @@ img {
     bottom: 0;
 }
 .lat-news-outer .lat-img-box .latest-info-date h3 {
-    font: 600 25px/21px "Open Sans", sans-serif;
+    font: 600 25px/21px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
 }
 .lat-news-outer .lat-img-box .latest-info-date h3 small {
-    font: 500 14px/21px "Open Sans", sans-serif;
+    font: 500 14px/21px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     text-transform: uppercase;
@@ -1441,7 +1441,7 @@ img {
     padding: 0 2em;
 }
 .lat-news-outer .lat-new-cont h3 {
-    font: 600 16px/26px "Open Sans", sans-serif;
+    font: 600 16px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #000;
     margin-top: 0;
@@ -1451,14 +1451,14 @@ img {
 }
 .lat-news-outer .lat-new-cont p {
     border-bottom: 1px solid #e7e7e7;
-    font: 400 1em/1.4em "Open Sans", sans-serif;
+    font: 400 1em/1.4em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #898989;
     padding-bottom: 15px;
     margin-bottom: 13px;
 }
 .latest-meta a {
-    font: normal 1em/1em "Open Sans", sans-serif;
+    font: normal 1em/1em "Source Sans Pro", sans-serif;
     color: #c1c1c1;
     padding-right: 13px;
 }
@@ -1494,12 +1494,12 @@ img {
     bottom: 0;
 }
 .latest .latest-image .latest-info-date h3 {
-    font: 600 1.5em/1em "Open Sans", sans-serif;
+    font: 600 1.5em/1em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
 }
 .latest .latest-image .latest-info-date h3 small {
-    font: 500 1em/1em "Open Sans", sans-serif;
+    font: 500 1em/1em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     text-transform: uppercase;
@@ -1510,7 +1510,7 @@ img {
     background: #fff;
 }
 .latest .latest-news-text h4 {
-    font: 600 16px/26px "Open Sans", sans-serif;
+    font: 600 16px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #000;
     margin-top: 0;
@@ -1520,14 +1520,14 @@ img {
 }
 .latest .latest-news-text p {
     border-bottom: 1px solid #e7e7e7;
-    font: 400 14px/26px "Open Sans", sans-serif;
+    font: 400 14px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #898989;
     padding-bottom: 15px;
     margin-bottom: 13px;
 }
 .latest .latest-image .latest-info-date h3 small {
-    font: 500 14px/21px "Open Sans", sans-serif;
+    font: 500 14px/21px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     text-transform: uppercase;
@@ -1562,7 +1562,7 @@ img {
     padding: 1.5em 0;
 }
 .indurial-solution-text h2 {
-    font: 600 2em/1em "Open Sans", sans-serif;
+    font: 600 2em/1em "Source Sans Pro", sans-serif;
     letter-spacing: 0.4px;
     color: #fff;
     font-style: italic;
@@ -1583,7 +1583,7 @@ img {
     background: #19242a;
     color: #fff;
     display: inline-block;
-    font: 500 1em/1em "Open Sans", sans-serif;
+    font: 500 1em/1em "Source Sans Pro", sans-serif;
     margin-top: 1px;
     padding: 0px 17px 0px 23px;
     text-transform: uppercase;
@@ -1648,7 +1648,7 @@ img {
 .about-us-widget h4,
 .get-in-touch h4,
 .widget-links h4 {
-    font: 600 20px "Open Sans", sans-serif;
+    font: 600 20px "Source Sans Pro", sans-serif;
     color: #fff;
     margin-top: 0px;
     text-transform: uppercase;
@@ -1666,7 +1666,7 @@ img {
     margin-top: 13px;
 }
 .follow-us h4 {
-    font: 600 20px "Open Sans", sans-serif;
+    font: 600 20px "Source Sans Pro", sans-serif;
     color: #fff;
     margin-top: 0px;
     text-transform: uppercase;
@@ -1699,7 +1699,7 @@ img {
     color: #627279;
     width: -webkit-calc(100% - 34px);
     width: calc(100% - 34px);
-    font: 400 1em/1.4em "Open Sans", sans-serif;
+    font: 400 1em/1.4em "Source Sans Pro", sans-serif;
     padding: 1.1em 0 0;
 }
 .widget.widget-contact ul li .fleft span {
@@ -1727,7 +1727,7 @@ img {
 }
 .footer-bottom .fo-txt p {
     color: #555759;
-    font: 400 1em/1em "Open Sans", sans-serif;
+    font: 400 1em/1em "Source Sans Pro", sans-serif;
 }
 .footer-bottom .fo-txt p a {
     color: #1d8898;
@@ -1765,7 +1765,7 @@ img {
     background-size: cover;
 }
 .inner-banner h2 {
-    font: 600 2.4em/1em "Alegreya", serif;
+    font: 600 2.4em/1em "Source Sans Pro", serif;
     text-transform: uppercase;
     color: #fff;
 }
@@ -1823,7 +1823,7 @@ img {
     background-size: cover;
 }
 .inner-banner2 h2 {
-    font: 600 4.3em/1em "Alegreya", serif;
+    font: 600 4.3em/1em "Source Sans Pro", serif;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -1915,7 +1915,7 @@ img {
 }
 .about-tab-box .tab-title-box ul li a {
     text-align: left;
-    font: 500 1.54em/1em "Open Sans", sans-serif;
+    font: 500 1.54em/1em "Source Sans Pro", sans-serif;
     display: block;
     font-weight: bold;
     color: #242424;
@@ -1927,7 +1927,7 @@ img {
     margin-left: 20px;
 }
 .about-tab-box .single-tab-content h2 {
-    font: bold 2.2em/1.2em "Alegreya", serif;
+    font: bold 2.2em/1.2em "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
@@ -1955,7 +1955,7 @@ img {
 .about-tab-box .single-tab-content p {
     color: #8E8D8D;
     margin: 0 0 1em;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
 }
 .about-tab-box .single-tab-content ul li {
     color: #333E56;
@@ -2036,14 +2036,14 @@ img {
     }
 }
 .features-section .features-area .features h4 {
-    font: 700 16px/26px "Raleway", sans-serif;
+    font: 700 16px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 8px;
 }
 .features-section .features-area .features p {
-    font: 500 14px/26px "Raleway", sans-serif;
+    font: 500 14px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     margin-bottom: 40px;
@@ -2153,13 +2153,13 @@ img {
     margin: 5px 0 0;
 }
 .team .team-content h4 {
-    font: 400 1.15em/1em "Open Sans", sans-serif;
+    font: 400 1.15em/1em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #242424;
     margin: 0;
 }
 .team .team-content p {
-    font: 400 14px/22px "Open Sans", sans-serif;
+    font: 400 14px/22px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #898989;
     margin: 0;
@@ -2393,7 +2393,7 @@ img {
     }
 }
 .testimonial .media-body p {
-    font: 400 14px/26px "Open Sans", sans-serif;
+    font: 400 14px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #898989;
     margin-bottom: 5px;
@@ -2413,7 +2413,7 @@ img {
     margin-right: 16px;
 }
 .testimonial .media-body a {
-    font: 300 14px/26px "Open Sans", sans-serif;
+    font: 300 14px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #c89551;
     font-style: italic;
@@ -2434,7 +2434,7 @@ img {
 ============================== */
 
 .service-tab-box h1 {
-    font: bold 2.2em/1.2em "Alegreya", serif;
+    font: bold 2.2em/1.2em "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
@@ -2454,7 +2454,7 @@ img {
 .service-tab-box p {
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #777777;
 }
@@ -2462,7 +2462,7 @@ img {
     color: #242424;
     margin: 0 0 0.5em;
     padding: 0;
-    font: 400 1.4em/1.8em "Open Sans", sans-serif;
+    font: 400 1.4em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
 }
 .service-tab-box ul.c-brochure {
@@ -2475,7 +2475,7 @@ img {
 }
 .service-tab-box ul.c-brochure li a {
     color: #fff;
-    font: 400 1.2em/1.2em "Open Sans", sans-serif;
+    font: 400 1.2em/1.2em "Source Sans Pro", sans-serif;
 }
 .service-tab-box ul.c-brochure li a span {
     display: inline-block;
@@ -2547,7 +2547,7 @@ img {
 .single-sidebar-widget .sec-title h2 span {
     font-size: 20px;
     text-transform: uppercase;
-    font: 600 0.8em/1em "Alegreya", serif;
+    font: 600 0.8em/1em "Source Sans Pro", serif;
 }
 .single-sidebar-widget .sec-title h2:after {
     width: 35px;
@@ -2816,7 +2816,7 @@ img {
     background: url("../images/services/bg-envelope.jpg") right bottom no-repeat;
 }
 .single-service-contact h3 {
-    font-family: "Alegreya", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 25px;
     color: #3e3e3e;
     margin: 0;
@@ -2829,7 +2829,7 @@ img {
     margin: 0 0 25px 0;
 }
 .single-service-contact a {
-    font-family: "Raleway", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 14px;
     font-weight: bold;
     color: #3dc1ea;
@@ -2930,7 +2930,7 @@ img {
     color: #898989;
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
 }
 .single-service-page .image-caption-box .text-box h2,
@@ -2940,7 +2940,7 @@ img {
     font-weight: bold;
     text-transform: capitalize;
     margin-bottom: 5px;
-    font-family: "Alegreya", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 /* ==============================
   21. Single service page styles
@@ -2966,7 +2966,7 @@ img {
     color: #898989;
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
 }
 .single-service-page .image-caption-box .caption-box-img,
@@ -2985,7 +2985,7 @@ img {
     margin: 0;
 }
 .core-projects h1 {
-    font: bold 1.9em/1.2em "Alegreya", serif;
+    font: bold 1.9em/1.2em "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
@@ -3003,13 +3003,13 @@ img {
     bottom: 0;
 }
 .core-projects h4 {
-    font: 600 1.2em/1em "Open Sans", sans-serif;
+    font: 600 1.2em/1em "Source Sans Pro", sans-serif;
     color: #242424;
 }
 .core-projects p {
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     /*color: #f1f1f1;*/
     color: inherit;
@@ -3093,7 +3093,7 @@ img {
     bottom: 37%;
 }
 .project-post-info .info-text h4 {
-    font: 700 16px "Open Sans", sans-serif;
+    font: 700 16px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     margin: 0;
@@ -3103,7 +3103,7 @@ img {
     margin: 0 0 20px 0;
 }
 .project-post-info .info-text a {
-    font: 700 14px "Open Sans", sans-serif;
+    font: 700 14px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     margin: 50px 0;
@@ -3114,7 +3114,7 @@ img {
     height: 38px;
     display: inline-block;
     text-transform: uppercase;
-    /* font: 700 14px "Open Sans", sans-serif;
+    /* font: 700 14px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
     margin: 0;
@@ -3173,7 +3173,7 @@ img {
     height: 45px;
     border-radius: 0;
     border: none;
-    font: 1em/1em "Open Sans", sans-serif;
+    font: 1em/1em "Source Sans Pro", sans-serif;
     padding: 0 30px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3258,7 +3258,7 @@ img {
 }
 .single-blog-post h6 {
     color: #1cbac8;
-    font: 400 1em/1em "Open Sans", sans-serif;
+    font: 400 1em/1em "Source Sans Pro", sans-serif;
     margin: 2em 0 0;
     padding: 0;
 }
@@ -3304,7 +3304,7 @@ img {
 ============================== */
 
 .news p {
-    font: 400 14px/26px "Open Sans", sans-serif;
+    font: 400 14px/26px "Source Sans Pro", sans-serif;
     color: #898989;
 }
 .post-list {
@@ -3314,7 +3314,7 @@ img {
 .post-list li {
     float: left;
     width: 270px;
-    font: 400 14px/30px "Open Sans", sans-serif;
+    font: 400 14px/30px "Source Sans Pro", sans-serif;
     color: #ff8c04;
     letter-spacing: 0.3px;
 }
@@ -3355,7 +3355,7 @@ blockquote:before {
 }
 blockquote p {
     float: left;
-    font: 400 16px/26px "Open Sans", sans-serif;
+    font: 400 16px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #898989;
     width: -webkit-calc(100% - 70px);
@@ -3371,7 +3371,7 @@ blockquote p {
 blockquote footer {
     text-align: right;
     color: #e8a20c;
-    font: 300 14px/26px "Raleway", sans-serif;
+    font: 300 14px/26px "Source Sans Pro", sans-serif;
     font-style: italic;
 }
 blockquote footer a {
@@ -3384,7 +3384,7 @@ blockquote footer a {
 .news-comments .comments_count,
 .leave-comments .leave-comment-title {
     margin: 30px 0px 30px 0;
-    font: 600 1.5em/1em "Alegreya", sans-serif;
+    font: 600 1.5em/1em "Source Sans Pro", sans-serif;
     color: #242424;
     text-transform: uppercase;
 }
@@ -3439,12 +3439,12 @@ blockquote footer a {
     }
 }
 .comments .comment .media-body h5 {
-    font: 500 1em/2em "Open Sans", sans-serif;
+    font: 500 1em/2em "Source Sans Pro", sans-serif;
     margin: 0;
     color: #242424;
 }
 .comments .comment .media-body p {
-    font: 400 14px/30px "Open Sans", sans-serif;
+    font: 400 14px/30px "Source Sans Pro", sans-serif;
     color: #898989;
 }
 .comments .comment .media-body .date-reply {
@@ -3462,7 +3462,7 @@ blockquote footer a {
 }
 .comments .comment .media-body .date-reply li a {
     padding: 0;
-    font: 13px/1 "Open Sans", sans-serif;
+    font: 13px/1 "Source Sans Pro", sans-serif;
     text-transform: capitalize;
     color: #47bcca;
 }
@@ -3520,13 +3520,13 @@ blockquote footer a {
 }
 .comment_form .leave-comment-title {
     margin: 0px 0px 26px 0px;
-    font: bold 20px/28px "Alegreya", serif;
+    font: bold 20px/28px "Source Sans Pro", serif;
     color: #353535;
 }
 .comment_form .form-control {
     border-radius: 0;
     padding: 9px 20px;
-    font: 14px/25px "Open Sans", sans-serif;
+    font: 14px/25px "Source Sans Pro", sans-serif;
     color: #000;
     margin-bottom: 20px;
     background: #f9f9f9;
@@ -3597,7 +3597,7 @@ blockquote footer a {
     border: 1px solid #f6ba18;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font: 600 1.2em/2.1em "Open Sans", sans-serif;
+    font: 600 1.2em/2.1em "Source Sans Pro", sans-serif;
     padding: 7px 22px 7px 22px;
     color: #19242a;
     margin-top: 10px;
@@ -3641,7 +3641,7 @@ blockquote footer a {
 }
 .touch .touch_bg .touch_top-con ul .item .media .media-body {
     text-align: left;
-    font: 14px/26px "Open Sans", sans-serif;
+    font: 14px/26px "Source Sans Pro", sans-serif;
     color: #898989;
     letter-spacing: 0.3px;
 }
@@ -3663,7 +3663,7 @@ blockquote footer a {
 .touch .touch_bg .touch_middle .input_form form .form-control {
     margin-bottom: 20px;
     border-radius: 0;
-    font: 15px/31px "Open Sans", sans-serif;
+    font: 15px/31px "Source Sans Pro", sans-serif;
     color: #959595;
     padding: 11px 20px;
     border: 1px solid #e1e1e1;
@@ -3684,7 +3684,7 @@ blockquote footer a {
     margin-bottom: 0;
 }
 .touch .touch_bg .touch_middle .input_form form .form-control.error + .error {
-    font: 13px/24px "Open Sans", sans-serif;
+    font: 13px/24px "Source Sans Pro", sans-serif;
     margin-bottom: 20px;
     margin-top: 5px;
     color: red;
@@ -3745,18 +3745,18 @@ blockquote footer a {
 .touch p {
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     color: #8E8D8D;
 }
 .touch h6 {
     color: #1088cc;
-    font: 400 1.2em/1.8em "Open Sans", sans-serif;
+    font: 400 1.2em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     font-style: italic;
 }
 .touch h6 span {
     color: #de5842;
-    font: 400 1.2em/1.8em "Open Sans", sans-serif;
+    font: 400 1.2em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     font-style: italic;
 }
@@ -3771,7 +3771,7 @@ blockquote footer a {
     padding: 0 0 6em;
 }
 .testimonials p {
-    font: 400 14px/26px "Open Sans", sans-serif;
+    font: 400 14px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #898989;
     padding-top: 25px;
@@ -3782,20 +3782,20 @@ blockquote footer a {
     border-bottom: 1px solid #e4e4e4;
 }
 .testimonial-p .media-body h3 {
-    font: 400 1.2em/1em "Open Sans", sans-serif;
+    font: 400 1.2em/1em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #242424;
     margin: 0 0 0.8em;
     padding: 0;
 }
 .testimonial-p .media-body p {
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #898989;
     margin-bottom: 1em;
 }
 .testimonial-p .media-body a {
-    font: 600 14px/26px "Open Sans", sans-serif;
+    font: 600 14px/26px "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #1fb5c7;
     font-style: italic;
@@ -3828,7 +3828,7 @@ blockquote footer a {
     padding: 0;
 }
 .section_header-t h2 {
-    font: bold 2.2em/1.2em "Alegreya", serif;
+    font: bold 2.2em/1.2em "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
@@ -3855,7 +3855,7 @@ blockquote footer a {
     margin: 0 0 1em;
 }
 .section_header-r h2 {
-    font: bold 2.2em/1.2em "Alegreya", serif;
+    font: bold 2.2em/1.2em "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
@@ -3882,7 +3882,7 @@ blockquote footer a {
 .req-page span {
     display: block;
     color: #404040;
-    font: 600 1em/1.2em "Open Sans", sans-serif;
+    font: 600 1em/1.2em "Source Sans Pro", sans-serif;
     margin: 0 0 0.6em;
 }
 .req-page-area .img-responsive {
@@ -3891,7 +3891,7 @@ blockquote footer a {
 .req-page-area form .form-control {
     margin-bottom: 20px;
     border-radius: 0;
-    font: 15px/31px "Open Sans", sans-serif;
+    font: 15px/31px "Source Sans Pro", sans-serif;
     color: #959595;
     padding: 11px 20px;
     border: 1px solid #e1e1e1;
@@ -3912,7 +3912,7 @@ blockquote footer a {
     border: 1px solid #f6ba18;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font: 600 1.2em/2.1em "Open Sans", sans-serif;
+    font: 600 1.2em/2.1em "Source Sans Pro", sans-serif;
     padding: 7px 22px 7px 22px;
     color: #19242a;
     margin-top: 10px;
@@ -3937,7 +3937,7 @@ blockquote footer a {
     margin-bottom: 0;
 }
 .req-page-area form .form-control.error + .error {
-    font: 13px/24px "Open Sans", sans-serif;
+    font: 13px/24px "Source Sans Pro", sans-serif;
     margin-bottom: 20px;
     margin-top: 5px;
     color: red;
@@ -3951,7 +3951,7 @@ blockquote footer a {
 }
 .req-page-area span {
     color: #404040;
-    font: 1.1em/1.1em "Open Sans", sans-serif;
+    font: 1.1em/1.1em "Source Sans Pro", sans-serif;
     display: block;
     padding: 0 0 0.5em;
 }
@@ -3990,14 +3990,14 @@ blockquote footer a {
 }
 .projects_hours p {
     color: #242424;
-    font: 600 1.3em/2em "Open Sans", sans-serif;
+    font: 600 1.3em/2em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0;
 }
 .projects_hours p span {
     display: block;
     color: #777;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
 }
 .project-con {
     background: #f5f5f5;
@@ -4006,7 +4006,7 @@ blockquote footer a {
 }
 .project-con h2 {
     color: #242424;
-    font: 600 1.3em/2em "Open Sans", sans-serif;
+    font: 600 1.3em/2em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0 0 1em;
 }
@@ -4014,7 +4014,7 @@ blockquote footer a {
     color: #898989;
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
 }
 .project-scop {} .project-scop .pro-img img {
@@ -4022,14 +4022,14 @@ blockquote footer a {
                  }
 .project-scop h3 {
     color: #242424;
-    font: 600 1.3em/1em "Open Sans", sans-serif;
+    font: 600 1.3em/1em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0 0 1em;
 }
 .project-scop p {
     margin: 0 0 1.2em;
     padding: 0;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     letter-spacing: 0.3px;
     color: #777777;
 }
@@ -4041,7 +4041,7 @@ blockquote footer a {
 }
 .project-scop .scope-item li {
     list-style: none;
-    font: 400 1.1em/1.5em "Open Sans", sans-serif;
+    font: 400 1.1em/1.5em "Source Sans Pro", sans-serif;
     color: #e84a37;
     -webkit-transition: all 300ms linear 0s;
     transition: all 300ms linear 0s;
@@ -4711,19 +4711,19 @@ blockquote footer a {
     display: inline-block;
     float: right;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 #checkout-content .order-box ul li span.bold {
     color: #242424;
     font-size: 18px;
     font-weight: 500;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 #checkout-content .order-box ul li a span {
     color: #11A9E0;
     font-size: 13px;
     font-weight: 500;
-    font-family: "Raleway", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 #checkout-content .order-box ul li.place-order-button {
     padding-top: 20px;
@@ -4882,7 +4882,7 @@ blockquote footer a {
 .wel-t-band {
     position: relative;
     background: #f0f2f3;
-    font: 400 1em/1em "Open Sans", sans-serif;
+    font: 400 1em/1em "Source Sans Pro", sans-serif;
     color: #6e6e6e;
 }
 .wel-t-band p span {
@@ -5199,7 +5199,7 @@ blockquote footer a {
     height: 40px;
     border-radius: 0;
     border: none;
-    font: 1em/1em "Open Sans", sans-serif;
+    font: 1em/1em "Source Sans Pro", sans-serif;
     padding: 0 18px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -5253,7 +5253,7 @@ blockquote footer a {
     background: #e84a37;
     color: #fff;
     border: 2px solid #e84a37;
-    font: 300 1.2em/1em "Open Sans", sans-serif;
+    font: 300 1.2em/1em "Source Sans Pro", sans-serif;
 }
 .thm-banner-t-wrapper .inverse:hover {
     color: #fff;
@@ -5268,7 +5268,7 @@ blockquote footer a {
     font-weight: bold !important;
     padding: 1.1em 2.5em;
     border-radius: 4px;
-    font: 400 1.2em/1em "Open Sans", sans-serif;
+    font: 400 1.2em/1em "Source Sans Pro", sans-serif;
 }
 .thm-banner-t-wrapper .thm-btn i {
     margin: 0;
@@ -5278,7 +5278,7 @@ blockquote footer a {
     background: #53cff5;
     color: #fff;
     border: 2px solid #53cff5;
-    font: 300 1.2em/1em "Open Sans", sans-serif;
+    font: 300 1.2em/1em "Source Sans Pro", sans-serif;
 }
 .thm-banner-t-wrapper .inversen:hover {
     color: #fff;
@@ -5340,7 +5340,7 @@ blockquote footer a {
     margin: 0;
     padding: 0 0.8em 0 0;
     text-align: right;
-    font: 600 2.4em/1em "Alegreya", serif;
+    font: 600 2.4em/1em "Source Sans Pro", serif;
     color: #323232;
     text-transform: uppercase;
 }
@@ -5352,7 +5352,7 @@ blockquote footer a {
     border-left: 3px solid #25639a;
 }
 .we-offer-cont2 p {
-    font: 400 1.2em/1.3em "Open Sans", sans-serif;
+    font: 400 1.2em/1.3em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0 0 0 2em;
     font-style: italic;
@@ -5445,7 +5445,7 @@ blockquote footer a {
     position: relative;
 }
 .quality-wrapper h2 {
-    font: 300 2.8em/1.3em "Open Sans", sans-serif;
+    font: 300 2.8em/1.3em "Source Sans Pro", sans-serif;
     margin: 0 0 1.2em;
     padding: 0;
     color: #242424;
@@ -5454,7 +5454,7 @@ blockquote footer a {
     color: #6c6c6c;
     margin: 0 0 4em;
     padding: 0;
-    font: 400 1.2em/1.8em "Open Sans", sans-serif;
+    font: 400 1.2em/1.8em "Source Sans Pro", sans-serif;
 }
 .vision-wrapper {
     position: relative;
@@ -5472,7 +5472,7 @@ blockquote footer a {
 }
 .vision-wrapper ul li p {
     color: #6c6c6c;
-    font: 700 1.6em/1.8em "Open Sans", sans-serif;
+    font: 700 1.6em/1.8em "Source Sans Pro", sans-serif;
     padding: 0;
     margin: 0;
     text-transform: uppercase;
@@ -5554,7 +5554,7 @@ blockquote footer a {
     color: #bbc1c7;
     margin: 1em 0 0;
     padding: 0;
-    font: 400 1.1em/1.6em "Open Sans", sans-serif;
+    font: 400 1.1em/1.6em "Source Sans Pro", sans-serif;
 }
 .testimonial-t-sec .testimonialn-slider .sign img {
     width: 160px;
@@ -5575,7 +5575,7 @@ blockquote footer a {
     margin: 1em 0 0;
 }
 .testimonial-t-sec .testimonialn-slider .name-content .client-name p {
-    font: 600 1.3em/2em "Open Sans", sans-serif;
+    font: 600 1.3em/2em "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -5583,7 +5583,7 @@ blockquote footer a {
 .testimonial-t-sec .testimonialn-slider .name-content .client-name p span {
     display: block;
     color: #fff;
-    font: 400 0.79em/1.8em "Open Sans", sans-serif;
+    font: 400 0.79em/1.8em "Source Sans Pro", sans-serif;
 }
 .testimonial-t-sec .testimonialn-slider .name-content .client-name ul li {
     display: inline-block;
@@ -5641,7 +5641,7 @@ blockquote footer a {
     padding: 0 0 2em;
 }
 .section_header2 h2 {
-    font: bold 2em/1em "Alegreya", serif;
+    font: bold 2em/1em "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
@@ -5700,19 +5700,19 @@ blockquote footer a {
 }
 .about-sec-content h4 {
     color: #303030;
-    font: 400 1.3em/1.5em "Open Sans", sans-serif;
+    font: 400 1.3em/1.5em "Source Sans Pro", sans-serif;
     margin: 0.8em 0 1em;
     padding: 0;
 }
 .about-sec-content p {
     color: #898989;
-    font: 400 1.1em/1.7em "Open Sans", sans-serif;
+    font: 400 1.1em/1.7em "Source Sans Pro", sans-serif;
     margin: 0 0 1em;
     padding: 0;
 }
 .about-sec-content ul {} .about-sec-content ul li {
                              color: #6c6c6c;
-                             font: 400 1.1em/2em "Open Sans", sans-serif;
+                             font: 400 1.1em/2em "Source Sans Pro", sans-serif;
                          }
 .about-sec-content ul li .fa {
     color: #233859;
@@ -5778,7 +5778,7 @@ blockquote footer a {
     margin: 0;
 }
 .accordian-area .panel-title {
-    font: 400 18px "Open Sans", sans-serif;
+    font: 400 18px "Source Sans Pro", sans-serif;
     background: #fff;
 }
 .accordian-area .panel-title.on
@@ -5800,7 +5800,7 @@ blockquote footer a {
 .accordian-area .panel-body {
     background: #fff;
     color: #898989;
-    font: 400 1.1em/1.8em "Open Sans", sans-serif;
+    font: 400 1.1em/1.8em "Source Sans Pro", sans-serif;
 }
 .panel-title.actives
 {
@@ -5953,21 +5953,21 @@ blockquote footer a {
     bottom: 0;
 }
 .news-evn-img .event-date h3 {
-    font: 600 1.6em/1.2em "Open Sans", sans-serif;
+    font: 600 1.6em/1.2em "Source Sans Pro", sans-serif;
     color: #fff;
     margin: 0;
     padding: 0.4em 0 0;
 }
 .news-evn-img .event-date h3 small {
     color: #fff;
-    font: 400 0.59em/1em "Open Sans", sans-serif;
+    font: 400 0.59em/1em "Source Sans Pro", sans-serif;
     display: block;
 }
 .news-evn-cont {
     position: relative;
 }
 .news-evn-cont h3 {
-    font: 600 1.07em/1.5em "Raleway", sans-serif;
+    font: 600 1.07em/1.5em "Source Sans Pro", sans-serif;
     letter-spacing: 0.5px;
     color: #000;
     -webkit-transition: all 300ms linear 0s;
@@ -5976,7 +5976,7 @@ blockquote footer a {
     padding: 0 0 0.5em;
 }
 .news-evn-cont p {
-    font: 400 1em/1.5em "Open Sans", sans-serif;
+    font: 400 1em/1.5em "Source Sans Pro", sans-serif;
     color: #8e8d8d;
     margin: 0;
     padding: 0;
@@ -6016,7 +6016,7 @@ blockquote footer a {
     background-size: cover;
 }
 .our-sol-wrapper p {
-    font: 300 32px "Open Sans", sans-serif;
+    font: 300 32px "Source Sans Pro", sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -6038,7 +6038,7 @@ blockquote footer a {
 }
 .our-t-client p {
     color: #898989;
-    font: 400 1em/1.8em "Open Sans", sans-serif;
+    font: 400 1em/1.8em "Source Sans Pro", sans-serif;
     margin: 1em 0 2em;
     padding: 0;
 }
@@ -6084,7 +6084,7 @@ blockquote footer a {
 .get-t-touch .input_form form .form-control {
     margin-bottom: 20px;
     border-radius: 0;
-    font: 1em/1em "Open Sans", sans-serif;
+    font: 1em/1em "Source Sans Pro", sans-serif;
     color: #b7b6b6;
     padding: 11px 20px;
     border: 1px solid #eaeaea;
@@ -6104,7 +6104,7 @@ blockquote footer a {
 }
 .get-t-touch .select-menu + .ui-selectmenu-button .ui-selectmenu-text {
     padding: 0;
-    font: 0.9em/1em "Open Sans", sans-serif;
+    font: 0.9em/1em "Source Sans Pro", sans-serif;
     line-height: 42px;
 }
 .get-t-touch .select-menu + .ui-selectmenu-button .ui-icon.ui-icon-triangle-1-s {
@@ -6200,7 +6200,7 @@ blockquote footer a {
 }
 .about-us-section .sec-title h2 {
     font-size: 28px;
-    font-family: "Alegreya", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     margin: 0 0 40px 0;
@@ -6338,7 +6338,7 @@ blockquote footer a {
     clear: both;
 }
 .indurial-t-solution3 h2 {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-style: normal;
     font-weight: 300;
     padding: 6px 0 0 50px;
@@ -6434,7 +6434,7 @@ blockquote footer a {
 }
 .diff-offer-wrapper3 .service-info h4 a {
     color: #242424;
-    font: 600 18px "Open Sans", sans-serif;
+    font: 600 18px "Source Sans Pro", sans-serif;
     text-transform: uppercase;
     -webkit-transition: all 300ms linear 0s;
     transition: all 300ms linear 0s;
@@ -6515,7 +6515,7 @@ blockquote footer a {
     border-radius: 5px;
 }
 .we-customer-support .service-t-content p {
-    font: 300 20px "Open Sans", sans-serif;
+    font: 300 20px "Source Sans Pro", sans-serif;
     color: #fff;
     margin: 0 0 25px 0;
 }
@@ -6845,7 +6845,7 @@ section.newsletter .inn
 }
 section.newsletter .inn h2
 {
-    font: bold 2em/1em "Alegreya", serif;
+    font: bold 2em/1em "Source Sans Pro", serif;
     color: #000;
     text-transform: uppercase;
     position: relative;
