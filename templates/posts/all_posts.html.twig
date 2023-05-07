@@ -28,7 +28,7 @@
                   <div class="col-md-4 col-sm-4 col-xs-12">
                       <div class="news-evn-img">
                           <a href="{{ path('app_single_blog', {slug: blog.slug}) }}" class="image_hover">
-                              <img src="{{ asset('media/blog/'~blog.photo) }}" alt="{{ blog.author }}" class="img-responsive zoom_img_effect">
+                              <img src="{{ asset(blog.photo) }}" alt="{{ blog.author }}" class="img-responsive zoom_img_effect">
                           </a>
                           <div class="event-date">
                               <h3>{{ blog.date|date("d")}} <small>{{ blog.date|date("M")}}</small></h3>

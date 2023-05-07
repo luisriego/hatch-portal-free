@@ -13,7 +13,7 @@
                 <div class="news-evn-img">
                     <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}" class="image_hover text-center">
                         {% if blog.b_photo is not null %}
-                            <img src="{{ asset('media/blog/'~blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
+                            <img src="{{ asset(blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
                         {% else %}
                             <img src="{{ asset('media/blog/avatar.jpg') }}" alt="avatar padrão" class="img-responsive zoom_img_effect">
                         {% endif %}

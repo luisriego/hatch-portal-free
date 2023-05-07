@@ -5,6 +5,10 @@ namespace App\Controller;
 use App\Entity\Blog;
 use App\Form\BlogFormType;
 use App\Repository\AuthorRepository;
+use Cloudinary\Api\Exception\ApiError;
+use Cloudinary\Api\Upload\UploadApi;
+use Cloudinary\Cloudinary;
+use Cloudinary\Configuration\Configuration;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
@@ -20,9 +24,14 @@ class NewPostController extends AbstractController
     ) {
     }
 
+    /**
+     * @throws \Exception
+     */
     #[Route('/new/post/{authorId}', name: 'app_new_post')]
-    public function __invoke(Request $request, $authorId, string $blogDir): Response
+    public function __invoke(Request $request, $authorId, string $cloudinaryKey, string $cloudinarySecret): Response
     {
+        // Configure an instance of your Cloudinary cloud
+
         $author = $this->authorRepository->findOneBy(['id' => $authorId]);
         $blog = new Blog();
         $form = $this->createForm(BlogFormType::class, $blog);
@@ -31,13 +40,26 @@ class NewPostController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             if ($photo = $form['photo']->getData()) {
-                $filename = bin2hex(random_bytes(6)).'.'.$photo->guessExtension();
+                $filename = bin2hex(random_bytes(6));
 
                 try {
-                    $photo->move($blogDir, $filename);
-                    $blog->setPhoto($filename);
-                } catch (IOExceptionInterface  $e) {
-                    echo 'An error occurred while creating your directory at '.$e->getPath();
+                    $cloudinary = new Cloudinary(
+                        [
+                            'cloud' => [
+                                'cloud_name' => 'inovacaobrasil',
+                                'api_key'    => $cloudinaryKey,
+                                'api_secret' => $cloudinarySecret,
+                            ],
+                        ]
+                    );
+
+                    $cloudinary->uploadApi()->upload(
+                        $photo->getRealPath(),
+                        ['public_id' => $filename, 'folder' => 'blog']
+                    );
+                    $blog->setPhoto('https://res.cloudinary.com/inovacaobrasil/image/upload/v1683423312/blog/'.$filename);
+                } catch (ApiError $e) {
+                    echo 'An error occurred while creating your directory at '.$e;
                 }
             }
 

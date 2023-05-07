@@ -1,91 +1,91 @@
 <section class="about-tab-box sectpad" style="margin-top: -40px">
     <div class="container clearfix">
             {{ include('about/_about-body.html.twig') }}
-        <div class="row" data-controller="about">
-            <div class="col-sm-4 col-lg-3" style="margin-top: 70px">
-                <div class="tab-title-box">
-                    <ul role="tablist" class="clearfix">
-                        <li data-tab-name="history" class="" data-about-target="visionBtn">
-                            <a aria-controls="history" role="tab" data-toggle="tab" data-action="about#visionTab">NOSSA VISÃO</a>
-                        </li>
-                        <li data-tab-name="mission" class="active" data-about-target="valuesBtn">
-                            <a aria-controls="mission" role="tab" data-toggle="tab" data-action="about#valuesTab">NOSSOS VALORES</a>
-                        </li>
-                        <li data-tab-name="vision" class="" data-about-target="missionBtn">
-                            <a aria-controls="vision" role="tab" data-toggle="tab" data-action="about#missionTab">NOSSA MISSÃO</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-8 col-lg-9" style="margin-top: 70px">
-                <div class="tab-content-box tab-content about-tab">
-                    <div id="history" class="single-tab-content tab-pane fade" data-about-target="vision">
-                        <h2>Our VISION</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                        <p>sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-                        <div class="row">
-                            <div class="col-sm-12 abot-img"><img src="images/about/abt-img1.jpg" alt="" class="img-responsive"><img src="images/about/abt-img2.jpg" alt="" class="img-responsive"></div>
-                        </div>
-                    </div>
-                    <div id="mission" class="single-tab-content tab-pane fade in active" data-about-target="values">
-                        <h2>Our VALUES</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                        <p>sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-                        <div class="row">
-                            <div class="col-sm-12 abot-img"><img src="images/about/abt-img1.jpg" alt="" class="img-responsive"><img src="images/about/abt-img2.jpg" alt="" class="img-responsive"></div>
-                        </div>
-                    </div>
-                    <div id="vision" class="single-tab-content tab-pane fade" data-about-target="mission">
-                        <h2>Our MISSION</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                        <p>sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-                        <div class="row">
-                            <div class="col-sm-12 abot-img"><img src="images/about/abt-img1.jpg" alt=""><img src="images/about/abt-img2.jpg" alt=""></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{#        <div class="row" data-controller="about">#}
+{#            <div class="col-sm-4 col-lg-3" style="margin-top: 70px">#}
+{#                <div class="tab-title-box">#}
+{#                    <ul role="tablist" class="clearfix">#}
+{#                        <li data-tab-name="history" class="" data-about-target="visionBtn">#}
+{#                            <a aria-controls="history" role="tab" data-toggle="tab" data-action="about#visionTab">NOSSA VISÃO</a>#}
+{#                        </li>#}
+{#                        <li data-tab-name="mission" class="active" data-about-target="valuesBtn">#}
+{#                            <a aria-controls="mission" role="tab" data-toggle="tab" data-action="about#valuesTab">NOSSOS VALORES</a>#}
+{#                        </li>#}
+{#                        <li data-tab-name="vision" class="" data-about-target="missionBtn">#}
+{#                            <a aria-controls="vision" role="tab" data-toggle="tab" data-action="about#missionTab">NOSSA MISSÃO</a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-sm-8 col-lg-9" style="margin-top: 70px">#}
+{#                <div class="tab-content-box tab-content about-tab">#}
+{#                    <div id="history" class="single-tab-content tab-pane fade" data-about-target="vision">#}
+{#                        <h2>Our VISION</h2>#}
+{#                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>#}
+{#                        <p>sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-12 abot-img"><img src="images/about/abt-img1.jpg" alt="" class="img-responsive"><img src="images/about/abt-img2.jpg" alt="" class="img-responsive"></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div id="mission" class="single-tab-content tab-pane fade in active" data-about-target="values">#}
+{#                        <h2>Our VALUES</h2>#}
+{#                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>#}
+{#                        <p>sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-12 abot-img"><img src="images/about/abt-img1.jpg" alt="" class="img-responsive"><img src="images/about/abt-img2.jpg" alt="" class="img-responsive"></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div id="vision" class="single-tab-content tab-pane fade" data-about-target="mission">#}
+{#                        <h2>Our MISSION</h2>#}
+{#                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>#}
+{#                        <p>sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-12 abot-img"><img src="images/about/abt-img1.jpg" alt=""><img src="images/about/abt-img2.jpg" alt=""></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
     </div>
 </section>
 
-<div class="features-section" style="margin-bottom: -1px">
-    <div class="features-image"><img src="images/features/1.jpg" alt="" style="margin-bottom: -1px"></div>
-    <div class="features-area">
-        <div class="features">
-            <div class="features-content">
-                <div class="media">
-                    <div class="media-left"><a href="#"><img src="images/features/phone.png" alt=""></a></div>
-                    <div class="media-body">
-                        <h4 class="media-heading">24/7 availality</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left"><a href="#"><img src="images/features/icon.png" alt=""></a></div>
-                    <div class="media-body">
-                        <h4 class="media-heading">No hidden cost</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="features-content">
-                <div class="media">
-                    <div class="media-left"><a href="#"><img src="images/features/icon2.png" alt=""></a></div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Certified Mechanics</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left"><a href="#"><img src="images/features/hand.png" alt=""></a></div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Affordable prices</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{#<div class="features-section" style="margin-bottom: -1px">#}
+{#    <div class="features-image"><img src="images/features/1.jpg" alt="" style="margin-bottom: -1px"></div>#}
+{#    <div class="features-area">#}
+{#        <div class="features">#}
+{#            <div class="features-content">#}
+{#                <div class="media">#}
+{#                    <div class="media-left"><a href="#"><img src="images/features/phone.png" alt=""></a></div>#}
+{#                    <div class="media-body">#}
+{#                        <h4 class="media-heading">24/7 availality</h4>#}
+{#                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="media">#}
+{#                    <div class="media-left"><a href="#"><img src="images/features/icon.png" alt=""></a></div>#}
+{#                    <div class="media-body">#}
+{#                        <h4 class="media-heading">No hidden cost</h4>#}
+{#                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="features-content">#}
+{#                <div class="media">#}
+{#                    <div class="media-left"><a href="#"><img src="images/features/icon2.png" alt=""></a></div>#}
+{#                    <div class="media-body">#}
+{#                        <h4 class="media-heading">Certified Mechanics</h4>#}
+{#                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="media">#}
+{#                    <div class="media-left"><a href="#"><img src="images/features/hand.png" alt=""></a></div>#}
+{#                    <div class="media-body">#}
+{#                        <h4 class="media-heading">Affordable prices</h4>#}
+{#                        <p>Lorem ipsum dolor sit amet, consectetur elit. Vestibulum nec odio ipsum. Suspe ndisse cursus malesuada facilisis.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 
