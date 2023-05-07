@@ -32,10 +32,10 @@ class BlogCrudController extends AbstractCrudController
             BooleanField::new('is_active'),
             DateTimeField::new('date')
                 ->setFormat('dd/MM/yyyy'),
-            ImageField::new('photo')
-                ->setRequired(false)
-                ->setBasePath('media/blog')
-                ->setUploadDir('public/media/blog'),
+//            ImageField::new('photo')
+//                ->setRequired(false)
+//                ->setBasePath('media/blog')
+//                ->setUploadDir('public/media/blog'),
         ];
     }
 
