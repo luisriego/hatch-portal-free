@@ -43,7 +43,7 @@ class NewProjectAuthorController extends AbstractController
         }
 
         return $this->render('new-project/new-project-author.html.twig', [
-            'breadcrumb' => 'Add new Author for project',
+            'breadcrumb' => 'Incluir author no projeto',
             'author_form' => $form->createView(),
         ]);
     }

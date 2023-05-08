@@ -17,7 +17,7 @@ class EthicController extends AbstractController
     {
         return $this->render('about/ethic.html.twig',
             [
-                'breadcrumb' => 'About the Company',
+                'breadcrumb' => 'Sobre a nossa companhia',
             ]);
     }
 }

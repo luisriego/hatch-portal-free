@@ -34,7 +34,7 @@ class NewPostAuthorController extends AbstractController
         }
 
         return $this->render('new-post/new-post-author.html.twig', [
-            'breadcrumb' => 'Add new Post',
+            'breadcrumb' => 'Incluir novo Post',
             'author_form' => $form->createView(),
         ]);
     }

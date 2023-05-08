@@ -12,7 +12,7 @@ class NewPostInfoController extends AbstractController
     public function index(): Response
     {
         return $this->render('new-post/new-info.html.twig', [
-            'breadcrumb' => 'Info about add new Post',
+            'breadcrumb' => 'Informação sobre novo Post',
         ]);
     }
 }

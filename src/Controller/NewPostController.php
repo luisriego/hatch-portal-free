@@ -73,7 +73,7 @@ class NewPostController extends AbstractController
         }
 
         return $this->render('new-post/new-post.html.twig', [
-            'breadcrumb' => 'Add new Post',
+            'breadcrumb' => 'Novo Post',
             'post_form' => $form->createView(),
         ]);
     }
