@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Project;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -17,15 +19,21 @@ class ProjectFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('area', ChoiceType::class, [
-                'mapped' => false,
-                'choices' => [
-                    'Selecione uma... ' => null,
-                    'Infraetrutura' => '1',
-                    'Metais e Minerais' => '2',
-                    'Energia' => '3',
-                ],
-            ])
+            ->add('area', EntityType::class, array(
+                'class' => 'App\Entity\Area',
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('a');
+                },
+            ))
+//            ->add('area', ChoiceType::class, [
+//                'mapped' => false,
+//                'choices' => [
+//                    'Selecione uma... ' => null,
+//                    'Energia' => '1',
+//                    'Infraestrutura' => '2',
+//                    'Metais e Minerais' => '3',
+//                ],
+//            ])
             ->add('title')
             ->add('subtitle')
             ->add('location')

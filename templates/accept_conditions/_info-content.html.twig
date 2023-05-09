@@ -16,15 +16,16 @@
             {{ form_widget(accept_form.accept, {
                 'label': 'Aceito as condições, quero participar! ',
                 'attr': {
-                    'class': 'btn btn-success btn-lg',
-                    'disabled': false
+                    'class': 'btn btn-success btn-lg pull-right',
+                    'disabled': false,
+                    'style': 'background-color: green'
                 } })
             }}
             {{ form_widget(accept_form.reject, {
                 'label': 'Não aceito as condiçoẽs, quero sair! ',
                 'attr': {
-                    'class': 'btn btn-danger btn-lg pull-right',
-                    'disabled': false
+                    'class': 'btn btn-outline-danger btn-lg',
+                    'disabled': false,
                 } })
             }}
 {#        <a data-animation="animated fadeInUp" href="" class="btn btn-info">Aceito as condições, quero participar!</a>#}
