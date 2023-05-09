@@ -54,7 +54,7 @@ class NewProjectController extends AbstractController
                 }
             }
 
-            if (null === $result = $this->projectRepository->findOneBy(['title' => $form['title']->getData(), 'area' => $form['area']->getData()])) {
+            if (null === $result = $this->projectRepository->findOneByTitleAndAreaOrFail($form['title']->getData(), $form['area']->getData())) {
                 $project->addAuthor($author);
                 $project->setArea($this->areaRepo->findOneBy(['id' => $form['area']->getData()]));
                 $project->setStatus(1);

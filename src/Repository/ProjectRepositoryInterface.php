@@ -14,5 +14,7 @@ interface ProjectRepositoryInterface
 
     public function findOneBySlugOrFail(string $slug): ?Project;
 
+    public function findOneByTitleAndAreaOrFail(string $title, string $area): ?Project;
+
     public function getTotalNumber(): ?int;
 }

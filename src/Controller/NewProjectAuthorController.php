@@ -32,14 +32,13 @@ class NewProjectAuthorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             if (null === $authorExistent = $this->authorRepository->findOneByEmailOrFail($author->getEmail())) {
                 $author->markAsUpdated();
-
                 $this->entityManager->persist($author);
                 $this->entityManager->flush();
 
                 return $this->redirectToRoute('app_new_project', ['author' => $author->getEmail()]);
             }
 
-            return $this->redirectToRoute('app_new_project', ['author' => $author->getEmail()]);
+            return $this->redirectToRoute('app_new_project', ['author' => $authorExistent->getEmail()]);
         }
 
         return $this->render('new-project/new-project-author.html.twig', [
