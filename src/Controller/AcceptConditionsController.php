@@ -60,7 +60,7 @@ class AcceptConditionsController extends AbstractController
             return $this->redirectToRoute('app_homepage');
         }
         return $this->render('accept_conditions/accept-conditions.html.twig', [
-            'breadcrumb' => 'Condições para publicação e aceitação',
+            'breadcrumb' => 'Condições para publicação e aceite',
             'accept_form' => $form->createView(),
         ]);
     }
