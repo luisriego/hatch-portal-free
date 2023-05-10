@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {% include "about/_header.html.twig" %}
+
+    {{ include('sections/_breadcrumb.html.twig') }}
+
+    <section class="about-tab-box sectpad" style="margin-top: -40px">
+        <div class="container clearfix">
+            {{ include('new-post/_info-content.html.twig') }}
+            </div>
+        </div>
+    </section>
+
+    {% include "modules/_solution.html.twig" %}
+
+    {% include "modules/_footer.html.twig" %}
+
+{% endblock %}
