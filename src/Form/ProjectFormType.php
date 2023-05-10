@@ -25,15 +25,6 @@ class ProjectFormType extends AbstractType
                     return $er->createQueryBuilder('a');
                 },
             ))
-//            ->add('area', ChoiceType::class, [
-//                'mapped' => false,
-//                'choices' => [
-//                    'Selecione uma... ' => null,
-//                    'Energia' => '1',
-//                    'Infraestrutura' => '2',
-//                    'Metais e Minerais' => '3',
-//                ],
-//            ])
             ->add('title')
             ->add('subtitle')
             ->add('location')

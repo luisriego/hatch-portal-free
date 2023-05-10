@@ -20,7 +20,7 @@
     <!-- Lattest news-->
     <div class="container clearfix sectpad-sec">
       <div class="section_header2 common">
-        <h2>Projetos Candidatos ao PLI</h2>
+        <h2>Projetos Candidatos ao Prêmio Local de Inovação</h2>
       </div>
       {% for row in projects|batch(3) %}
       <div class="row event-pad">
@@ -29,7 +29,7 @@
           <div class="news-evn-img">
             <a href="{{ path('app_project', {slug: project.slug}) }}" class="image_hover">
               {% if project.image is not null %}
-                  <img class="img-responsive zoom_img_effect" src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}">
+                  <img class="img-responsive zoom_img_effect" src="{{ asset(project.image) }}" alt="{{ project.title }}">
               {% else %}
                   {{ project.image }}
                   <img class="img-responsive zoom_img_effect" src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ project.title }}">

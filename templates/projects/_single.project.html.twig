@@ -2,7 +2,7 @@
     <section class="">
         <figure class="project-info">
             {% if project.image is not null %}
-                <img src="{{ asset('media/projects/'~project.image) }}" alt="{{ project.title }}" width="1920" height="580">
+                <img src="{{ asset(project.image) }}" alt="{{ project.title }}" width="1920" height="580">
             {% else %}
                 <img src="{{ asset('media/banner/Innovation-inflation.jpg') }}" alt="{{ project.title }}" width="1920" height="580">
             {% endif %}

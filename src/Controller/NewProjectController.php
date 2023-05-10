@@ -9,6 +9,7 @@ use App\Repository\AuthorRepository;
 use App\Repository\AuthorRepositoryInterface;
 use App\Repository\ProjectRepository;
 use App\Repository\ProjectRepositoryInterface;
+use App\Service\UploadFileService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
@@ -22,13 +23,18 @@ class NewProjectController extends AbstractController
         private readonly EntityManagerInterface $entityManager,
         private readonly AreaRepository $areaRepo,
         private readonly AuthorRepositoryInterface $authorRepository,
-        private readonly ProjectRepositoryInterface $projectRepository)
-    {
+        private readonly ProjectRepositoryInterface $projectRepository,
+        private readonly UploadFileService $uploadService,
+    ) {
     }
 
+    /**
+     * @throws \Exception
+     */
     #[Route('/new-project/{author}', name: 'app_new_project')]
-    public function __invoke(Request $request, $author, string $photoDir): Response
+    public function __invoke(Request $request, $author): Response
     {
+        $imagePath = '';
         $author = $this->authorRepository->findOneByEmailOrFail($author);
         $projects = $author->getProjects();
         if (count($projects) === 0) {
@@ -43,15 +49,8 @@ class NewProjectController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($photo = $form['photo']->getData()) {
-                $filename = bin2hex(random_bytes(6)).'.'.$photo->guessExtension();
-
-                try {
-                    $photo->move($photoDir, $filename);
-                    $project->setImage($filename);
-                } catch (IOExceptionInterface  $e) {
-                    echo 'An error occurred while creating your directory at '.$e->getPath();
-                }
+            if (null !== $photo = $form['photo']->getData()) {
+                $imagePath = $this->uploadService->handle($photo, 'project');
             }
 
             if (null === $result = $this->projectRepository->findOneByTitleAndAreaOrFail($form['title']->getData(), $form['area']->getData())) {
@@ -59,6 +58,9 @@ class NewProjectController extends AbstractController
                 $project->setArea($this->areaRepo->findOneBy(['id' => $form['area']->getData()]));
                 $project->setStatus(1);
                 $project->setAcceptedOn(new \DateTimeImmutable());
+                if ($imagePath !== '') {
+                    $project->setImage($imagePath);
+                }
 
                 $this->entityManager->persist($project);
                 $this->entityManager->flush();
