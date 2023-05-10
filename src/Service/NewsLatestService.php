@@ -15,7 +15,7 @@ class NewsLatestService
 
     public function handle(): array|null
     {
-        if (null === $result = $this->newsRepository->findRandomTreeOrFail()) {
+        if (null === $result = $this->newsRepository->findNActiveOrFail(3)) {
             throw new NotFoundHttpException();
         }
 

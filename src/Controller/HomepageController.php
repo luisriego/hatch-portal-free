@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\NewsRepositoryInterface;
 use App\Service\BlogService;
 use App\Service\EventService;
 use App\Service\HomepageService;
@@ -16,7 +17,7 @@ class HomepageController extends AbstractController
 {
     public function __construct(
         private readonly BlogService $blogService,
-        private readonly NewsLatestService $newsService,
+        private readonly NewsRepositoryInterface $newsRepository,
 //        private readonly HomepageService $homepageService,
 //        private readonly EventService $eventService,
 //        private readonly TestimonialService $testimonialService,
@@ -27,7 +28,7 @@ class HomepageController extends AbstractController
     public function __invoke(): Response
     {
         $randomBlog = $this->blogService->handle();
-        $randomNews = $this->newsService->handle();
+        $randomNews = $this->newsRepository->findNActiveOrFail(3);
 //        $randomData = $this->homepageService->handle();
 //        $randomEvent = $this->eventService->handle();
 //        $randomTestimonials = $this->testimonialService->handle();

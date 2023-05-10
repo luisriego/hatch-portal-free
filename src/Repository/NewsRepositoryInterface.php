@@ -16,7 +16,7 @@ interface NewsRepositoryInterface
 
     public function findOneBySlugOrFail(string $slug): ?News;
 
-    public function findThreeActiveOrFail(int $limit): ?array;
+    public function findNActiveOrFail(int $limit): ?array;
 
     public function getTotalNumber(): ?int;
 

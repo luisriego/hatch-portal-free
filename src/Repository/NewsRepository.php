@@ -45,11 +45,11 @@ class NewsRepository extends ServiceEntityRepository implements NewsRepositoryIn
             ->getSingleScalarResult();
     }
 
-    public function findThreeActiveOrFail(int $limit): ?array
+    public function findNActiveOrFail(int $limit): ?array
     {
         return $this->createQueryBuilder('n')
             ->andWhere('n.toPublish = true')
-            ->setMaxResults(3)
+            ->setMaxResults($limit)
             ->getQuery()
             ->getResult();
     }
@@ -90,14 +90,5 @@ class NewsRepository extends ServiceEntityRepository implements NewsRepositoryIn
             ->setParameter('slug', $slug)
             ->getQuery()
             ->getSingleResult();
-    }
-
-    public function findRandomTreeOrFail(): ?array
-    {
-        return $this->createQueryBuilder('n')
-            ->andWhere('n.toPublish = true')
-            ->setMaxResults(3)
-            ->getQuery()
-            ->getResult();
     }
 }
