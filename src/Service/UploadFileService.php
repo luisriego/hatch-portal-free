@@ -22,6 +22,7 @@ class UploadFileService
      */
     public function handle(UploadedFile $file, string $folder): string
     {
+        $filePath = '';
         $filename = bin2hex(random_bytes(6));
 
         $cloudinary = new Cloudinary(
@@ -33,7 +34,11 @@ class UploadFileService
                 ],
             ]
         );
-        $filePath = 'https://res.cloudinary.com/inovacaobrasil/image/upload/v1683423312/'.$folder.'/'.$filename;
+        if ($folder === 'news') {
+            $filePath = 'https://res.cloudinary.com/inovacaobrasil/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1683423312/'.$folder.'/'.$filename;
+        } else {
+            $filePath = 'https://res.cloudinary.com/inovacaobrasil/image/upload/v1683423312/'.$folder.'/'.$filename;
+        }
 
         try {
             $cloudinary->uploadApi()->upload(

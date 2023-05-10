@@ -27,9 +27,8 @@ class NewsCrudController extends AbstractCrudController
             TextEditorField::new('text'),
             BooleanField::new('toPublish'),
             ImageField::new('image')
-                ->setRequired(false)
-                ->setBasePath('media/news')
-                ->setUploadDir('public/media/news'),
+                ->onlyOnIndex()
+                ->setRequired(false),
         ];
     }
 

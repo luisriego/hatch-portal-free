@@ -43,3 +43,8 @@ services:
         tags:
             - { name: 'doctrine.orm.entity_listener', event: 'prePersist', entity: 'App\Entity\Blog' }
             - { name: 'doctrine.orm.entity_listener', event: 'preUpdate', entity: 'App\Entity\Blog' }
+
+    App\EventListener\NewsEntityListener:
+        tags:
+            - { name: 'doctrine.orm.entity_listener', event: 'prePersist', entity: 'App\Entity\News' }
+            - { name: 'doctrine.orm.entity_listener', event: 'preUpdate', entity: 'App\Entity\News' }

@@ -4,35 +4,38 @@
         <h2>Notícias no nosso portal</h2>
     </div>
     <div class="col-md-4">
-        <a href="{{ path('app_news_author') }}" class="btn btn-primary btn-lg align-right" style="background-color: lightblue">Eu quero publicar uma notícia</a>
+        <a href="{{ path('app_new_news') }}" class="btn btn-primary btn-lg align-right" style="background-color: lightblue">Eu quero publicar uma notícia</a>
     </div>
     <div class="row event-pad col-md-12">
-        {% if blogs is empty %}
+        {% if news is empty %}
             <h3>Nenhuma notícia foi publicada ainda!</h3>
             <p>Se você escreveu uma notícia e ainda não aparece aqui, aguarde, em breve sera revisada</p>
         {% endif %}
-        {% for blog in blogs %}
+        {% for singleNews in news %}
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="news-evn-img">
-                    <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}" class="image_hover text-center">
-                        {% if blog.b_photo is not null %}
-                            <img src="{{ asset(blog.b_photo) }}" alt="{{ blog.b_author }}" class="img-responsive zoom_img_effect">
+                    <a href="{{ path('app_single_news', {slug: singleNews.slug}) }}" class="image_hover text-center">
+                        {% if singleNews.image is not null %}
+                            <img src="{{ asset(singleNews.image) }}" alt="{{ singleNews.author }}" class="img-responsive zoom_img_effect">
                         {% else %}
                             <img src="{{ asset('media/blog/avatar.jpg') }}" alt="avatar padrão" class="img-responsive zoom_img_effect">
                         {% endif %}
                     </a>
                     <div class="event-date">
-                        <h3>{{ blog.b_date|date("d")}} <small>{{ blog.b_date|date("M")}}</small></h3>
+                        <h3>
+                            {{ singleNews.publishedOn|date("d")}}
+                            <small>{{ singleNews.publishedOn|date("M")}}</small>
+                            <small>{{ singleNews.publishedOn|date("Y")}}</small>
+                        </h3>
                     </div>
                 </div>
                 <div class="news-evn-cont">
                     <div class="news-meta">
-                        <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}">Por: {{ blog.b_author }}</a>
-                        <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}"> Comentários: </a>
+                        <p>Por: {{ singleNews.author }}</p>
+{#                        <a href="{{ path('app_single_blog', {slug: singleNews.slug}) }}"> Comentários: </a>#}
                     </div>
-                    <a href="{{ path('app_single_blog', {slug: blog.b_slug}) }}">
-                        <h3>{{ blog.b_title }}</h3>
-                    </a>
+                    <h3>{{ singleNews.title }}</h3>
+                    <a target="_blank" href="{{ singleNews.url }}">{{ singleNews.url }}</a>
                 </div>
             </div>
         {% endfor %}

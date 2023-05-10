@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\NewsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[ORM\Entity(repositoryClass: NewsRepository::class)]
 class News
@@ -31,6 +32,18 @@ class News
 
     #[ORM\Column(nullable: true)]
     private ?bool $toPublish = null;
+
+    #[ORM\Column(length: 50)]
+    private ?string $author = null;
+
+    #[ORM\Column(length: 255, unique: true)]
+    private ?string $slug = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $publishedOn = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subtitle = null;
 
     public function getId(): ?int
     {
@@ -112,5 +125,61 @@ class News
     public function __toString(): string
     {
         return $this->title;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(string $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function computeSlug(SluggerInterface $slugger)
+    {
+        if (!$this->slug || '_' === $this->slug) {
+            $this->slug = (string) $slugger->slug($this->getTitle(), '_')->lower();
+        }
+    }
+
+    public function getPublishedOn(): ?\DateTimeInterface
+    {
+        return $this->publishedOn;
+    }
+
+    public function setPublishedOn(?\DateTimeInterface $publishedOn): self
+    {
+        $this->publishedOn = $publishedOn;
+
+        return $this;
+    }
+
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(?string $subtitle): self
+    {
+        $this->subtitle = $subtitle;
+
+        return $this;
     }
 }

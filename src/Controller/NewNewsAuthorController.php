@@ -21,7 +21,7 @@ class NewNewsAuthorController extends AbstractController
     ) {
     }
 
-    #[Route('/new/author/news', name: 'app_news_author')]
+    #[Route('/news/author/new', name: 'app_news_author')]
     public function __invoke(Request $request): Response
     {
         $avatarPath = '';
@@ -46,7 +46,7 @@ class NewNewsAuthorController extends AbstractController
                 $this->entityManager->persist($authorExist);
                 $this->entityManager->flush();
 
-                return $this->redirectToRoute('app_new_post', ['authorId' => $authorExist->getId()]);
+                return $this->redirectToRoute('app_new_news', ['authorId' => $authorExist->getId()]);
             }
             $author->markAsUpdated();
             if ($avatarPath !== '') {
@@ -57,11 +57,11 @@ class NewNewsAuthorController extends AbstractController
 
             $this->entityManager->flush();
 
-            return $this->redirectToRoute('app_new_post', ['authorId' => $author->getId()]);
+            return $this->redirectToRoute('app_new_news', ['authorId' => $author->getId()]);
         }
 
         return $this->render('new-news/new-news-author.html.twig', [
-            'breadcrumb' => 'Incluir novo Post',
+            'breadcrumb' => 'Incluir nova notícia',
             'author_form' => $form->createView(),
         ]);
     }

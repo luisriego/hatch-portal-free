@@ -1,0 +1,30 @@
+<section class="core-projects sectpad">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 pull-right">
+                <!-- News-->
+                <div class="single-post-wrapper news news-details">
+                    <!-- News 1-->
+                    <article class="single-blog-post img-cap-effect">
+                        <div class="col-md-4 col-sm-12 pull-left img-box" style="padding: 0">
+                            <a>
+                                <img src="{{ asset(news.image) }}" alt="" class="img-responsive" style="max-width: 78%; margin-top: 17px">
+                            </a>
+                        </div>
+{#                        <div class="meta-info">#}
+{#                            <div class="content-box">#}
+{#                                <ul class="post-links">#}
+{#                                    <li><a href="#"><i class="fa fa-user"></i> Autor:  {{ news.author }}</a></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <h6>{{ news.publishedOn|date('d/M/Y') }}</h6>
+                        <h2>{{ news.title }}</h2>
+                        <h3>{{ news.subtitle }}</h3>
+                         {{ news.text|raw }}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
