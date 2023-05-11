@@ -18,10 +18,14 @@
 {#                                </ul>#}
 {#                            </div>#}
 {#                        </div>#}
-                        <h6>{{ news.publishedOn|date('d/M/Y') }}</h6>
-                        <h2>{{ news.title }}</h2>
-                        <h3>{{ news.subtitle }}</h3>
-                         {{ news.text|raw }}
+                        <div class="col-md-4 col-sm-12 pull-left img-box" style="padding: 0">
+                            <h6>{{ news.publishedOn|date('d/M/Y') }}</h6>
+                            <h6>{{ news.author }}</h6>
+                            <hr>
+                            <h2>{{ news.title }}</h2>
+                            <h3>{{ news.subtitle }}</h3>
+                        </div>
+                        {{ news.text|raw }}
                     </article>
                 </div>
             </div>
