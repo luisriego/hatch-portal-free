@@ -14,13 +14,13 @@
 {#                        <div class="meta-info">#}
 {#                            <div class="content-box">#}
 {#                                <ul class="post-links">#}
-{#                                    <li><a href="#"><i class="fa fa-user"></i> Autor:  {{ news.author }}</a></li>#}
+{#                                    <li><a href="#"> Autor:  {{ news.author }}</a></li>#}
 {#                                </ul>#}
 {#                            </div>#}
 {#                        </div>#}
-                        <div class="col-md-8 col-sm-12 pull-left img-box" style="padding: 0">
-                            <h6>{{ news.publishedOn|date('d/M/Y') }}</h6>
-                            <h6>{{ news.author }}</h6>
+                        <div class="col-md-8 col-sm-12 pull-left img-box" style="padding: 0; min-heigth: 185px">
+                            <h6 style="margin: 0">{{ news.publishedOn|date('d/M/Y') }}</h6>
+                            <h6 style="margin: 0"><i class="fa fa-user"></i>{{ news.author }}</h6>
                             <hr>
                             <h2>{{ news.title }}</h2>
                             <h3>{{ news.subtitle }}</h3>
