@@ -49,6 +49,7 @@ class NewsRepository extends ServiceEntityRepository implements NewsRepositoryIn
     {
         return $this->createQueryBuilder('n')
             ->andWhere('n.toPublish = true')
+            ->orderBy('n.publishedOn', 'DESC')
             ->setMaxResults($limit)
             ->getQuery()
             ->getResult();
