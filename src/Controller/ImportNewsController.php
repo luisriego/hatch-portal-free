@@ -47,7 +47,7 @@ class ImportNewsController extends AbstractController
 //            $this->entityManager->persist($news);
 //            $this->entityManager->flush();
 //
-//            return $this->redirectToRoute('app_homepage');
+            return $this->redirectToRoute('app_homepage');
         }
 
         return $this->render('new-news/import-news.html.twig', [

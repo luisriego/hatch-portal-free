@@ -1,11 +1,13 @@
 <!-- Lattest news-->
 <div class="container clearfix sectpad-sec">
-    <div class="section_header2 common col-md-8">
+    <div class="section_header2 common col-md-5">
         <h2>Notícias no nosso portal</h2>
     </div>
     <div class="col-md-4">
-        <a href="{{ path('app_new_news') }}" class="btn btn-primary btn-lg align-right" style="background-color: lightblue">Eu quero publicar uma notícia</a>
-        <a href="{{ path('app_import_news') }}" class="btn btn-primary btn-lg align-left" style="background-color: lightblue">Importar</a>
+        <a href="{{ path('app_import_news') }}" class="btn btn-primary btn-lg align-left" style="background-color: blueviolet">Importar Notícia</a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ path('app_new_news') }}" class="btn btn-primary btn-lg align-right" style="background-color: lightblue; color: black">Publicar uma notícia</a>
     </div>
     <div class="row event-pad col-md-12">
         {% if news is empty %}
@@ -15,7 +17,7 @@
         {% for singleNews in news %}
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="news-evn-img">
-                    <a href="{{ path('app_single_news', {slug: singleNews.slug}) }}" class="image_hover text-center">
+                    <a target="_blank" href="{{ singleNews.url }}" class="image_hover text-center">
                         {% if singleNews.image is not null %}
                             <img src="{{ asset(singleNews.image) }}" alt="{{ singleNews.author }}" class="img-responsive zoom_img_effect">
                         {% else %}
