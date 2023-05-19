@@ -1,0 +1,77 @@
+{{ form_start(news_form, {'attr': {'class': 'custom-form text-left hatch-scfForm'}}) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(news_form) }}
+    </div>
+
+    <div class="font-weight-bold">
+        <div class="col-md-4 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
+            {{ form_label(news_form.title, 'Título *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(news_form.title, {
+                'attr': {
+                    'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                    'data-action': 'project#areaBtn'
+                } })
+            }}
+            {{ form_help(news_form.title, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+        </div>
+        <div class="col-md-7 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="title">
+            {{ form_label(news_form.subtitle, 'Subtitulo *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(news_form.subtitle, { 'attr': {
+                'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                'data-action': 'blur->project#titleBtn'
+            } }) }}
+            {{ form_help(news_form.subtitle, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+        </div>
+        <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="url">
+            {{ form_label(news_form.text, 'Conteúdo do artigo', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(news_form.text, { 'attr': {
+                'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                'data-action': 'blur->project#urlBtn'
+            } }) }}
+            {{ form_help(news_form.text, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+        </div>
+        <div class="col-md-6 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="title">
+            {{ form_label(news_form.publishedOn, 'Data de publicação *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(news_form.publishedOn, { 'attr': {
+                'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                'data-action': 'blur->project#titleBtn'
+            } }) }}
+            {{ form_help(news_form.publishedOn, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+        </div>
+        <div class="col-md-5 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
+            {{ form_label(news_form.author, 'Autor *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(news_form.author, {
+                'attr': {
+                    'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                    'data-action': 'project#areaBtn'
+                } })
+            }}
+            {{ form_help(news_form.author, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+        </div>
+        <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
+            {{ form_label(news_form.url, 'Endereço Web da notícia *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(news_form.url, {
+                'attr': {
+                    'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                    'data-action': 'project#areaBtn'
+                } })
+            }}
+            {{ form_help(news_form.url, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+        </div>
+        <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content">
+            {{ form_label(news_form.photo, 'Sua foto', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(news_form.photo, { 'attr': {'class': 'form-control text-box single-line hatch-form-control font-weight-bold', 'required': false} }) }}
+            {{ form_help(news_form.photo, { 'attr': {'class': 'help-block font-weight-bold',} }) }}
+        </div>
+    </div>
+    <div class="form-submit-border" style="margin-top: 50px; text-align: right">
+        {{ form_widget(news_form.submit, {
+            'label': 'Próximo ',
+            'attr': {
+                'class': 'btn btn-default font-weight-bold',
+                'disabled': false
+            } })
+        }}
+    </div>
+{{ form_rest(news_form) }}
+{{ form_end(news_form) }}

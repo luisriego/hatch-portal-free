@@ -27,6 +27,8 @@ class ImportNewsController extends AbstractController
     #[Route('/news/import/', name: 'app_import_news')]
     public function __invoke(Request $request): Response
     {
+        $url = $request->query->get('url');
+
         $photoPath = '';
         $news = new News();
         $form = $this->createForm(ImportNewsFormType::class, $news);
@@ -34,7 +36,7 @@ class ImportNewsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $news = $this->scrapNewsService->handle($form['url']->getData());
+//            $news = $this->scrapNewsService->handle($form['url']->getData());
 //            if ($photo = $form['photo']->getData()) {
 //                $photoPath = $this->uploadService->handle($photo, 'news');
 //            }
@@ -49,9 +51,11 @@ class ImportNewsController extends AbstractController
 //
             return $this->redirectToRoute('app_homepage');
         }
+        $news = $this->scrapNewsService->handle($url);
 
-        return $this->render('new-news/import-news.html.twig', [
+        return $this->render('new-news/_single-news.html.twig', [
             'breadcrumb' => 'Importar notícia',
+            'news' => $news,
             'import_news_form' => $form->createView(),
         ]);
     }

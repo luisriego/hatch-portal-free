@@ -65,7 +65,7 @@ class ScrapNewsService
         $news->setAuthor($siteName);
         $news->setToPublish(false);
 
-        $this->newsRepository->save($news, true);
+        $this->newsRepository->save($news);
 
         return $news;
     }
