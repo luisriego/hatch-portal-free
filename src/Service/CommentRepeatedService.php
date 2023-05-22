@@ -19,9 +19,9 @@ class CommentRepeatedService
     public function handle(string $id, string $email, string $message): bool
     {
         if (null === $this->commentRepository->findOneByBlogEmailAndMessageOrFail($id, $email, $message)) {
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 }

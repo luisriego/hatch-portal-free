@@ -17,7 +17,7 @@ class CommentFormType extends AbstractType
             ->add('name')
             ->add('email')
             ->add('submit', SubmitType::class, [
-                'label' => 'Enviar agora <i class="fa fa-arrow-right"></i>',
+                'label' => 'Enviar agora ',
                 'label_html' => true,
             ])
         ;
