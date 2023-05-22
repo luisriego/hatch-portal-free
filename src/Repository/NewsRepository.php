@@ -55,13 +55,12 @@ class NewsRepository extends ServiceEntityRepository implements NewsRepositoryIn
             ->getResult();
     }
 
-    public function getAllNewsActives(int $maxResults): ?array
+    public function getAllNewsActives(): ?array
     {
         return $this->createQueryBuilder('n')
             ->andWhere('n.toPublish = :val')
             ->setParameter('val', true)
             ->orderBy('n.publishedOn', 'ASC')
-            ->setMaxResults($maxResults)
             ->getQuery()
             ->getResult()
             ;
@@ -91,5 +90,18 @@ class NewsRepository extends ServiceEntityRepository implements NewsRepositoryIn
             ->setParameter('slug', $slug)
             ->getQuery()
             ->getSingleResult();
+    }
+
+    /**
+     * @throws NonUniqueResultException
+     * @throws NoResultException
+     */
+    public function findOneByUrlOrFail(string $url): ?News
+    {
+        return $this->createQueryBuilder('n')
+            ->andWhere('n.url = :url')
+            ->setParameter('url', $url)
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 }

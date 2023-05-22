@@ -3,8 +3,8 @@
         {{ form_errors(news_form) }}
     </div>
 
-    <div class="font-weight-bold">
-        <div class="col-md-4 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
+    <div class="row font-weight-bold">
+        <div class="col-md-12 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
             {{ form_label(news_form.title, 'Título *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
             {{ form_widget(news_form.title, {
                 'attr': {
@@ -14,7 +14,7 @@
             }}
             {{ form_help(news_form.title, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
         </div>
-        <div class="col-md-7 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="title">
+        <div class="col-md-12 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="title">
             {{ form_label(news_form.subtitle, 'Subtitulo *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
             {{ form_widget(news_form.subtitle, { 'attr': {
                 'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
@@ -22,7 +22,7 @@
             } }) }}
             {{ form_help(news_form.subtitle, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
         </div>
-        <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="url">
+        <div class="d-none col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="url">
             {{ form_label(news_form.text, 'Conteúdo do artigo', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
             {{ form_widget(news_form.text, { 'attr': {
                 'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
@@ -38,7 +38,7 @@
             } }) }}
             {{ form_help(news_form.publishedOn, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
         </div>
-        <div class="col-md-5 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
+        <div class="col-md-6 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
             {{ form_label(news_form.author, 'Autor *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
             {{ form_widget(news_form.author, {
                 'attr': {
@@ -48,7 +48,7 @@
             }}
             {{ form_help(news_form.author, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
         </div>
-        <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
+        <div class="d-none col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content" data-project-target="area">
             {{ form_label(news_form.url, 'Endereço Web da notícia *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
             {{ form_widget(news_form.url, {
                 'attr': {
@@ -58,8 +58,8 @@
             }}
             {{ form_help(news_form.url, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
         </div>
-        <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content">
-            {{ form_label(news_form.photo, 'Sua foto', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+        <div class="d-none col-md-8 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content">
+            {{ form_label(news_form.photo, 'Foto', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
             {{ form_widget(news_form.photo, { 'attr': {'class': 'form-control text-box single-line hatch-form-control font-weight-bold', 'required': false} }) }}
             {{ form_help(news_form.photo, { 'attr': {'class': 'help-block font-weight-bold',} }) }}
         </div>

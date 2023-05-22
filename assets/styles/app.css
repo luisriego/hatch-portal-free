@@ -22,37 +22,37 @@ li {
     padding: 0;
     list-style: none;
 }
-.btn {
-    background: #e84a37;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 0 40px;
-    line-height: 48px;
-    text-transform: uppercase;
-}
-.btn0 {
-    background: #e84a37;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 0 40px;
-    line-height: 48px;
-    text-transform: uppercase;
-    margin: 0 20px 0 0;
-}
-.btn1 {
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 0 40px;
-    line-height: 48px;
-    text-transform: uppercase;
-}
-.btn2 {
-    color: #000;
-    background: #e84a37;
-}
+/*.btn {*/
+/*    background: #e84a37;*/
+/*    color: #fff;*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    padding: 0 40px;*/
+/*    line-height: 48px;*/
+/*    text-transform: uppercase;*/
+/*}*/
+/*.btn0 {*/
+/*    background: #e84a37;*/
+/*    color: #fff;*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    padding: 0 40px;*/
+/*    line-height: 48px;*/
+/*    text-transform: uppercase;*/
+/*    margin: 0 20px 0 0;*/
+/*}*/
+/*.btn1 {*/
+/*    color: #000;*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    padding: 0 40px;*/
+/*    line-height: 48px;*/
+/*    text-transform: uppercase;*/
+/*}*/
+/*.btn2 {*/
+/*    color: #000;*/
+/*    background: #e84a37;*/
+/*}*/
 a,
 .btn,
 button {
@@ -7358,6 +7358,7 @@ section.newsletter .req-button a i
     font-size: 4em;
 }
 
-.mb2 {
-    margin-button: 20px !important;
+.modal-body button {
+    display: none;
 }
+

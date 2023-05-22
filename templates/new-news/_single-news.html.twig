@@ -2,9 +2,9 @@
 <div class="news-evn-img text-center m-5">
     <img src="{{ asset(news.image) }}" alt="{{ news.author }}" class="img-responsive  border border-primary" width="400px">
 </div>
-<h4><span style="color: #4dcef6">Data: </span>  {{ news.publishedOn|date('d/m/Y')}}</h4>
-<h4><span style="color: #4dcef6">Publicado em: </span> {{ news.author }}</h4>
-<h4><span style="color: #4dcef6">Título: </span>  {{ news.title }}</h4>
-<h4><span style="color: #4dcef6">Subtítulo: </span> {{ news.subtitle }}</h4>
+{#<h4><span style="color: #4dcef6">Data: </span>  {{ news.publishedOn|date('d/m/Y')}}</h4>#}
+{#<h4><span style="color: #4dcef6">Publicado em: </span> {{ news.author }}</h4>#}
+{#<h4><span style="color: #4dcef6">Título: </span>  {{ news.title }}</h4>#}
+{#<h4><span style="color: #4dcef6">Subtítulo: </span> {{ news.subtitle }}</h4>#}
 
-{{ include('new-news/_form-import.html.twig') }}
+{{ include('new-news/_form.html.twig') }}

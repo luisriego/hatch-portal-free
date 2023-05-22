@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\News;
 use App\Form\ImportNewsFormType;
+use App\Form\NewsFormType;
 use App\Service\ScrapNewsService;
 use App\Service\UploadFileService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -15,8 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class ImportNewsController extends AbstractController
 {
     public function __construct(
-        private readonly EntityManagerInterface $entityManager,
-        private readonly UploadFileService $uploadService,
+//        private readonly EntityManagerInterface $entityManager,
+//        private readonly UploadFileService $uploadService,
         private readonly ScrapNewsService $scrapNewsService,
     ) {
     }
@@ -31,7 +32,8 @@ class ImportNewsController extends AbstractController
 
         $photoPath = '';
         $news = new News();
-        $form = $this->createForm(ImportNewsFormType::class, $news);
+        $news = $this->scrapNewsService->handle($url);
+        $form = $this->createForm(NewsFormType::class, $news);
 
         $form->handleRequest($request);
 
@@ -51,12 +53,11 @@ class ImportNewsController extends AbstractController
 //
             return $this->redirectToRoute('app_homepage');
         }
-        $news = $this->scrapNewsService->handle($url);
 
         return $this->render('new-news/_single-news.html.twig', [
             'breadcrumb' => 'Importar notícia',
             'news' => $news,
-            'import_news_form' => $form->createView(),
+            'news_form' => $form->createView(),
         ]);
     }
 }

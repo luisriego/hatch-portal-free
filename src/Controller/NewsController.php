@@ -19,7 +19,7 @@ class NewsController extends AbstractController
     {
         $news = $this->newsService->handle();
 
-        return $this->render('posts/all_news.html.twig',
+        return $this->render('news/all_news.html.twig',
             [
                 'breadcrumb' => 'Notícias de atualidade sobre inovação e tecnologia',
                 'news' => $news,

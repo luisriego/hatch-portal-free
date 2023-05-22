@@ -5,17 +5,23 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Entity\News;
-use App\Repository\NewsRepository;
+use App\Exception\ResourceAlreadyExistsException;
+use App\Repository\NewsRepositoryInterface;
 use Goutte\Client;
 use Symfony\Component\HttpClient\HttpClient;
 
 class ScrapNewsService
 {
-    public function __construct(private readonly NewsRepository $newsRepository)
+    public function __construct(private readonly NewsRepositoryInterface $newsRepository)
     {
     }
     public function handle(string $url): News|null
     {
+        if (null !== $newsAlreadyExists = $this->newsRepository->findOneByUrlOrFail($url)) {
+            ResourceAlreadyExistsException::fromUrl('News', $url);
+            return $newsAlreadyExists;
+        }
+
         $image = "";
         $title = "";
         $subtitle = "";
@@ -31,6 +37,10 @@ class ScrapNewsService
                 ->attr('content');
         } catch(\Exception $e) { // I guess its InvalidArgumentException in this case
             echo $e->getMessage();
+        }
+
+        if ($siteName === 'YouTube'){
+            return $this->getYoutubeData($crawler, $url);
         }
 
         $title = $crawler->filter('h1')->each(function ($node) { return $node->text();});
@@ -65,8 +75,39 @@ class ScrapNewsService
         $news->setAuthor($siteName);
         $news->setToPublish(false);
 
-        $this->newsRepository->save($news);
+        $this->newsRepository->save($news, true);
 
         return $news;
     }
+
+    private function getYoutubeData($crawler, string $url): News
+    {
+        $youtubeNews = new News();
+
+        try{
+            $title = $crawler->filter('meta[property="og:title"]')
+                ->first()
+                ->attr('content');
+            $subtitle = $crawler->filter('meta[property="og:description"]')
+                ->first()
+                ->attr('content');
+            $image = $crawler->filter('meta[property="og:image"]')
+                ->first()
+                ->attr('content');
+        } catch(\Exception $e) { // I guess its InvalidArgumentException in this case
+            echo $e->getMessage();
+        }
+        $youtubeNews->setTitle($title);
+        $youtubeNews->setSubtitle($subtitle);
+        $youtubeNews->setImage($image);
+        $youtubeNews->setUrl($url);
+        $youtubeNews->setDate('');
+        $youtubeNews->setAuthor('YouTube');
+        $youtubeNews->setToPublish(false);
+
+        $this->newsRepository->save($youtubeNews, true);
+
+        return $youtubeNews;
+    }
+
 }
