@@ -17,9 +17,10 @@
                         placeholder="Endereço web da notícia"
                         aria-label="Recipient's username" aria-describedby="button-addon2"
                         data-action="modal-form#onInput"
+                        required="required"
                 >
                 <button
-                        class="btn btn-primary btn-lg" id="button-addon2" type="button"
+                        class="btn btn-outline-info btn-lg" id="button-addon2" type="button"
                         data-action="modal-form#openModal"
                 >importar</button>
                 {{ include('modules/_modal.html.twig', {
@@ -28,7 +29,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <a href="{{ path('app_new_news') }}" class="btn btn-primary btn-lg" style="background-color: lightblue; color: black">Publicar uma notícia</a>
+            <a href="{{ path('app_new_news') }}" class="btn btn-outline-dark btn-lg">Publicar uma notícia</a>
         </div>
     </div>
 
