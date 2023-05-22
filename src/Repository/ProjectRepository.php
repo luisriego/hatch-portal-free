@@ -80,7 +80,7 @@ class ProjectRepository extends ServiceEntityRepository implements ProjectReposi
     public function getAllProjectsToAdmin(): ?array
     {
         return $this->createQueryBuilder('p')
-            ->orderBy('p.createdAt', 'DESC')
+            ->orderBy('p.createdOn', 'DESC')
             ->getQuery()
             ->getResult()
         ;
