@@ -1,0 +1,24 @@
+<!-- Modal -->
+<div
+    class="modal fade"
+    id="exampleModal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-modal-form-target="modal"
+>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{ modalTitle }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" data-modal-form-target="modalBody">
+                {{ modalContent|default('Loading...') }}
+            </div>
+            <div class="modal-footer">
+{#                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>#}
+                <button type="button" class="btn btn-danger" data-action="modal-form#deleteNews">Cancela, vou fazer manualmente</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok, pode guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

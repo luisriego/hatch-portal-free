@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\News;
 use App\Form\ImportNewsFormType;
+use App\Form\NewsFormType;
 use App\Service\ScrapNewsService;
 use App\Service\UploadFileService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -15,8 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class ImportNewsController extends AbstractController
 {
     public function __construct(
-        private readonly EntityManagerInterface $entityManager,
-        private readonly UploadFileService $uploadService,
+//        private readonly EntityManagerInterface $entityManager,
+//        private readonly UploadFileService $uploadService,
         private readonly ScrapNewsService $scrapNewsService,
     ) {
     }
@@ -27,14 +28,17 @@ class ImportNewsController extends AbstractController
     #[Route('/news/import/', name: 'app_import_news')]
     public function __invoke(Request $request): Response
     {
+        $url = $request->query->get('url');
+
         $photoPath = '';
         $news = new News();
-        $form = $this->createForm(ImportNewsFormType::class, $news);
+        $news = $this->scrapNewsService->handle($url);
+        $form = $this->createForm(NewsFormType::class, $news);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $news = $this->scrapNewsService->handle($form['url']->getData());
+//            $news = $this->scrapNewsService->handle($form['url']->getData());
 //            if ($photo = $form['photo']->getData()) {
 //                $photoPath = $this->uploadService->handle($photo, 'news');
 //            }
@@ -50,9 +54,10 @@ class ImportNewsController extends AbstractController
             return $this->redirectToRoute('app_homepage');
         }
 
-        return $this->render('new-news/import-news.html.twig', [
+        return $this->render('new-news/_single-news.html.twig', [
             'breadcrumb' => 'Importar notícia',
-            'import_news_form' => $form->createView(),
+            'news' => $news,
+            'news_form' => $form->createView(),
         ]);
     }
 }

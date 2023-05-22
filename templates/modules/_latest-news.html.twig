@@ -1,14 +1,37 @@
 <!-- Lattest news-->
 <div class="container clearfix sectpad-sec">
-    <div class="section_header2 common col-md-5">
+    <div class="section_header2 common col-md-12">
         <h2>Notícias no nosso portal</h2>
     </div>
-    <div class="col-md-4">
-        <a href="{{ path('app_import_news') }}" class="btn btn-primary btn-lg align-left" style="background-color: blueviolet">Importar Notícia</a>
+    <div class="row">
+        <div class="col-md-9">
+{#                    <a href="{{ path('app_import_news') }}" class="btn btn-primary btn-lg align-left" style="background-color: blueviolet">Importar Notícia</a>#}
+            <div
+                    class="input-group mb-3"
+                    {{ stimulus_controller('modal-form', {
+                        formUrl: path('app_import_news')
+                    }) }}
+            >
+                <input
+                        type="text" class="form-control"
+                        placeholder="Endereço web da notícia"
+                        aria-label="Recipient's username" aria-describedby="button-addon2"
+                        data-action="modal-form#onInput"
+                >
+                <button
+                        class="btn btn-primary btn-lg" id="button-addon2" type="button"
+                        data-action="modal-form#openModal"
+                >importar</button>
+                {{ include('modules/_modal.html.twig', {
+                    modalTitle: 'Previsualizar os dados da notícia'
+                }) }}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ path('app_new_news') }}" class="btn btn-primary btn-lg" style="background-color: lightblue; color: black">Publicar uma notícia</a>
+        </div>
     </div>
-    <div class="col-md-3">
-        <a href="{{ path('app_new_news') }}" class="btn btn-primary btn-lg align-right" style="background-color: lightblue; color: black">Publicar uma notícia</a>
-    </div>
+
     <div class="row event-pad col-md-12">
         {% if news is empty %}
             <h3>Nenhuma notícia foi publicada ainda!</h3>
@@ -18,10 +41,18 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="news-evn-img">
                     <a target="_blank" href="{{ singleNews.url }}" class="image_hover text-center">
-                        {% if singleNews.image is not null %}
-                            <img src="{{ asset(singleNews.image) }}" alt="{{ singleNews.author }}" class="img-responsive zoom_img_effect">
+                        {% if singleNews.image is not empty %}
+                            <img
+                                src="{{ asset(singleNews.image) }}" alt="{{ singleNews.author }}"
+                                class="img-responsive zoom_img_effect"
+                                width="100%" height="220px"
+                            >
                         {% else %}
-                            <img src="{{ asset('media/blog/avatar.jpg') }}" alt="avatar padrão" class="img-responsive zoom_img_effect">
+                            <img
+                                src="https://res.cloudinary.com/inovacaobrasil/image/upload/v1684699226/news/news_default.png" alt="avatar padrão"
+                                class="img-responsive zoom_img_effect"
+                                width="100%" height="220px"
+                            >
                         {% endif %}
                     </a>
                     <div class="event-date">

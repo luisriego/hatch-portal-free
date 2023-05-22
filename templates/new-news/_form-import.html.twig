@@ -1,0 +1,39 @@
+{{ form_start(import_news_form, {'attr': {'class': 'custom-form text-left hatch-scfForm'}}) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(import_news_form) }}
+    </div>
+
+    <div class="font-weight-bold">
+        <div class="col-md-11 col-sm-8 required-field scfSingleLineTextBorder form-group has-feedback contactus-field-content">
+            {{ form_label(import_news_form.url, 'Endereço Web da notícia *', {'label_attr': {'class': 'control-label contactus-field-title font-weight-bold'}}) }}
+            {{ form_widget(import_news_form.url, {
+                'attr': {
+                    'class': 'form-control text-box single-line hatch-form-control font-weight-bold',
+                } })
+            }}
+            {{ form_help(import_news_form.url, { 'attr': {'class': 'help-block font-weight-bold'} }) }}
+        </div>
+    </div>
+    <div {{ stimulus_controller('modal-form', {
+        formUrl: path('app_import_news')
+    }) }}>
+        <button
+                class="btn btn-primary btn-sm"
+                data-action="modal-form#openModal"
+        >preview</button>
+
+        {{ include('modules/_modal.html.twig', {
+            modalTitle: 'Previsualizar os dados da notícia'
+        }) }}
+    </div>
+    <div class="form-submit-border" style="margin-top: 50px; text-align: right">
+        {{ form_widget(import_news_form.submit, {
+            'label': 'Publicar ',
+            'attr': {
+                'class': 'btn btn-default font-weight-bold',
+                'disabled': false
+            } })
+        }}
+    </div>
+{{ form_rest(import_news_form) }}
+{{ form_end(import_news_form) }}

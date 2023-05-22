@@ -16,9 +16,11 @@ interface NewsRepositoryInterface
 
     public function findOneBySlugOrFail(string $slug): ?News;
 
+    public function findOneByUrlOrFail(string $url): ?News;
+
     public function findNActiveOrFail(int $limit): ?array;
 
     public function getTotalNumber(): ?int;
 
-    public function getAllNewsActives(int $maxResults): ?array;
+    public function getAllNewsActives(): ?array;
 }

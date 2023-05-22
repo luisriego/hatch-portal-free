@@ -4,20 +4,20 @@
 
     {% include "about/_header.html.twig" %}
 
-    {{ include('sections/_breadcrumb.html.twig') }}
+{#    {{ include('sections/_breadcrumb.html.twig') }}#}
 
     <section class="section-main section-twocolumn-right">
         <div class="container">
             <div class="row">
-                {{ include('new-news/_import-form-blog.container.html.twig') }}
-
+{#                {{ include('new-news/_import-form-blog.container.html.twig') }}#}
+                {{ include('new-news/_single-news.html.twig') }}
 {#                {{ include('about/_sidebar-nav.html.twig') }}#}
             </div>
         </div>
     </section>
 
-    {% include "modules/_solution.html.twig" %}
+{#    {% include "modules/_solution.html.twig" %}#}
 
-    {% include "modules/_footer.html.twig" %}
+{#    {% include "modules/_footer.html.twig" %}#}
 
 {% endblock %}
