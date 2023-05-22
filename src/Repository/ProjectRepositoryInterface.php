@@ -17,4 +17,6 @@ interface ProjectRepositoryInterface
     public function findOneByTitleAndAreaOrFail(string $title, string $area): ?Project;
 
     public function getTotalNumber(): ?int;
+
+    public function getAllProjectsToAdmin(): ?array;
 }
