@@ -35,9 +35,11 @@
                   <img class="img-responsive zoom_img_effect" src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ project.title }}">
               {% endif %}
             </a>
-            {# <div class="event-date">
-              <h3>05 <small>Aug</small></h3>
-            </div> #}
+            <div class="event-date" style="background: transparent; left: 5px; bottom: 157px;">
+              {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                  <h3><a type="button" href="{{ path('app_delete_project', {slug: project.slug})}}" class="btn btn-danger" style="transform: rotate(-20deg);">Delete</a></h3>
+              {% endif %}
+            </div>
           </div>
           <div class="news-evn-cont">
             <div class="news-meta">
