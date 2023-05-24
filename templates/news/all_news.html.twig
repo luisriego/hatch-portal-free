@@ -41,7 +41,9 @@
                               {% endif %}
                           </a>
                           <div class="event-date">
-                              <h3 style="margin-top: -5px">{{ news.date|date("d")}} <small>{{ news.date|date("M")}}</small><small>{{ news.date|date("Y")}}</small></h3>
+                              {% set dateTime = date(news.date) %}
+
+                              <h3 style="margin-top: -5px">{{ dateTime|date("d")}} <small>{{ dateTime|date("M")}}</small><small>{{ dateTime|date("Y")}}</small></h3>
                           </div>
                       </div>
                       <div class="news-evn-cont">
