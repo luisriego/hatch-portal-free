@@ -17,10 +17,19 @@ class ScrapNewsService
     }
     public function handle(string $url): News|null
     {
-        if (null !== $newsAlreadyExists = $this->newsRepository->findOneByUrlOrFail($url)) {
-            ResourceAlreadyExistsException::fromUrl('News', $url);
-            return $newsAlreadyExists;
+//        if (null !== $newsAlreadyExists = $this->newsRepository->findOneByUrlOrFail($url)) {
+//            ResourceAlreadyExistsException::fromUrl('News', $url);
+//            return $newsAlreadyExists;
+//        }
+
+        $client = new Client(HttpClient::create(['timeout' => 60]));
+        $crawler = $client->request('GET', $url);
+
+        $siteName = explode('.', $url)[1];
+        if ($siteName === "youtube") {
+            return $this->getYoutubeData($crawler, $url);
         }
+
 
         $image = "";
         $title = "";
@@ -28,20 +37,17 @@ class ScrapNewsService
         $date = "";
         $siteName = "";
 
-        $client = new Client(HttpClient::create(['timeout' => 60]));
-        $crawler = $client->request('GET', $url);
-
-        try{
-            $siteName = $crawler->filter('meta[property="og:site_name"]')
-                ->first()
-                ->attr('content');
-        } catch(\Exception $e) { // I guess its InvalidArgumentException in this case
-            echo $e->getMessage();
-        }
-
-        if ($siteName === 'YouTube'){
-            return $this->getYoutubeData($crawler, $url);
-        }
+//        try{
+//            $siteName = $crawler->filter('meta[property="og:site_name"]')
+//                ->first()
+//                ->attr('content');
+//        } catch(\Exception $e) { // I guess its InvalidArgumentException in this case
+//            echo $e->getMessage();
+//        }
+//
+//        if ($siteName === 'YouTube'){
+//            return $this->getYoutubeData($crawler, $url);
+//        }
 
         $title = $crawler->filter('h1')->each(function ($node) { return $node->text();});
         $title = (is_array($title)) ? $title[0] : $title;
@@ -84,6 +90,8 @@ class ScrapNewsService
     {
         $youtubeNews = new News();
 
+        $author = $crawler->filter('#text')->each(function ($node) { return $node->text();});
+        dd($author);
         try{
             $title = $crawler->filter('meta[property="og:title"]')
                 ->first()
@@ -109,5 +117,4 @@ class ScrapNewsService
 
         return $youtubeNews;
     }
-
 }
