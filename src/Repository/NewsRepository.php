@@ -63,7 +63,7 @@ class NewsRepository extends ServiceEntityRepository implements NewsRepositoryIn
             ->orderBy('n.publishedOn', 'ASC')
             ->getQuery()
             ->getResult()
-            ;
+        ;
     }
 
     /**

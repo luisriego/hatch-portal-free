@@ -32,7 +32,7 @@ class ImportNewsFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => News::class
+            'data_class' => News::class,
         ]);
     }
 }

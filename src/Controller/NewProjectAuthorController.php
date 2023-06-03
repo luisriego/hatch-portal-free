@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Author;
-use App\Exception\AuthorAlreadyExistsException;
 use App\Form\AuthorFormType;
 use App\Repository\AuthorRepositoryInterface;
 use App\Service\UploadFileService;
@@ -19,8 +18,7 @@ class NewProjectAuthorController extends AbstractController
         private readonly EntityManagerInterface $entityManager,
         private readonly AuthorRepositoryInterface $authorRepository,
         private readonly UploadFileService $uploadService,
-    )
-    {
+    ) {
     }
 
     #[Route('/new/authors/project', name: 'app_new_authors_project')]
@@ -41,7 +39,7 @@ class NewProjectAuthorController extends AbstractController
                 $authorExist->markAsUpdated();
                 $authorExist->setResume($form['resume']->getData());
                 $authorExist->setPosition($form['position']->getData());
-                if ($avatarPath !== '') {
+                if ('' !== $avatarPath) {
                     $authorExist->setAvatar($avatarPath);
                 }
 
@@ -52,13 +50,14 @@ class NewProjectAuthorController extends AbstractController
             }
 
             $author->markAsUpdated();
-            if ($avatarPath !== '') {
+            if ('' !== $avatarPath) {
                 $author->setAvatar($avatarPath);
             }
 
             $this->entityManager->persist($author);
 
             $this->entityManager->flush();
+
             return $this->redirectToRoute('app_new_project', ['author' => $author->getEmail()]);
         }
 

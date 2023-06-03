@@ -1,6 +1,6 @@
 import { Controller} from '@hotwired/stimulus'
 import { Modal } from 'bootstrap'
-import $ from "jquery";
+// import $ from "jquery";
 
 export default class extends Controller {
     inputValue = ''

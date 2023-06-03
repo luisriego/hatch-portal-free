@@ -38,7 +38,7 @@ class FactRepository extends ServiceEntityRepository implements FactRepositoryIn
             ->setParameter('project', $id)
             ->getQuery()
             ->getResult()
-            ;
+        ;
     }
 
 //    public function findOneBySomeField($value): ?Fact

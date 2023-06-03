@@ -57,7 +57,7 @@
                         {% endif %}
                     </a>
                     <div class="event-date">
-                        <h3>
+                        <h3 style="margin-top: -5px">
                             {{ singleNews.publishedOn|date("d")}}
                             <small>{{ singleNews.publishedOn|date("M")}}</small>
                             <small>{{ singleNews.publishedOn|date("Y")}}</small>
@@ -70,7 +70,7 @@
 {#                        <a href="{{ path('app_single_blog', {slug: singleNews.slug}) }}"> Comentários: </a>#}
                     </div>
                     <h3>{{ singleNews.title }}</h3>
-                    <a target="_blank" href="{{ singleNews.url }}">{{ singleNews.url }}</a>
+                    <a target="_blank" href="{{ singleNews.url }}">Veja o artigo completo <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         {% endfor %}

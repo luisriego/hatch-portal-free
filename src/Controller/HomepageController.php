@@ -6,8 +6,6 @@ use App\Repository\NewsRepositoryInterface;
 use App\Service\BlogService;
 use App\Service\EventService;
 use App\Service\HomepageService;
-use App\Service\NewsLatestService;
-use App\Service\NewsService;
 use App\Service\TestimonialService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,6 +35,7 @@ class HomepageController extends AbstractController
             [
                 'blogs' => $randomBlog,
                 'news' => $randomNews,
+                'challenges' => [],
 //                'data' => $randomData,
 //                'events' => $randomEvent,
 //                'testimonial' => $randomTestimonials,

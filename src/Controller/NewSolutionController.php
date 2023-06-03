@@ -4,9 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Solution;
 use App\Form\SolutionFormType;
-use App\Repository\ProjectRepository;
 use App\Repository\ProjectRepositoryInterface;
-use App\Repository\SolutionRepository;
 use App\Repository\SolutionRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

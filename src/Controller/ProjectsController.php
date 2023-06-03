@@ -25,7 +25,6 @@ class ProjectsController extends AbstractController
             $projects = $this->projectsService->handle();
         }
 
-
         return $this->render('projects/all_projects.html.twig',
             [
                 'breadcrumb' => 'Projetos candidatos',

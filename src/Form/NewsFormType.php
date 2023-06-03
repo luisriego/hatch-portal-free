@@ -84,7 +84,7 @@ class NewsFormType extends AbstractType
                 new UniqueEntity([
                     'entityClass' => News::class,
                     'fields' => 'title',
-                    'message' => 'O título deve ser único, parece que já há um artigo com esse mesmo título'
+                    'message' => 'O título deve ser único, parece que já há um artigo com esse mesmo título',
                 ]),
             ],
         ]);

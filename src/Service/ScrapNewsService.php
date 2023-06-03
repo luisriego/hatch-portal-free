@@ -15,6 +15,7 @@ class ScrapNewsService
     public function __construct(private readonly NewsRepositoryInterface $newsRepository)
     {
     }
+
     public function handle(string $url): News|null
     {
 //        if (null !== $newsAlreadyExists = $this->newsRepository->findOneByUrlOrFail($url)) {
@@ -26,16 +27,15 @@ class ScrapNewsService
         $crawler = $client->request('GET', $url);
 
         $siteName = explode('.', $url)[1];
-        if ($siteName === "youtube") {
+        if ('youtube' === $siteName) {
             return $this->getYoutubeData($crawler, $url);
         }
 
-
-        $image = "";
-        $title = "";
-        $subtitle = "";
-        $date = "";
-        $siteName = "";
+        $image = '';
+        $title = '';
+        $subtitle = '';
+        $date = '';
+        $siteName = '';
 
 //        try{
 //            $siteName = $crawler->filter('meta[property="og:site_name"]')
@@ -49,10 +49,10 @@ class ScrapNewsService
 //            return $this->getYoutubeData($crawler, $url);
 //        }
 
-        $title = $crawler->filter('h1')->each(function ($node) { return $node->text();});
+        $title = $crawler->filter('h1')->each(function ($node) { return $node->text(); });
         $title = (is_array($title)) ? $title[0] : $title;
         if ($title) {
-            $subtitle = $crawler->filter('h2')->each(function ($node) { return $node->text();});
+            $subtitle = $crawler->filter('h2')->each(function ($node) { return $node->text(); });
             $subtitle = (is_array($subtitle)) ? $subtitle[0] : $subtitle;
         }
 
@@ -64,12 +64,12 @@ class ScrapNewsService
                 $image = $img->attr('data-src');
             } elseif ($img->attr('alt') == $title) {
                 $image = $img->attr('src');
-            } elseif (intval($img->attr('width')) > 600){
+            } elseif (intval($img->attr('width')) > 600) {
                 $image = $img->attr('src');
             }
         }
 
-        $dates = $crawler->filter('time')->each(function ($node) { return $node->text();});
+        $dates = $crawler->filter('time')->each(function ($node) { return $node->text(); });
         $date = (!empty($dates) && is_array($dates)) ? $dates[0] : '';
 
         $news = new News();
@@ -90,9 +90,9 @@ class ScrapNewsService
     {
         $youtubeNews = new News();
 
-        $author = $crawler->filter('#text')->each(function ($node) { return $node->text();});
+        $author = $crawler->filter('#text')->each(function ($node) { return $node->text(); });
         dd($author);
-        try{
+        try {
             $title = $crawler->filter('meta[property="og:title"]')
                 ->first()
                 ->attr('content');
@@ -102,7 +102,7 @@ class ScrapNewsService
             $image = $crawler->filter('meta[property="og:image"]')
                 ->first()
                 ->attr('content');
-        } catch(\Exception $e) { // I guess its InvalidArgumentException in this case
+        } catch (\Exception $e) { // I guess its InvalidArgumentException in this case
             echo $e->getMessage();
         }
         $youtubeNews->setTitle($title);

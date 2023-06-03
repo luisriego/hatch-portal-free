@@ -80,7 +80,6 @@ class BlogRepository extends ServiceEntityRepository implements BlogRepositoryIn
             ->getResult($limit);
     }
 
-
     public function getAllPostsActives(): ?array
     {
         return $this->createQueryBuilder('b')
