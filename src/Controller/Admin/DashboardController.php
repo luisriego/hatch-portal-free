@@ -8,6 +8,7 @@ use App\Entity\Blog;
 use App\Entity\Challenge;
 use App\Entity\Comment;
 use App\Entity\Event;
+use App\Entity\Faq;
 use App\Entity\Highlight;
 use App\Entity\News;
 use App\Entity\Project;
@@ -82,6 +83,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Area', 'fa fa-arrows', Area::class);
         yield MenuItem::linkToCrud('Topics', 'fas fa-folder', Topic::class);
         yield MenuItem::linkToCrud('Type', 'fa fa-check-square', Type::class);
+        yield MenuItem::linkToCrud('Faqs', 'fa fa-question', Faq::class);
         yield MenuItem::section('Blog data');
         yield MenuItem::linkToCrud('Posts', 'fa fa-blog', Blog::class)
             ->setBadge($numBlogs, 'info');
