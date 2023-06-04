@@ -1,0 +1,103 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% include "challenge-set/_header.html.twig" %}
+    <section class="breadcumb-wrapper">
+      <div class="container clearfix">
+        <ul class="breadcumb">
+          <li><a href="{{ path('app_homepage') }}">Home</a></li>
+          <li><span>{{ breadcrumb }}</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lattest challengeSet-->
+    <div class="container clearfix sectpad-sec">
+      <div class="section_header2 common">
+        <h2>Todos os desafios lançados</h2>
+      </div>
+      {% for row in challengesSet|batch(3) %}
+          <div class="row event-pad">
+              {% for challengeSet in row %}
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                      <div class="">
+                          <a href="{{ challengeSet.url }}" target="_blank" class="image_hover">
+                              {% if challengeSet.image is not empty %}
+                                  <img
+                                      src="{{ asset(challengeSet.image) }}" alt="{{ challengeSet.image }}"
+                                      class="img-responsive zoom_img_effect" width="100%"
+                                  >
+                              {% else %}
+                                  <img
+                                      src="https://res.cloudinary.com/inovacaobrasil/image/upload/v1684699226/challengeSet/challengeSet_default.png" alt="{{ challengeSet.author }}"
+                                      class="img-responsive zoom_img_effect" width="100%" height="220px"
+                                  >
+                              {% endif %}
+                          </a>
+                          <div class="event-date">
+                              {% set dateTime = date(challengeSet.date) %}
+
+                              <h3 style="margin-top: -5px">{{ dateTime|date("d")}} <small>{{ dateTime|date("M")}}</small><small>{{ dateTime|date("Y")}}</small></h3>
+                          </div>
+                      </div>
+                      <div class="challengeSet-evn-cont">
+                          <div class="challengeSet-meta">
+                              <a href="{{ path('app_single_blog', {slug: challengeSet.slug}) }}">Por: {{ challengeSet.author }}</a>
+                          </div>
+                          <a href="{{ path('app_single_blog', {slug: challengeSet.slug}) }}">
+                              <h3>{{ challengeSet.title }}</h3>
+                          </a>
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+      {% endfor %}
+    </div>
+
+
+    <!-- Project  Page-->
+    {# <section class="core-projects sectpad">
+      <div class="container clearfix">
+        <h1>Our company experts</h1>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+      </div>
+    </section> #}
+    <!-- Projects-->
+    {# <section class="project-post-area sectpad">
+      <div class="container clearfix">
+        {% for row in projects|batch(4) %}
+        <div class="project-post">
+          <div class="row">
+          {% for project in row %}
+            <div class="col-sm-4 project-post-info">
+              <div class="project-post-image">
+                <a href="{{ path('app_post', {projectId: post.id}) }}">
+                    {% if post.image is not null %}
+                        <img src="{{ asset('media/projects/'~post.image) }}" alt="{{ post.title }}">
+                    {% else %}
+                        {{ post.image }}
+                        <img src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ post.title }}" width="265" height="175">
+                    {% endif %}
+                </a>
+                <a href="{{ path('app_post', {projectId: post.id}) }}" class="four_arrow_hover_box"><span class="arrows"><span></span></span></a>
+              </div>
+              <div class="info-text">
+                <a href="{{ path('app_post', {projectId: post.id}) }}">
+                  <h4>{{ post.title }}</h4>
+                </a>
+                <p>{{ post.subtitle }}</p>
+                <p>{{ post.location }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section> #}
+
+    {# {% include "modules/_solution.html.twig" %} #}
+
+    {% include "modules/_footer.html.twig" %}
+
+{% endblock %}
