@@ -19,7 +19,7 @@ class PostFixture extends Fixture
         $manager->persist($owner1);
 
         $post1 = new Blog();
-        $post1->setTitle('Post 1');
+        $post1->setTitle('Advanced process control: the engine of Industry 4.0');
         $post1->setAuthor('autor 1');
         $post1->setDate(new \DateTime());
         $post1->setText('texto del post');
