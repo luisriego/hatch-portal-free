@@ -48,8 +48,15 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin_dashboard')]
     public function index(): Response
     {
-//        return parent::index();
-        return $this->render('admin/index.html.twig');
+        $projects = $this->projectRepository->getTotalNumber();
+        $posts = $this->blogRepository->getTotalNumber();
+        $news = $this->newsRepository->getTotalNumber();
+
+        return $this->render('admin/index.html.twig',[
+            'projects' => $projects,
+            'posts' => $posts,
+            'news' => $news,
+        ]);
     }
 
     public function configureDashboard(): Dashboard

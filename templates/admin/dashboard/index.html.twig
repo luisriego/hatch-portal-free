@@ -3,10 +3,10 @@
     <!-- Start First Cards -->
     <!-- *************************************************************** -->
     <div class="row">
-        {{ include('admin/dashboard/_card.html.twig') }}
-        {{ include('admin/dashboard/_card.html.twig') }}
-        {{ include('admin/dashboard/_card.html.twig') }}
-        {{ include('admin/dashboard/_card.html.twig') }}
+        {{ include('admin/dashboard/_card.html.twig', { 'variable': projects, 'title': 'Projetos cadastrados' }) }}
+        {{ include('admin/dashboard/_card.html.twig', { 'variable': posts, 'title': 'Posts no nosso Blog' }) }}
+        {{ include('admin/dashboard/_card.html.twig', { 'variable': news, 'title': 'Artigos publicados' }) }}
+        {{ include('admin/dashboard/_card.html.twig', { 'variable': projects, 'title': 'Desafios lançados' }) }}
 
     </div>
     <div class="row" style="margin-top: 20px">
