@@ -2,20 +2,8 @@
 
 {% block body %}
     {% include "projects/_header.html.twig" %}
-    <!-- Inner Header-->
-{#    <section class="inner-banner2 clearfix">#}
-{#      <div class="container clearfix">#}
-{#        <h2>Projetos</h2>#}
-{#      </div>#}
-{#    </section>#}
-    <section class="breadcumb-wrapper">
-      <div class="container clearfix">
-        <ul class="breadcumb">
-          <li><a href="{{ path('app_homepage') }}">Home</a></li>
-          <li><span>{{ breadcrumb }}</span></li>
-        </ul>
-      </div>
-    </section>
+
+    {% include('sections/_breadcrumb.html.twig') %}
 
     <!-- Lattest news-->
     <div class="container clearfix sectpad-sec">
@@ -29,10 +17,10 @@
           <div class="news-evn-img">
             <a href="{{ path('app_project', {slug: project.slug}) }}" class="image_hover">
               {% if project.image is not null %}
-                  <img class="img-responsive zoom_img_effect" src="{{ asset(project.image) }}" alt="{{ project.title }}">
+                  <img class="img-responsive zoom_img_effect" src="{{ asset(project.image) }}" alt="{{ project.title }}" height="225px">
               {% else %}
                   {{ project.image }}
-                  <img class="img-responsive zoom_img_effect" src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ project.title }}">
+                  <img class="img-responsive zoom_img_effect" src="{{ asset('media/banner/Innovation-inflation-small.jpg') }}" alt="{{ project.title }}" height="225px">
               {% endif %}
             </a>
             <div class="event-date" style="background: transparent; left: 5px; bottom: 157px;">

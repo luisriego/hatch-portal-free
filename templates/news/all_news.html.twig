@@ -2,20 +2,8 @@
 
 {% block body %}
     {% include "news/_header.html.twig" %}
-    <!-- Inner Header-->
-{#    <section class="inner-banner2 clearfix">#}
-{#      <div class="container clearfix">#}
-{#        <h2>Projetos</h2>#}
-{#      </div>#}
-{#    </section>#}
-    <section class="breadcumb-wrapper">
-      <div class="container clearfix">
-        <ul class="breadcumb">
-          <li><a href="{{ path('app_homepage') }}">Home</a></li>
-          <li><span>{{ breadcrumb }}</span></li>
-        </ul>
-      </div>
-    </section>
+    
+    {% include('sections/_breadcrumb.html.twig') %}
 
     <!-- Lattest news-->
     <div class="container clearfix sectpad-sec">
@@ -41,9 +29,11 @@
                               {% endif %}
                           </a>
                           <div class="event-date">
-                              {% set dateTime = date(news.date) %}
-
-                              <h3 style="margin-top: -5px">{{ dateTime|date("d")}} <small>{{ dateTime|date("M")}}</small><small>{{ dateTime|date("Y")}}</small></h3>
+                            <h3 style="margin-top: -5px">
+                              {{ news.publishedOn|date("d")}}
+                              <small>{{ news.publishedOn|date("M")}}</small>
+                              <small>{{ news.publishedOn|date("Y")}}</small>
+                            </h3>
                           </div>
                       </div>
                       <div class="news-evn-cont">

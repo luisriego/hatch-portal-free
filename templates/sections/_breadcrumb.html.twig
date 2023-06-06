@@ -1,8 +1,14 @@
 <section class="breadcumb-wrapper">
     <div class="container clearfix">
-        <ul class="breadcumb">
-            <li><a href="{{ path('app_homepage') }}">Home</a></li>
-            <li><span>{{ breadcrumb }}</span></li>
-        </ul>
+        <div class="row">
+            <ul class="breadcumb col-md-10">
+                <li><a href="{{ path('app_homepage') }}">Home</a></li>
+                <li><span>{{ breadcrumb }}</span></li>
+            </ul>
+            <div class="col-md-2">
+                <a class="btn btn-outline-primary btn-sm">Inscreva seu projeto</a>
+            </div>
+        </div>
     </div>
+    
 </section>

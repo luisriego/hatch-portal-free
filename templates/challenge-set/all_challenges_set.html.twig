@@ -2,14 +2,8 @@
 
 {% block body %}
     {% include "challenge-set/_header.html.twig" %}
-    <section class="breadcumb-wrapper">
-      <div class="container clearfix">
-        <ul class="breadcumb">
-          <li><a href="{{ path('app_homepage') }}">Home</a></li>
-          <li><span>{{ breadcrumb }}</span></li>
-        </ul>
-      </div>
-    </section>
+    
+    {% include "sections/_breadcrumb.html.twig" %}
 
     <!-- Lattest challengeSet-->
     <div class="container clearfix sectpad-sec">

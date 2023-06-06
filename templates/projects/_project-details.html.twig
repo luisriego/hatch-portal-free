@@ -1,13 +1,13 @@
 <section class="core-projects" style="margin-top: -70px">
     <div class="container">
-        <div class="project-facts">
+        <div class="row project-facts">
             {% for fact in project.fact %}
-                <div class="col-lg-3" style="background-color: #e84a37; margin: 10px; height: 160px; width: 100%">
-                    <div class="panel-body" style="color: white !important;">{{ fact.name|raw }}</div>
+                <div class="col-md-3" style="background-color: #e84a37; margin: 10px; height: 160px">
+                    <div class="panel-body text-center m-2 mt-4 align-middle" style="color: white !important;">{{ fact.name|raw }}</div>
                 </div>
             {% endfor %}
         </div>
-        <div class="pro-content clearfix project-details">
+        <div class="row pro-content clearfix project-details">
             {{ include('projects/_challenges.html.twig') }}
             {{ include('projects/_solutions.html.twig') }}
             {{ include('projects/_highlights.html.twig') }}
