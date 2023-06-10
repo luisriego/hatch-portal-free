@@ -2,10 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Fact;
-use App\Form\FactFormType;
-use App\Repository\FactRepository;
-use App\Repository\ProjectRepository;
 use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -41,7 +37,7 @@ class AcceptConditionsController extends AbstractController
                 ? 'accept_conditions'
                 : 'reject_conditions';
 
-            if ($nextAction === 'accept_conditions') {
+            if ('accept_conditions' === $nextAction) {
                 $project->setIsAccepted(true);
                 $project->SetAcceptedOn();
                 $project->markAsUpdated();
@@ -50,7 +46,7 @@ class AcceptConditionsController extends AbstractController
                 $this->entityManager->flush();
             }
 
-            if ($nextAction === 'reject_conditions') {
+            if ('reject_conditions' === $nextAction) {
                 $project->setIsAccepted(false);
 
                 $this->entityManager->persist($project);
@@ -59,6 +55,7 @@ class AcceptConditionsController extends AbstractController
 
             return $this->redirectToRoute('app_homepage');
         }
+
         return $this->render('accept_conditions/accept-conditions.html.twig', [
             'breadcrumb' => 'Condições para publicação e aceite',
             'accept_form' => $form->createView(),

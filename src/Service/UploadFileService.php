@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use Exception;
-use Cloudinary\Cloudinary;
 use Cloudinary\Api\Exception\ApiError;
+use Cloudinary\Cloudinary;
+use Exception;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class UploadFileService
@@ -29,12 +29,12 @@ class UploadFileService
             [
                 'cloud' => [
                     'cloud_name' => 'inovacaobrasil',
-                    'api_key'    => $this->cloudinaryKey,
+                    'api_key' => $this->cloudinaryKey,
                     'api_secret' => $this->cloudinarySecret,
                 ],
             ]
         );
-        if ($folder === 'news') {
+        if ('news' === $folder) {
             $filePath = 'https://res.cloudinary.com/inovacaobrasil/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1683423312/'.$folder.'/'.$filename;
         } else {
             $filePath = 'https://res.cloudinary.com/inovacaobrasil/image/upload/v1683423312/'.$folder.'/'.$filename;
@@ -50,5 +50,4 @@ class UploadFileService
 
         return $filePath;
     }
-
 }

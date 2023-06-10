@@ -5,14 +5,11 @@ namespace App\Controller;
 use App\Entity\Project;
 use App\Form\ProjectFormType;
 use App\Repository\AreaRepository;
-use App\Repository\AuthorRepository;
 use App\Repository\AuthorRepositoryInterface;
-use App\Repository\ProjectRepository;
 use App\Repository\ProjectRepositoryInterface;
 use App\Service\UploadFileService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,10 +34,10 @@ class NewProjectController extends AbstractController
         $imagePath = '';
         $author = $this->authorRepository->findOneByEmailOrFail($author);
         $projects = $author->getProjects();
-        if (count($projects) === 0) {
+        if (0 === count($projects)) {
             $project = new Project();
         }
-        if (count($projects) === 1) {
+        if (1 === count($projects)) {
             $project = $projects[0];
         }
 
@@ -58,7 +55,7 @@ class NewProjectController extends AbstractController
                 $project->setArea($this->areaRepo->findOneBy(['id' => $form['area']->getData()]));
                 $project->setStatus(1);
                 $project->setAcceptedOn(new \DateTimeImmutable());
-                if ($imagePath !== '') {
+                if ('' !== $imagePath) {
                     $project->setImage($imagePath);
                 }
 

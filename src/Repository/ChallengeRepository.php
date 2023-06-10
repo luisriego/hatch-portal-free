@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\Challenge;
-use App\Entity\Project;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -50,7 +49,7 @@ class ChallengeRepository extends ServiceEntityRepository implements ChallengeRe
             ->setParameter('slug', $slug)
             ->getQuery()
             ->getOneOrNullResult()
-            ;
+        ;
     }
 
 //    /**

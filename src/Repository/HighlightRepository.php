@@ -41,7 +41,6 @@ class HighlightRepository extends ServiceEntityRepository implements HighlightRe
         ;
     }
 
-
 //    public function findOneBySomeField($value): ?Highlight
 //    {
 //        return $this->createQueryBuilder('h')

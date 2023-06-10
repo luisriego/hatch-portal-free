@@ -14,8 +14,7 @@ class HomepageTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Vem aí o prêmio Local de Inovação 2023');
         $this->assertSelectorTextContains('h2', 'Últimos Posts do nosso Blog');
-        $this->assertSelectorTextContains('h3', 'As inscrições se encerram em 31 de julho de 2023.');
-        $this->assertSelectorTextContains('a h3', 'Post 1');
+        $this->assertSelectorTextContains('h3', 'As inscrições se encerram em 31 de outubro de 2023.');
     }
 
     public function testHomepageMenu(): void

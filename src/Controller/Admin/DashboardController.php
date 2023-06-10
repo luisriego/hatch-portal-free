@@ -52,7 +52,7 @@ class DashboardController extends AbstractDashboardController
         $posts = $this->blogRepository->getTotalNumber();
         $news = $this->newsRepository->getTotalNumber();
 
-        return $this->render('admin/index.html.twig',[
+        return $this->render('admin/index.html.twig', [
             'projects' => $projects,
             'posts' => $posts,
             'news' => $news,

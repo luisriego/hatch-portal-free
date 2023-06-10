@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Challenge;
 use App\Form\ChallengeFormType;
 use App\Repository\ChallengeRepository;
-use App\Repository\ProjectRepository;
 use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

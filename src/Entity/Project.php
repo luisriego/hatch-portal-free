@@ -20,7 +20,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[UniqueEntity('slug')]
 class Project
 {
-    use TimestampableTrait, IsActiveTrait, IsAcceptedTrait;
+    use TimestampableTrait;
+    use IsActiveTrait;
+    use IsAcceptedTrait;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -317,7 +319,6 @@ class Project
 
     public function setSlug(string $slug): self
     {
-
         $this->slug = $slug;
 
         return $this;
@@ -326,7 +327,7 @@ class Project
     public function computeSlug(SluggerInterface $slugger)
     {
         if (!$this->slug || '_' === $this->slug) {
-            $this->slug = (string) $slugger->slug($this->getTitle() . '_' . $this->getSubtitle() . '_' . $this->getLocation(), '_')->lower();
+            $this->slug = (string) $slugger->slug($this->getTitle().'_'.$this->getSubtitle().'_'.$this->getLocation(), '_')->lower();
         }
     }
 

@@ -4,9 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Highlight;
 use App\Form\HighlightFormType;
-use App\Repository\HighlightRepository;
 use App\Repository\HighlightRepositoryInterface;
-use App\Repository\ProjectRepository;
 use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

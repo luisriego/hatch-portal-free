@@ -4,9 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Fact;
 use App\Form\FactFormType;
-use App\Repository\FactRepository;
 use App\Repository\FactRepositoryInterface;
-use App\Repository\ProjectRepository;
 use App\Repository\ProjectRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

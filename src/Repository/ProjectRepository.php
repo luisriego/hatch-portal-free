@@ -64,18 +64,17 @@ class ProjectRepository extends ServiceEntityRepository implements ProjectReposi
         ;
     }
 
-
-   public function findOneByTitleAndAreaOrFail($title, $area): ?Project
-   {
-       return $this->createQueryBuilder('p')
+    public function findOneByTitleAndAreaOrFail($title, $area): ?Project
+    {
+        return $this->createQueryBuilder('p')
            ->andWhere('p.title = :title')
            ->andWhere('p.area = :area')
            ->setParameter('title', $title)
            ->setParameter('area', $area)
            ->getQuery()
            ->getOneOrNullResult()
-       ;
-   }
+        ;
+    }
 
     public function getAllProjectsToAdmin(): ?array
     {

@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\News;
 use App\Form\NewsFormType;
-use App\Repository\AuthorRepository;
 use App\Service\UploadFileService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -38,7 +37,7 @@ class NewNewsController extends AbstractController
             }
 
             $news->setDate($form['publishedOn']->getData()->format('d/m/Y'));
-            if ($photoPath !== '') {
+            if ('' !== $photoPath) {
                 $news->setImage($photoPath);
             }
 

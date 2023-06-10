@@ -6,13 +6,9 @@ use App\Entity\Blog;
 use App\Form\BlogFormType;
 use App\Repository\AuthorRepository;
 use App\Service\UploadFileService;
-use Cloudinary\Api\Exception\ApiError;
-use Cloudinary\Api\Upload\UploadApi;
 use Cloudinary\Cloudinary;
-use Cloudinary\Configuration\Configuration;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -48,7 +44,7 @@ class NewPostController extends AbstractController
 
             $blog->setOwner($author);
             $blog->setAuthor($author->getName().' '.$author->getSurname());
-            if ($photoPath !== '') {
+            if ('' !== $photoPath) {
                 $blog->setPhoto($photoPath);
             }
 

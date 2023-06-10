@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Entity\Blog;
-use App\Repository\BlogRepository;
 use App\Repository\BlogRepositoryInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 

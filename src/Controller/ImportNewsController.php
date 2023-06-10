@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\News;
-use App\Form\ImportNewsFormType;
 use App\Form\NewsFormType;
 use App\Service\ScrapNewsService;
 use App\Service\UploadFileService;

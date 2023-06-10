@@ -6,8 +6,6 @@ use App\Entity\Author;
 use App\Form\AuthorFormType;
 use App\Repository\AuthorRepositoryInterface;
 use App\Service\UploadFileService;
-use Cloudinary\Api\Exception\ApiError;
-use Cloudinary\Cloudinary;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,7 +42,7 @@ class NewPostAuthorController extends AbstractController
                 $authorExist->markAsUpdated();
                 $authorExist->setResume($form['resume']->getData());
                 $authorExist->setPosition($form['position']->getData());
-                if ($avatarPath !== '') {
+                if ('' !== $avatarPath) {
                     $authorExist->setAvatar($avatarPath);
                 }
 
@@ -54,7 +52,7 @@ class NewPostAuthorController extends AbstractController
                 return $this->redirectToRoute('app_new_post', ['authorId' => $authorExist->getId()]);
             }
             $author->markAsUpdated();
-            if ($avatarPath !== '') {
+            if ('' !== $avatarPath) {
                 $author->setAvatar($avatarPath);
             }
 

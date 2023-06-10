@@ -9,8 +9,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class HomepageService
 {
-    public function __construct(private readonly DoctrineTopicRepository $topicRepository)
-    {
+    public function __construct(
+        private readonly DoctrineTopicRepository $topicRepository
+    ) {
     }
 
     public function handle(): array
@@ -18,7 +19,6 @@ class HomepageService
         if (null === $result = $this->topicRepository->findBy(['toPublish' => true], ['type' => 'ASC'], 3)) {
             throw new NotFoundHttpException();
         }
-
         return $result;
 //        return [];
     }

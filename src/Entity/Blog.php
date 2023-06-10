@@ -116,7 +116,6 @@ class Blog
 
     public function setSlug(string $slug): self
     {
-
         $this->slug = $slug;
 
         return $this;
@@ -129,12 +128,12 @@ class Blog
         }
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(DateTimeInterface $date): self
     {
         $this->date = $date;
 

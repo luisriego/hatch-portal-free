@@ -39,7 +39,7 @@ class NewNewsAuthorController extends AbstractController
                 $authorExist->markAsUpdated();
                 $authorExist->setResume($form['resume']->getData());
                 $authorExist->setPosition($form['position']->getData());
-                if ($avatarPath !== '') {
+                if ('' !== $avatarPath) {
                     $authorExist->setAvatar($avatarPath);
                 }
 
@@ -49,7 +49,7 @@ class NewNewsAuthorController extends AbstractController
                 return $this->redirectToRoute('app_new_news', ['authorId' => $authorExist->getId()]);
             }
             $author->markAsUpdated();
-            if ($avatarPath !== '') {
+            if ('' !== $avatarPath) {
                 $author->setAvatar($avatarPath);
             }
 

@@ -22,8 +22,7 @@ class DeleteProjectController extends AbstractController
         if ($this->isGranted('ROLE_ADMIN')) {
             $this->deleteProjectService->handle($slug);
             $projects = $this->projectsServiceToAdmin->handle();
-        } 
-
+        }
 
         return $this->render('projects/all_projects.html.twig',
             [
