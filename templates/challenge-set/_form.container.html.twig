@@ -1,26 +1,10 @@
 <div role="main" class="col-md-12 col-sm-8">
-
-    <div>
-        <h1 class="pageTitle">+<span style="color: #e84a37">+</span></h1>
-
-            <div class="project-details">
-                <div class="col-md-12">
-                    <h2>Desafios do projeto <span style="color: #e84a37">{{ project.title }}</span></h2>
-                    {% if challenges|length > 0 %}
-                        <ul style=" background-color: lightgray; padding: 10px">
-                            {% for challenge in challenges %}
-                                <li>{{ challenge.text }}</li> 
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-            </div>
-
-        <h3 class="pageTitle">Adicione um Desafio</h3>
+    <div class="mt-3">
+        <h1 class="pageTitle"> Registre o seu projeto</h1>
     </div>
 
-    <div class="component sitecore-form" id="{0f27ac40-b2a6-4b1f-b31d-a58a86756b49}">
-        <div class="component-content" data-controller="challenge">
+    <div class="component sitecore-form" id="">
+        <div class="component-content" data-controller="project">
             {{ form_start(project_form, {'attr': {'class': 'custom-form text-left hatch-scfForm'}}) }}
                 <div class="my-custom-class-for-errors">
                     {{ form_errors(project_form) }}
@@ -39,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="form-submit-border col-md-6" style="margin-top: 50px" data-challenge-target="buttonPlus">
+                    <div class="form-submit-border col-md-6 d-none" data-challenge-target="buttonPlus">
                         {{ form_widget(project_form.addNew, {
                             'label': 'Adicionar e mais um desafio ',
                             'attr': {
@@ -48,9 +32,9 @@
                             } })
                         }}
                     </div>
-                    <div class="form-submit-border col-md-6" style="margin-top: 50px" data-challenge-target="buttonNext">
+                    <div class="form-submit-border col-md-6" data-challenge-target="buttonNext">
                         {{ form_widget(project_form.next, {
-                            'label': 'Adicionar e próximo',
+                            'label': 'Finalizar',
                             'attr': {
                                 'class': 'btn btn-info btn-lg',
                                 'disabled': false
