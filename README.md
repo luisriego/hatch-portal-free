@@ -99,11 +99,61 @@ $subQueryBuilder = $this->getEntityManager()->createQueryBuilder();
         ->getQuery();
 ```
 
+
+## Deploy scripts
+bash to exec on every CI
+``` 
+# deploy.sh
+
 #!/bin/bash
 
 cd app
 git pull origin main
+docker system prune -f
 docker build -t deploy .
 docker stop $(docker ps -aq) || true
 docker container prune -f
 docker run -d -p 8080:80 --restart unless-stopped --name hatch_portal_app deploy
+```
+
+sudo vi /etc/nginx/sites_available/default
+```
+# /etc/apache2/sites_avaliable/default
+server
+  listen 443 ssl;
+  server_name innovationhatch.com;
+  
+  ssl_certificate   /etc/ssl/cloudflare/api.pem;
+  ssl_certificate_key   /etc/ssl/cloudflare/api.key;
+  
+  client_max_body_size 20M;
+  
+  location / {
+    proxy_pass http://localhost:8080;
+    proxy_redirect    off;
+    proxy_set_header  Host            $host;
+    proxy_set_header  X-Real-Ip       $remote_addr;
+    proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header  Upgrade         $http_upgrade;
+    proxy_set_header  Connection "upgrade"; 
+  }
+```
+
+This script redirect the cloudflare service to our server
+```
+# /etc/apache2/sites-available/000-proxy.conf
+
+<VirtualHost *:80>
+  serverName innovacaobrasil.com
+  proxyPreserveHost On
+  proxyPass / http://127.0.0.1:8080/
+  proxyPassReverse / http://127.0.0.1:8080/
+  <Location />
+    Include /etc/apache/allow-cloudflare.conf
+  </Location>
+</VirtualHost>
+
+# important enabled the proxy ...
+# ...$ a2enmod proxy
+# ...$ a2enmod proxy_http
+```
