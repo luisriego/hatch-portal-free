@@ -25,8 +25,8 @@ class HomepageController extends AbstractController
     #[Route('/', name: 'app_homepage')]
     public function __invoke(): Response
     {
-        $randomBlog = $this->blogService->handle();
-        $randomNews = $this->newsRepository->findNActiveOrFail(3);
+        $randomBlog = $this->blogService->handle() ?? null;
+        $randomNews = $this->newsRepository->findNActiveOrFail(3) ?? null;
 //        $randomData = $this->homepageService->handle();
 //        $randomEvent = $this->eventService->handle();
 //        $randomTestimonials = $this->testimonialService->handle();
