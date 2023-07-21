@@ -51,12 +51,13 @@
                         {{ form_help(project_form.photo, { 'attr': {'class': 'help-block font-weight-bold',} }) }}
                     </div>
                 </div>
-                <div class="form-submit-border" style="margin-top: 50px; text-align: right" data-project-target="button">
+
+                <div class="form-submit-border mt-5" data-project-target="button">
+                    <button class="btn btn-outline-primary font-weight-bold">anterior</button>
                     {{ form_widget(project_form.next, {
                         'label': 'Próximo ',
                         'attr': {
-                            'class': 'btn btn-default font-weight-bold',
-                            'disabled': true
+                            'class': 'btn btn-outline-primary font-weight-bold',
                         } })
                     }}
                 </div>

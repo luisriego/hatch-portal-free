@@ -1,9 +1,9 @@
 <section class="core-projects" style="margin-top: -70px">
     <div class="container">
-        <div class="row project-facts">
-            {% for fact in project.fact %}
-                <div class="col-md-3" style="background-color: #e84a37; margin: 10px; height: 160px">
-                    <div class="panel-body text-center m-2 mt-4 align-middle" style="color: white !important;">{{ fact.name|raw }}</div>
+        <div class="row justify-content-around">
+            {% for fact in project.fact | slice(0, 3) %}
+                <div class="col-md-3 project-facts-item">
+                    <div class="panel-body text-center m-2 mt-4">{{ fact.name|raw }}</div>
                 </div>
             {% endfor %}
         </div>
@@ -15,13 +15,29 @@
         <div class="projects_hours clearfix">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <p>Project Starting Date<span>12.01.2016</span></p>
+                    <p>Data de início do projeto
+                        <span>
+                            {% if fact.init is defined and fact.init is not null %}
+                                {{ fact.init }}
+                            {% else %}
+                                Não informado
+                            {% endif %}
+                        </span>
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <p>Project End<span>In Progress</span></p>
+                    <p>Data de finalizacão do projeto
+                        <span>
+                            {% if fact.ended is defined and fact.ended is not null %}
+                                {{ fact.ended }}
+                            {% else %}
+                                Não informado
+                            {% endif %}
+                        </span>
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <p>Castegoria<span>{{ project.area.name }}</span></p>
+                    <p>Categoria<span>{{ project.area.name }}</span></p>
                 </div>
             </div>
         </div>

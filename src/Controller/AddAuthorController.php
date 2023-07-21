@@ -70,7 +70,7 @@ class AddAuthorController extends AbstractController
         }
 
         if ($target === 'app_new_challenge_set') {
-            return $this->render('new-project/new-project-author.html.twig', [
+            return $this->render('challenge-set/new-challenge-set-author.html.twig', [
                 'breadcrumb' => 'Incluir responsável do projeto',
                 'author_form' => $form->createView(),
             ]);

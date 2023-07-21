@@ -7336,6 +7336,12 @@ section.newsletter .req-button a i
     justify-content: center;
 }
 
+.project-facts-item {
+    background-color: #e84a37;
+    height: 160px;
+    color: white !important;
+}
+
 .project-info {
     background: #ebebeb;
     border-bottom: 6px solid #e84a37;
