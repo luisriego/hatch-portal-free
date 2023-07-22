@@ -37,10 +37,11 @@ class ProjectCrudController extends AbstractCrudController
                 ->onlyOnDetail(),
             DateTimeField::new('accepted_on')
                 ->onlyOnDetail(),
-            ImageField::new('image')
-                ->setRequired(false)
-                ->setBasePath('media/projects')
-                ->setUploadDir('public/media/projects'),
+            TextField::new('image'),
+//            ImageField::new('image')
+//                ->setRequired(false)
+//                ->setBasePath('media/projects')
+//                ->setUploadDir('public/media/projects'),
             TextField::new('sumary')
                 ->onlyOnForms(),
             TextField::new('slug')
